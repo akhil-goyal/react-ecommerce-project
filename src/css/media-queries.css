@@ -1,0 +1,1092 @@
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+    /* ------------------------- Section GENERAL ---------------------- */
+    .subheading {
+        font-size: 2em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ------------------------- Section HEADER ----------------------- */
+    .page-header {
+        height: 4em;
+    }
+    
+    .logo-container img {
+        height: 2.4em;
+        width: 1.8em;
+    }
+    
+    .logo {
+        font-family: var(--cursive-font);
+        font-size: 1.8em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ------------------------- Section HERO ------------------------- */
+    .heading {
+        height: 40vh;
+        display: grid;
+        align-items: center;
+    }
+    
+    .heading h1 {
+        font-size: 2.5em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ------------------------- Section TRENDING --------------------- */
+    .trending-products {
+        width: calc(250px * 16);
+    }
+    
+    .trending-products img{
+        height: 12em;
+        width: 12em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ----------------------- Section HIGHLIGHTS --------------------- */
+    .highlights .grid{
+        grid-template-columns: 1fr;
+    }
+    
+    .highlight-1,
+    .highlight-2,
+    .highlight-3
+    {
+        height: 20em;
+        display: grid;
+        align-content: center;
+        justify-content: center;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ----------------------- Section SEARCH-BAR --------------------- */
+    .search-box input {
+        width: 30%;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ----------------------- Section PRODUCTS ----------------------- */
+    .results .grid {
+        display: grid;
+        row-gap: 1em;
+        grid-template-rows: repeat(2, 1fr);
+    }
+    
+    .product-title-newflash img{
+        height: 1.6em;
+        width: 2.1em;
+        padding-left: 0.5em;
+        animation: blinker 1s linear infinite;
+    }
+    
+    .product img {
+        height: 15em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ----------------------- Section PAGINATION --------------------- */
+    .pagination {
+        margin-top: 1em;
+    }
+    
+    .buttons-prev-next {
+        justify-content: center;
+    }
+    
+    .buttons-prev-next a {
+        margin: 1em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    
+    
+    /* ------------------------- Section FOOTER ----------------------- */
+    .legal > li {
+        padding: 0 0.7em;
+    }
+    
+    legend,
+    h3,
+    .label-sort
+    {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    
+    .label-sort{
+        padding-right: 0.4em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    }
+    
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+    
+    /* ------------------------- Section GENERAL ---------------------- */
+    .container {
+        max-width: 700px;
+        margin: 0 auto;
+        overflow: auto;
+        padding: 0 20px;
+    }
+    
+    .subheading {
+        font-size: 2em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ------------------------- Section HEADER ----------------------- */
+    .page-header {
+        height: 4em;
+    }
+    
+    .logo-container img {
+        height: 2.4em;
+        width: 1.8em;
+    }
+    
+    .logo {
+        font-family: var(--cursive-font);
+        font-size: 1.8em;
+    }
+    
+    .side-bar a {
+        font-size: 1.2em;
+      }
+    /* ---------------------------------------------------------------- */
+    
+    /* ------------------------- Section HERO ------------------------- */
+    .heading {
+        height: 40vh;
+        display: grid;
+        align-items: center;
+    }
+    
+    .heading h1 {
+        font-size: 2.5em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ------------------------- Section TRENDING --------------------- */
+    .trending-products {
+        width: calc(250px * 16);
+    }
+    
+    .trending-products img{
+        height: 12em;
+        width: 12em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ----------------------- Section HIGHLIGHTS --------------------- */
+    .highlights .grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .highlight-1,
+    .highlight-2,
+    .highlight-3
+    {
+        height: 20em;
+        display: grid;
+        align-content: center;
+        justify-content: center;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ----------------------- Section SEARCH-BAR --------------------- */
+    .search-box input {
+        width: 30%;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ------------------------- Section FILTERS ---------------------- */
+    .product-filters {
+        justify-content: start;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ----------------------- Section PRODUCTS ----------------------- */
+    .section-product-and-filters {
+        margin-top: 2em;
+    }
+    
+    .results .grid {
+        display: grid;
+        row-gap: 1em;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .product img {
+        height: 20em;
+    }
+    
+    .product-title-newflash img{
+        height: 1.6em;
+        width: 2.1em;
+        padding-left: 0.5em;
+        animation: blinker 1s linear infinite;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ----------------------- Section PAGINATION --------------------- */
+    .pagination {
+        margin-top: 1em;
+    }
+    
+    .buttons-prev-next {
+        justify-content: center;
+    }
+    
+    .buttons-prev-next a {
+        margin: 1em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    
+    
+    /* -------------------- Section CUSTOMER REVIEWS ------------------ */
+    .customer-reviews {
+        margin-top: 2em;
+      }
+      
+    .reviews article {
+        height: 7em;
+    }
+    
+    .reviews img {
+        border-radius: 4em;
+    }
+    /* ---------------------------------------------------------------- */
+      
+      
+    
+    /* ----------------------- Section NEWSLETTER --------------------- */
+    .newsletter-subscription {
+        margin-top: 3em;
+    }
+    
+    .newsletter-email {
+        height: 2.5em;
+        width: 30%;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    
+    
+    /* ------------------------- Section FOOTER ----------------------- */
+    .legal > li {
+        padding: 0 0.7em;
+    }
+    
+    legend,
+    h3,
+    .label-sort
+    {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    
+    .label-sort{
+        padding-right: 0.4em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    }
+    
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+    
+    /* ------------------------- Section GENERAL ---------------------- */
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        overflow: auto;
+        padding: 0 40px;
+    }
+    
+    .subheading {
+        font-size: 2em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ------------------------- Section HEADER ----------------------- */
+    .page-header {
+        display: none;
+    }
+    
+    .page-header-webview {
+        display: flex;
+        justify-content: space-between;
+        height: 4em;
+    }
+    
+    .page-header-webview ul > li {
+        padding: 0 2em;
+    }
+    
+    .page-header-webview .logo,
+    .page-header-webview .user-settings
+    {
+        align-self: center;
+    }
+    
+    .page-header-webview .logo {
+        font-size: 1.5em;
+    }
+    
+    .logo-container img {
+        height: 2.7em;
+        width: 2em;
+    }
+    
+    .user-image {
+        height: 1.8em;
+        width: 1.9em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ------------------------- Section HERO ------------------------- */
+    .heading {
+        height: 40vh;
+        display: grid;
+        align-items: center;
+    }
+    
+    .heading h1 {
+        font-size: 3em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ------------------------- Section TRENDING --------------------- */
+    .trending-products {
+        width: calc(250px * 16);
+    }
+    
+    .trending-products img{
+        height: 15em;
+        width: 15em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ----------------------- Section HIGHLIGHTS --------------------- */
+    .highlights {
+        overflow: unset;
+    }
+    
+    .highlights .grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .highlight-1,
+    .highlight-2,
+    .highlight-3
+    {
+        height: 20em;
+        display: grid;
+        align-content: center;
+    }
+    
+    .highlight-1:hover,
+    .highlight-2:hover,
+    .highlight-3:hover {
+      transform: scale(1.03);
+      cursor: pointer;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ----------------------- Section SEARCH-BAR --------------------- */
+    .search-box input {
+        width: 15em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ------------------------- Section FILTERS ---------------------- */
+    .filters {
+        border: 0.2em solid var(--color-primary);
+        border-radius: 0em 0em 1em 1em;
+        padding: 2em 1em;
+    }
+    
+    .filter-options {
+        display: block;
+    }
+    
+    .product-filters {
+        justify-content: start;
+        background-color: var(--color-primary);
+        color: var(--color-light);
+        border-radius: 1em 1em 0em 0em;
+        padding: 0 1em;
+        margin-top: 1em;
+    }
+    
+    .button-filters {
+        display: none;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ----------------------- Section PRODUCTS ----------------------- */
+    .section-product-and-filters {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        align-items: flex-start;
+        margin-top: 2em;
+    }
+    
+    .results .grid {
+        display: grid;
+        row-gap: 1em;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .product img {
+        height: 22em;
+    }
+    
+    .product-title-newflash img{
+        height: 1.9em;
+        width: 2.4em;
+        padding-left: 0.5em;
+        animation: blinker 1s linear infinite;
+    }
+    
+    .products-and-search {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 2.5em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ----------------------- Section PAGINATION --------------------- */
+    .pagination {
+        margin-top: 1em;
+    }
+    
+    .buttons-prev-next {
+        justify-content: center;
+    }
+    
+    .buttons-prev-next a {
+        margin: 1em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* -------------------- Section CUSTOMER REVIEWS ------------------ */
+    .customer-reviews {
+        margin-top: 2em;
+    }
+    
+    .reviews {
+        display: flex;
+    }
+    
+    .reviews article {
+        height: 18em;
+        width: 33.3%;
+    }
+    
+    .reviews img {
+        height: 4em;
+        width: 4.5em;
+        border-radius: 3em;
+    }
+    
+    .reviews p {
+        color: var(--color-primary);
+    }
+    
+    .review-1,
+    .review-2,
+    .review-3 {
+        display: flex;
+        gap: 1em;
+    }
+    
+    .separator-vertical {
+        display: block;
+        height: 8em;
+        width: 0.1em;
+    }
+    /* ------------------------------------------------------------------ */
+      
+      
+      /* ----------------------- Section NEWSLETTER --------------------- */
+    .newsletter-subscription {
+        margin-top: 3em;
+    }
+    
+    .newsletter-email {
+        height: 2.5em;
+        width: 30%;
+    }
+    
+    .newsletter-button {
+        height: 2em;
+        width: 6em;
+    }
+      /* ---------------------------------------------------------------- */
+    
+    /* ------------------------- Section FOOTER ----------------------- */
+    .legal > li {
+        padding: 0 1rem;
+    }
+    
+    legend,
+    h3,
+    .label-sort
+    {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    
+    .label-sort{
+        padding-right: 0.4em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    }
+    
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+    
+    /* ------------------------- Section GENERAL ---------------------- */
+    .container {
+        max-width: 1600px;
+        margin: 0 auto;
+        overflow: auto;
+        padding: 0 40px;
+    }
+    
+    .subheading {
+        font-size: 2em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ------------------------- Section HEADER ----------------------- */
+    .page-header {
+        display: none;
+    }
+    
+    .page-header-webview {
+        display: flex;
+        justify-content: space-between;
+        height: 5em;
+    }
+    
+    .page-header-webview ul > li {
+        padding: 0 3em;
+    }
+    
+    .page-header-webview .logo,
+    .page-header-webview .user-settings
+    {
+        align-self: center;
+    }
+    
+    .page-header-webview .logo {
+        font-size: 2em;
+    }
+    
+    .logo-container img {
+        height: 3em;
+        width: 2.3em;
+    }
+    
+    .user-image {
+        height: 2em;
+        width: 2.1em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ------------------------- Section HERO ------------------------- */
+    .heading {
+        height: 45vh;
+        margin: 0;
+        display: grid;
+        align-items: center;
+    }
+    
+    .heading h1 {
+        font-size: 4em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ------------------------- Section TRENDING --------------------- */
+    .trending-products {
+        width: calc(250px * 16);
+    }
+    
+    .trending-products img{
+        height: 20em;
+        width: 20em;
+    }
+    
+    .trending {
+        margin-top: 2em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ----------------------- Section HIGHLIGHTS --------------------- */
+    .highlights {
+        margin-top: 3em;
+        overflow: unset;
+    }
+    
+    .highlights .grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .highlight-1,
+    .highlight-2,
+    .highlight-3
+    {
+        height: 40vh;
+        display: grid;
+        align-content: center;
+        padding: 0 5em;
+    }
+    
+    .highlight-1:hover,
+    .highlight-2:hover,
+    .highlight-3:hover {
+      transform: scale(1.03);
+      cursor: pointer;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ----------------------- Section SEARCH-BAR --------------------- */
+    .search-box {
+        display: flex;
+        gap: 0.5em;
+    }
+    
+    .search-box input {
+        width: 15em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ------------------------- Section FILTERS ---------------------- */
+    .product-filters {
+        justify-content: start;
+        background-color: var(--color-primary);
+        color: var(--color-light);
+        border-radius: 1em 1em 0em 0em;
+        padding: 0 1em;
+        margin-top: 1em;
+        }
+            
+    .filters {
+        border: 0.2em solid var(--color-primary);
+        border-radius: 0em 0em 1em 1em;
+        padding: 2em 1em;
+    }
+    
+    .filter-options {
+        display: block;
+    }
+    
+    .button-filters {
+        display: none;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ----------------------- Section PRODUCTS ----------------------- */
+    .section-product-and-filters {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        align-items: flex-start;
+        margin-top: 4em;
+    }
+    
+    .results .grid {
+        display: grid;
+        row-gap: 1em;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .product article {
+        margin: 0.4em 0;
+    }
+    
+    .product img {
+        height: 26em;
+    }
+    
+    .product-title-icons i {
+        padding: 0 0.2em;
+    }
+    
+    .product-title-newflash img{
+        height: 1.9em;
+        width: 2.4em;
+        padding-left: 0.5em;
+        animation: blinker 1s linear infinite;
+    }
+    
+    .products-and-search {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 2.5em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ----------------------- Section PAGINATION --------------------- */
+    .pagination {
+        margin-top: 1em;
+    }
+    
+    .buttons-prev-next {
+        justify-content: center;
+    }
+    
+    .buttons-prev-next a {
+        margin: 1em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* -------------------- Section CUSTOMER REVIEWS ------------------ */
+    .customer-reviews {
+        margin-top: 2em;
+    }
+    
+    .reviews {
+        display: flex;
+    }
+    
+    .reviews article {
+        height: 13em;
+        width: 33.3%;
+    }
+    
+    .reviews img {
+        height: 5em;
+        width: 5.5em;
+    }
+    
+    .separator-vertical {
+        display: block;
+        height: 8em;
+        width: 0.1em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ----------------------- Section NEWSLETTER --------------------- */
+    .newsletter-subscription {
+        margin-top: 3em;
+    }
+    
+    .newsletter p {
+        font-size: 1.2em;
+    }
+    
+    .newsletter-email {
+        height: 2.5em;
+        width: 30%;
+    }
+    
+    .newsletter-button {
+        height: 3em;
+        width: 10em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ------------------------- Section FOOTER ----------------------- */
+    .page-footer {
+        padding: 1.5em 0;
+        margin-top: 2em;
+    }
+    
+    .legal > li {
+        padding: 0 1rem;
+    }
+    
+    small {
+        justify-self: center;
+    }
+    
+    legend,
+    h3,
+    .label-sort
+    {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    
+    .label-sort{
+        padding-right: 0.4em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    }
+    
+    /* For full HD display & above */
+    @media only screen and (min-width: 1920px) {
+    
+    /* ------------------------- Section GENERAL ---------------------- */
+    body a,p{
+        font-size: 1.5em;
+    }
+    
+    .container {
+        max-width: 2200px;
+        margin: 0 auto;
+        overflow: auto;
+        padding: 0 40px;
+    }
+    
+    .subheading {
+        font-size: 2em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ------------------------- Section HEADER ----------------------- */
+    .page-header {
+        display: none;
+    }
+    
+    .page-header-webview {
+        display: flex;
+        justify-content: space-between;
+        height: 7em;
+    }
+    
+    .page-header-webview ul > li {
+        padding: 0 4em;
+    }
+    
+    .page-header-webview .logo,
+    .page-header-webview .user-settings
+    {
+        align-self: center;
+    }
+    
+    .page-header-webview .logo {
+        font-size: 3em;
+    }
+    
+    .logo-container img {
+        height: 4em;
+        width: 3.3em;
+    }
+    
+    .user-image {
+        height: 3em;
+        width: 3.1em;
+        border-radius: 2em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ------------------------- Section HERO ------------------------- */
+    .heading {
+        height: 45vh;
+        display: grid;
+        align-items: center;
+    }
+    
+    .heading h1 {
+        font-size: 6em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ------------------------- Section TRENDING --------------------- */
+    .trending-products {
+        width: calc(400px * 16);
+    }
+    
+    .trending-products img{
+        height: 25em;
+        width: 25em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ----------------------- Section HIGHLIGHTS --------------------- */
+    .highlights {
+        overflow: unset;
+    }
+    .highlights .grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .highlight-1,
+    .highlight-2,
+    .highlight-3
+    {
+        height: 35vh;
+        display: grid;
+        align-content: center;
+        padding: 0 5em;
+    }
+    
+    .highlight-1:hover,
+    .highlight-2:hover,
+    .highlight-3:hover {
+      transform: scale(1.03);
+      cursor: pointer;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ----------------------- Section SEARCH-BAR --------------------- */
+    .search-box input {
+        width: 20em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ------------------------- Section FILTERS ---------------------- */
+    .filters {
+        border: 0.2em solid var(--color-primary);
+        border-radius: 0em 0em 1em 1em;
+        padding: 2em 1em;
+    }
+    
+    .product-filters {
+        justify-content: start;
+        background-color: var(--color-primary);
+        color: var(--color-light);
+        border-radius: 1em 1em 0em 0em;
+        padding: 0 1em;
+        margin-top: 1em;
+    }
+    
+    .filter-options {
+        display: block;
+    }
+    
+    .button-filters {
+        display: none;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ----------------------- Section PRODUCTS ----------------------- */
+    .section-product-and-filters {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        align-items: flex-start;
+        margin-top: 3em;
+    }
+    
+    .results .grid {
+        display: grid;
+        row-gap: 1em;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .product img {
+        height: 40em;
+    }
+    
+    .product-title-newflash img{
+        height: 1.9em;
+        width: 2.4em;
+        padding-left: 0.5em;
+        animation: blinker 1s linear infinite;
+    }
+    
+    .products-and-search {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 2.5em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ----------------------- Section PAGINATION --------------------- */
+    .pagination {
+        margin-top: 1em;
+    }
+    
+    .buttons-prev-next {
+        justify-content: center;
+    }
+    
+    .buttons-prev-next a {
+        margin: 1em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 2em;
+        width: 7em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* -------------------- Section CUSTOMER REVIEWS ------------------ */
+    .customer-reviews {
+        margin-top: 2em;
+    }
+    
+    .reviews {
+        display: flex;
+    }
+    
+    .reviews article {
+        height: 15em;
+        width: 33.3%;
+        padding: 0 2em;
+    }
+    
+    .reviews img {
+        height: 6em;
+        width: 6.5em;
+        border-radius: 4em;
+    }
+    
+    .separator-vertical {
+        display: block;
+        height: 8em;
+        width: 0.1em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ----------------------- Section NEWSLETTER --------------------- */
+    .newsletter-subscription {
+        margin-top: 3em;
+    }
+    
+    .newsletter p {
+        font-size: 1.4em;
+    }
+    
+    .newsletter small {
+        color: var(--color-light);
+    }
+    
+    .newsletter-email {
+        height: 2.5em;
+        width: 30%;
+    }
+    
+    .newsletter-button {
+        height: 3em;
+        width: 10em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    /* ------------------------- Section FOOTER ----------------------- */
+    .page-footer {
+        height: 14em;
+    }
+    
+    .legal > li {
+        padding: 0 1rem;
+    }
+    
+    legend,
+    h3,
+    .label-sort
+    {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    
+    .label-sort{
+        padding-right: 0.4em;
+    }
+    /* ---------------------------------------------------------------- */
+    
+    }
