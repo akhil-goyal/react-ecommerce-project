@@ -1,10 +1,26 @@
 import React from 'react';
+import 'css/App.css';
+import 'css/style.css';
+import 'css/media-queries.css';
+
+import newLabel from 'img/new.png';
+import siteLogo from 'img/logo.png';
+import userAvatar from 'img/user.jpg';
+import plantOne from 'img/plant1.jpg';
+import plantTwo from 'img/plant2.jpg';
+import plantThree from 'img/plant3.jpg';
+import plantFour from 'img/plant4.jpg';
+import plantFive from 'img/plant5.jpg';
+import plantSix from 'img/plant6.jpg';
+import customerOne from 'img/customer1.jpg';
+import customerTwo from 'img/customer2.jpg';
+import customerThree from 'img/customer3.jpg';
 
 const HomePage = () => {
+
     return (
         <>
             <aside id="nav-top">
-
             </aside>
 
             <aside className="side-bar">
@@ -15,11 +31,12 @@ const HomePage = () => {
 
                     <figure>
                         <a href="index.html" className="sidebar-logo">
-                            Spruce <img src="img/logo.png" style="height: 2rem; width: 1.5rem;" alt="Spruce Logo" />
+                            {/* Spruce <img src="img/logo.png" style="height: 2rem; width: 1.5rem;" alt="Spruce Logo" /> */}
+                            Spruce <img src={siteLogo} />
                         </a>
                     </figure>
 
-                    <a href="javascript:void(0)" className="menu-close">&times;</a>
+                    <a href="#" className="menu-close">&times;</a>
 
                 </article>
 
@@ -55,10 +72,10 @@ const HomePage = () => {
 
                 <figure className="logo-container">
                     <a href="index.html" className="logo">Spruce</a>
-                    <img src="img/logo.png" alt="Site Logo" />
+                    <img src={siteLogo} alt="Site Logo" />
                 </figure>
 
-                <figure className="user-settings"><img className="user-image" src="img/user.jpg" alt="" />
+                <figure className="user-settings"><img className="user-image" src={userAvatar} alt="" />
                 </figure>
 
             </header>
@@ -67,7 +84,7 @@ const HomePage = () => {
 
                 <figure className="logo-container">
                     <a href="index.html" className="logo">Spruce</a>
-                    <img src="img/logo.png" alt="Site Logo" />
+                    <img src={siteLogo} alt="Site Logo" />
                 </figure>
 
                 <nav className="header-webview-nav">
@@ -80,7 +97,7 @@ const HomePage = () => {
                     </ul>
                 </nav>
 
-                <figure className="user-settings"><img className="user-image" src="img/user.jpg" alt="" />
+                <figure className="user-settings"><img className="user-image" src={userAvatar} alt="" />
                 </figure>
 
             </header>
@@ -104,43 +121,43 @@ const HomePage = () => {
                         <h5 className="hidden">""</h5>
 
                         <figure className="trending-product flex">
-                            <img src="img/plant1.jpg" alt="Plant" />
+                            <img src={plantOne} alt="Plant" />
                             <figcaption className="text-center"><em>Silver Dollar Plant</em></figcaption>
                         </figure>
                         <figure className="trending-product flex">
-                            <img src="img/plant2.jpg" alt="Plant" />
+                            <img src={plantTwo} alt="Plant" />
                             <figcaption className="text-center"><em>String Of Pearls</em></figcaption>
                         </figure>
                         <figure className="trending-product flex">
-                            <img src="img/plant3.jpg" alt="Plant" />
+                            <img src={plantThree} alt="Plant" />
                             <figcaption className="text-center"><em>Peace Lily</em></figcaption>
                         </figure>
                         <figure className="trending-product flex">
-                            <img src="img/plant4.jpg" alt="Plant" />
+                            <img src={plantFour} alt="Plant" />
                             <figcaption className="text-center"><em>Areca Palm</em></figcaption>
                         </figure>
                         <figure className="trending-product flex">
-                            <img src="img/plant5.jpg" alt="Plant" />
+                            <img src={plantFive} alt="Plant" />
                             <figcaption className="text-center"><em>Grafted Ficus Bonsai</em></figcaption>
                         </figure>
                         <figure className="trending-product flex">
-                            <img src="img/plant6.jpg" alt="Plant" />
+                            <img src={plantSix} alt="Plant" />
                             <figcaption className="text-center"><em>Calathea Orbifolia</em></figcaption>
                         </figure>
                         <figure className="trending-product flex">
-                            <img src="img/plant1.jpg" alt="Plant" />
+                            <img src={plantOne} alt="Plant" />
                             <figcaption className="text-center"><em>Silver Dollar Plant</em></figcaption>
                         </figure>
                         <figure className="trending-product flex">
-                            <img src="img/plant2.jpg" alt="Plant" />
+                            <img src={plantTwo} alt="Plant" />
                             <figcaption className="text-center"><em>String Of Pearls</em></figcaption>
                         </figure>
                         <figure className="trending-product flex">
-                            <img src="img/plant3.jpg" alt="Plant" />
+                            <img src={plantThree} alt="Plant" />
                             <figcaption className="text-center"><em>Peace Lily</em></figcaption>
                         </figure>
                         <figure className="trending-product flex">
-                            <img src="img/plant4.jpg" alt="Plant" />
+                            <img src={plantFour} alt="Plant" />
                             <figcaption className="text-center"><em>Areca Palm</em></figcaption>
                         </figure>
                     </article>
@@ -221,17 +238,17 @@ const HomePage = () => {
 
                                                 <li>
                                                     <input type="checkbox" name="type-filter" value="outdoor" id="filter-outdoor" />
-                                                    <label for="filter-outdoor">Outdoor</label>
+                                                    <label htmlFor="filter-outdoor">Outdoor</label>
                                                 </li>
 
                                                 <li>
                                                     <input type="checkbox" name="type-filter" value="indoor" id="filter-indoor" />
-                                                    <label for="filter-indoor">Indoor</label>
+                                                    <label htmlFor="filter-indoor">Indoor</label>
                                                 </li>
 
                                                 <li>
                                                     <input type="checkbox" name="type-filter" value="aerial" id="filter-aerial" />
-                                                    <label for="filter-aerial">Aerial</label>
+                                                    <label htmlFor="filter-aerial">Aerial</label>
                                                 </li>
 
                                             </ul>
@@ -247,10 +264,10 @@ const HomePage = () => {
                                             <ul className="filter-pot-requirement">
 
                                                 <li><input type="checkbox" name="req-filter" value="incl" id="filter-incl" /> <label
-                                                    for="filter-incl">Including Pot</label></li>
+                                                    htmlFor="filter-incl">Including Pot</label></li>
 
                                                 <li><input type="checkbox" name="req-filter" value="excl" id="filter-excl" /> <label
-                                                    for="filter-excl">Excluding Pot</label></li>
+                                                    htmlFor="filter-excl">Excluding Pot</label></li>
 
                                             </ul>
                                         </nav>
@@ -265,13 +282,13 @@ const HomePage = () => {
                                             <ol className="filter-plant-size">
 
                                                 <li><input type="checkbox" name="size-filter" value="input-seed" id="filter-seed" /> <label
-                                                    for="filter-seed">Seedlings</label></li>
+                                                    htmlFor="filter-seed">Seedlings</label></li>
 
                                                 <li><input type="checkbox" name="size-filter" value="input-sapling" id="filter-sapling" /> <label
-                                                    for="filter-sapling">Sapling</label></li>
+                                                    htmlFor="filter-sapling">Sapling</label></li>
 
                                                 <li><input type="checkbox" name="size-filter" value="input-peak" id="filter-peak" /> <label
-                                                    for="filter-peak">Peak</label></li>
+                                                    htmlFor="filter-peak">Peak</label></li>
 
                                             </ol>
                                         </nav>
@@ -287,7 +304,7 @@ const HomePage = () => {
 
                                                 <li>
                                                     <input type="radio" name="rating" value="4" id="aboveFour" />
-                                                    <label for="aboveFour">
+                                                    <label htmlFor="aboveFour">
                                                         <i className="fas fa-star"></i>
                                                         <i className="fas fa-star"></i>
                                                         <i className="fas fa-star"></i>
@@ -298,7 +315,7 @@ const HomePage = () => {
 
                                                 <li>
                                                     <input type="radio" name="rating" value="3" id="aboveThree" />
-                                                    <label for="aboveThree">
+                                                    <label htmlFor="aboveThree">
                                                         <i className="fas fa-star"></i>
                                                         <i className="fas fa-star"></i>
                                                         <i className="fas fa-star"></i>
@@ -309,7 +326,7 @@ const HomePage = () => {
 
                                                 <li>
                                                     <input type="radio" name="rating" value="2" id="aboveTwo" />
-                                                    <label for="aboveTwo">
+                                                    <label htmlFor="aboveTwo">
                                                         <i className="fas fa-star"></i>
                                                         <i className="fas fa-star"></i>
                                                         <i className="far fa-star"></i>
@@ -320,7 +337,7 @@ const HomePage = () => {
 
                                                 <li>
                                                     <input type="radio" name="rating" value="1" id="aboveOne" />
-                                                    <label for="aboveOne">
+                                                    <label htmlFor="aboveOne">
                                                         <i className="fas fa-star"></i>
                                                         <i className="far fa-star"></i>
                                                         <i className="far fa-star"></i>
@@ -336,7 +353,7 @@ const HomePage = () => {
 
                                     <fieldset>
 
-                                        <label className="label-sort" for="sort">Sort by</label>
+                                        <label className="label-sort" htmlFor="sort">Sort by</label>
 
                                         <select name="sort" id="sort">
 
@@ -396,7 +413,7 @@ const HomePage = () => {
                                     <h5 className="hidden">""</h5>
 
                                     <figure>
-                                        <img className="product-picture" src="img/plant1.jpg" alt="Silver Dollar Plant" />
+                                        <img className="product-picture" src={plantOne} alt="Silver Dollar Plant" />
                                     </figure>
 
                                     <article className="product-title-icons flex">
@@ -406,7 +423,7 @@ const HomePage = () => {
                                         <figure className="product-title-newflash flex">
 
                                             <h3>Silver Dollar Plant</h3>
-                                            <img className="new-product-icon" src="img/new.png" alt="" />
+                                            <img className="new-product-icon" src={newLabel} alt="" />
 
                                         </figure>
 
@@ -487,12 +504,12 @@ const HomePage = () => {
 
                                                     <li>
                                                         <input id="pot1-req" type="radio" name="pot-requirement" value="req" />
-                                                        <label for="pot1-req">Required</label>
+                                                        <label htmlFor="pot1-req">Required</label>
                                                     </li>
 
                                                     <li>
                                                         <input id="pot1-not-req" type="radio" name="pot-requirement" value="not-req" />
-                                                        <label for="pot1-not-req">Not required</label>
+                                                        <label htmlFor="pot1-not-req">Not required</label>
                                                     </li>
 
                                                 </ul>
@@ -509,17 +526,17 @@ const HomePage = () => {
 
                                                     <li>
                                                         <input id="pot1-size-1" type="radio" name="plant-size" value="seed" />
-                                                        <label for="pot1-size-1">Seedlings</label>
+                                                        <label htmlFor="pot1-size-1">Seedlings</label>
                                                     </li>
 
                                                     <li>
                                                         <input id="pot1-size-2" type="radio" name="plant-size" value="sapling" />
-                                                        <label for="pot1-size-2">Sapling</label>
+                                                        <label htmlFor="pot1-size-2">Sapling</label>
                                                     </li>
 
                                                     <li>
                                                         <input id="pot1-size-3" type="radio" name="plant-size" value="peak" />
-                                                        <label for="pot1-size-3">Peak</label>
+                                                        <label htmlFor="pot1-size-3">Peak</label>
                                                     </li>
 
                                                 </ol>
@@ -545,7 +562,7 @@ const HomePage = () => {
                                     <h5 className="hidden">""</h5>
 
                                     <figure>
-                                        <img className="product-picture" src="img/plant2.jpg" alt="String of pearls" />
+                                        <img className="product-picture" src={plantTwo} alt="String of pearls" />
                                     </figure>
 
                                     <article className="product-title-icons flex">
@@ -637,12 +654,12 @@ const HomePage = () => {
 
                                                     <li>
                                                         <input id="pot2-req" type="radio" name="pot-requirement" value="req" />
-                                                        <label for="pot2-req">Required</label>
+                                                        <label htmlFor="pot2-req">Required</label>
                                                     </li>
 
                                                     <li>
                                                         <input id="pot2-not-req" type="radio" name="pot-requirement" value="not-req" />
-                                                        <label for="pot2-not-req">Not required</label>
+                                                        <label htmlFor="pot2-not-req">Not required</label>
                                                     </li>
 
                                                 </ul>
@@ -659,17 +676,17 @@ const HomePage = () => {
 
                                                     <li>
                                                         <input id="pot2-size-1" type="radio" name="plant-size" value="seed" />
-                                                        <label for="pot2-size-1">Seedlings</label>
+                                                        <label htmlFor="pot2-size-1">Seedlings</label>
                                                     </li>
 
                                                     <li>
                                                         <input id="pot2-size-2" type="radio" name="plant-size" value="sapling" />
-                                                        <label for="pot2-size-2">Sapling</label>
+                                                        <label htmlFor="pot2-size-2">Sapling</label>
                                                     </li>
 
                                                     <li>
                                                         <input id="pot2-size-3" type="radio" name="plant-size" value="peak" />
-                                                        <label for="pot2-size-3">Peak</label>
+                                                        <label htmlFor="pot2-size-3">Peak</label>
                                                     </li>
 
                                                 </ol>
@@ -695,7 +712,7 @@ const HomePage = () => {
                                     <h5 className="hidden">""</h5>
 
                                     <figure>
-                                        <img className="product-picture" src="img/plant3.jpg" alt="Peace Lilly" />
+                                        <img className="product-picture" src={plantThree} alt="Peace Lilly" />
                                     </figure>
 
                                     <article className="product-title-icons flex">
@@ -705,7 +722,7 @@ const HomePage = () => {
                                         <figure className="product-title-newflash flex">
 
                                             <h3>Peace Lilly</h3>
-                                            <img className="new-product-icon" src="img/new.png" alt="" />
+                                            <img className="new-product-icon" src={newLabel} alt="" />
 
                                         </figure>
 
@@ -787,12 +804,12 @@ const HomePage = () => {
 
                                                     <li>
                                                         <input id="pot3-req" type="radio" name="pot-requirement" value="req" />
-                                                        <label for="pot3-req">Required</label>
+                                                        <label htmlFor="pot3-req">Required</label>
                                                     </li>
 
                                                     <li>
                                                         <input id="pot3-not-req" type="radio" name="pot-requirement" value="not-req" />
-                                                        <label for="pot3-not-req">Not required</label>
+                                                        <label htmlFor="pot3-not-req">Not required</label>
                                                     </li>
 
                                                 </ul>
@@ -809,17 +826,17 @@ const HomePage = () => {
 
                                                     <li>
                                                         <input id="pot3-size-1" type="radio" name="plant-size" value="seed" />
-                                                        <label for="pot3-size-1">Seedlings</label>
+                                                        <label htmlFor="pot3-size-1">Seedlings</label>
                                                     </li>
 
                                                     <li>
                                                         <input id="pot3-size-2" type="radio" name="plant-size" value="sapling" />
-                                                        <label for="pot3-size-2">Sapling</label>
+                                                        <label htmlFor="pot3-size-2">Sapling</label>
                                                     </li>
 
                                                     <li>
                                                         <input id="pot3-size-3" type="radio" name="plant-size" value="peak" />
-                                                        <label for="pot3-size-3">Peak</label>
+                                                        <label htmlFor="pot3-size-3">Peak</label>
                                                     </li>
 
                                                 </ol>
@@ -845,7 +862,7 @@ const HomePage = () => {
                                     <h5 className="hidden">""</h5>
 
                                     <figure>
-                                        <img className="product-picture" src="img/plant4.jpg" alt="Areca Palm" />
+                                        <img className="product-picture" src={plantFour} alt="Areca Palm" />
                                     </figure>
 
                                     <article className="product-title-icons flex">
@@ -935,12 +952,12 @@ const HomePage = () => {
 
                                                     <li>
                                                         <input id="pot4-req" type="radio" name="pot-requirement" value="req" />
-                                                        <label for="pot4-req">Required</label>
+                                                        <label htmlFor="pot4-req">Required</label>
                                                     </li>
 
                                                     <li>
                                                         <input id="pot4-not-req" type="radio" name="pot-requirement" value="not-req" />
-                                                        <label for="pot4-not-req">Not required</label>
+                                                        <label htmlFor="pot4-not-req">Not required</label>
                                                     </li>
 
                                                 </ul>
@@ -957,17 +974,17 @@ const HomePage = () => {
 
                                                     <li>
                                                         <input id="pot4-size-1" type="radio" name="plant-size" value="seed" />
-                                                        <label for="pot4-size-1">Seedlings</label>
+                                                        <label htmlFor="pot4-size-1">Seedlings</label>
                                                     </li>
 
                                                     <li>
                                                         <input id="pot4-size-2" type="radio" name="plant-size" value="sapling" />
-                                                        <label for="pot4-size-2">Sapling</label>
+                                                        <label htmlFor="pot4-size-2">Sapling</label>
                                                     </li>
 
                                                     <li>
                                                         <input id="pot4-size-3" type="radio" name="plant-size" value="peak" />
-                                                        <label for="pot4-size-3">Peak</label>
+                                                        <label htmlFor="pot4-size-3">Peak</label>
                                                     </li>
 
                                                 </ol>
@@ -993,7 +1010,7 @@ const HomePage = () => {
                                     <h5 className="hidden">""</h5>
 
                                     <figure>
-                                        <img className="product-picture" src="img/plant5.jpg" alt="Grafted Ficus Bonsai" />
+                                        <img className="product-picture" src={plantFive} alt="Grafted Ficus Bonsai" />
                                     </figure>
 
                                     <article className="product-title-icons flex">
@@ -1003,7 +1020,7 @@ const HomePage = () => {
                                         <figure className="product-title-newflash flex">
 
                                             <h3>Grafted Ficus Bonsai</h3>
-                                            <img className="new-product-icon" src="img/new.png" alt="" />
+                                            <img className="new-product-icon" src={newLabel} alt="" />
 
                                         </figure>
 
@@ -1084,12 +1101,12 @@ const HomePage = () => {
 
                                                     <li>
                                                         <input id="pot5-req" type="radio" name="pot-requirement" value="req" />
-                                                        <label for="pot5-req">Required</label>
+                                                        <label htmlFor="pot5-req">Required</label>
                                                     </li>
 
                                                     <li>
                                                         <input id="pot5-not-req" type="radio" name="pot-requirement" value="not-req" />
-                                                        <label for="pot5-not-req">Not required</label>
+                                                        <label htmlFor="pot5-not-req">Not required</label>
                                                     </li>
 
                                                 </ul>
@@ -1106,17 +1123,17 @@ const HomePage = () => {
 
                                                     <li>
                                                         <input id="pot5-size-1" type="radio" name="plant-size" value="seed" />
-                                                        <label for="pot5-size-1">Seedlings</label>
+                                                        <label htmlFor="pot5-size-1">Seedlings</label>
                                                     </li>
 
                                                     <li>
                                                         <input id="pot5-size-2" type="radio" name="plant-size" value="sapling" />
-                                                        <label for="pot5-size-2">Sapling</label>
+                                                        <label htmlFor="pot5-size-2">Sapling</label>
                                                     </li>
 
                                                     <li>
                                                         <input id="pot5-size-3" type="radio" name="plant-size" value="peak" />
-                                                        <label for="pot5-size-3">Peak</label>
+                                                        <label htmlFor="pot5-size-3">Peak</label>
                                                     </li>
 
                                                 </ol>
@@ -1142,7 +1159,7 @@ const HomePage = () => {
                                     <h5 className="hidden">""</h5>
 
                                     <figure>
-                                        <img className="product-picture" src="img/plant6.jpg" alt="Calathea Orbifolia" />
+                                        <img className="product-picture" src={plantSix} alt="Calathea Orbifolia" />
                                     </figure>
 
                                     <article className="product-title-icons flex">
@@ -1232,12 +1249,12 @@ const HomePage = () => {
 
                                                     <li>
                                                         <input id="pot6-req" type="radio" name="pot-requirement" value="req" />
-                                                        <label for="pot6-req">Required</label>
+                                                        <label htmlFor="pot6-req">Required</label>
                                                     </li>
 
                                                     <li>
                                                         <input id="pot6-not-req" type="radio" name="pot-requirement" value="not-req" />
-                                                        <label for="pot6-not-req">Not required</label>
+                                                        <label htmlFor="pot6-not-req">Not required</label>
                                                     </li>
 
                                                 </ul>
@@ -1254,17 +1271,17 @@ const HomePage = () => {
 
                                                     <li>
                                                         <input id="pot6-size-1" type="radio" name="plant-size" value="seed" />
-                                                        <label for="pot6-size-1">Seedlings</label>
+                                                        <label htmlFor="pot6-size-1">Seedlings</label>
                                                     </li>
 
                                                     <li>
                                                         <input id="pot6-size-2" type="radio" name="plant-size" value="sapling" />
-                                                        <label for="pot6-size-2">Sapling</label>
+                                                        <label htmlFor="pot6-size-2">Sapling</label>
                                                     </li>
 
                                                     <li>
                                                         <input id="pot6-size-3" type="radio" name="plant-size" value="peak" />
-                                                        <label for="pot6-size-3">Peak</label>
+                                                        <label htmlFor="pot6-size-3">Peak</label>
                                                     </li>
 
                                                 </ol>
@@ -1338,7 +1355,7 @@ const HomePage = () => {
                         <article className="review-1">
                             <h5 className="hidden">""</h5>
 
-                            <img src="img/customer1.jpg" alt="User 1" />
+                            <img src={customerOne} alt="User 1" />
 
                             <section className="customer-review-name">
 
@@ -1359,7 +1376,7 @@ const HomePage = () => {
                         <article className="review-2">
                             <h5 className="hidden">""</h5>
 
-                            <img src="img/customer2.jpg" alt="User 2" />
+                            <img src={customerTwo} alt="User 2" />
                             <section className="customer-review-name">
                                 <h5 className="hidden">""</h5>
 
@@ -1378,7 +1395,7 @@ const HomePage = () => {
 
                             <h5 className="hidden">""</h5>
 
-                            <img src="img/customer3.jpg" alt="User 3" />
+                            <img src={customerThree} alt="User 3" />
 
                             <section className="customer-review-name">
 

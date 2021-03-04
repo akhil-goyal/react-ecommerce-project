@@ -20,7 +20,7 @@
     background: linear-gradient(
       rgba(0, 0, 0, 0.575), 
       rgba(0, 0, 0, 0.171)
-    ),url(../img/sidebar-background.jpg);
+    ),url(img/sidebar-background.jpg);
     background-size: cover; 
     background-position: center;
     overflow-x: hidden;
@@ -154,7 +154,7 @@
     background: linear-gradient(
       rgba(0, 0, 0, 0.171), 
       rgba(0, 0, 0, 0.171)
-    ),url(../img/hero.jpg);
+    ),url(img/hero.jpg);
     background-size: cover; 
     background-position: center;
     color: var(--color-light);
@@ -206,7 +206,7 @@
     background: linear-gradient(
       rgba(0, 0, 0, 0.377), 
       rgba(0, 0, 0, 0.377)
-    ),url(../img/highlight-1.jpg);
+    ),url(img/highlight-1.jpg);
     transition: all .2s ease-in-out;
     background-size: cover; 
     background-position: center;
@@ -222,7 +222,7 @@
     background: linear-gradient(
       rgba(0, 0, 0, 0.562), 
       rgba(0, 0, 0, 0.562)
-    ),url(../img/highlight-2.jpg);
+    ),url(img/highlight-2.jpg);
     transition: all .2s ease-in-out;
     background-size: cover; 
     background-position: center;
@@ -238,7 +238,7 @@
     background: linear-gradient(
       rgba(0, 0, 0, 0.445), 
       rgba(0, 0, 0, 0.445)
-    ),url(../img/highlight-3.jpg);
+    ),url(img/highlight-3.jpg);
     transition: all .2s ease-in-out;
     background-size: cover; 
     background-position: center;
@@ -581,7 +581,7 @@
     background: linear-gradient(
         rgba(0, 0, 0, 0.671), 
         rgba(0, 0, 0, 0.671)
-    ),url(../img/newsletter.jpg);
+    ),url(img/newsletter.jpg);
     background-size: cover; 
     background-position: center;
     display: grid;
