@@ -110,13 +110,13 @@ const ProductsList = ({ productsList }) => {
                             <ul className="pot-fields">
 
                                 <li>
-                                    <input id="pot1-req" type="radio" name="pot-requirement" value="req" />
-                                    <label htmlFor="pot1-req">Required</label>
+                                    <input id={`pot${product.id}-req`} type="radio" name="pot-requirement" value="req" />
+                                    <label htmlFor={`pot${product.id}-req`}>Required</label>
                                 </li>
 
                                 <li>
-                                    <input id="pot1-not-req" type="radio" name="pot-requirement" value="not-req" />
-                                    <label htmlFor="pot1-not-req">Not required</label>
+                                    <input id={`pot${product.id}-not-req`} type="radio" name="pot-requirement" value="not-req" />
+                                    <label htmlFor={`pot${product.id}-not-req`}>Not required</label>
                                 </li>
 
                             </ul>
@@ -132,18 +132,18 @@ const ProductsList = ({ productsList }) => {
                             <ol className="size-fields">
 
                                 <li>
-                                    <input id="pot1-size-1" type="radio" name="plant-size" value="seed" />
-                                    <label htmlFor="pot1-size-1">Seedlings</label>
+                                    <input id={`pot${product.id}-size-1`} type="radio" name="plant-size" value="seed" />
+                                    <label htmlFor={`pot${product.id}-size-1`}>Seedlings</label>
                                 </li>
 
                                 <li>
-                                    <input id="pot1-size-2" type="radio" name="plant-size" value="sapling" />
-                                    <label htmlFor="pot1-size-2">Sapling</label>
+                                    <input id={`pot${product.id}-size-2`} type="radio" name="plant-size" value="sapling" />
+                                    <label htmlFor={`pot${product.id}-size-2`}>Sapling</label>
                                 </li>
 
                                 <li>
-                                    <input id="pot1-size-3" type="radio" name="plant-size" value="peak" />
-                                    <label htmlFor="pot1-size-3">Peak</label>
+                                    <input id={`pot${product.id}-size-3`} type="radio" name="plant-size" value="peak" />
+                                    <label htmlFor={`pot${product.id}-size-3`}>Peak</label>
                                 </li>
 
                             </ol>
@@ -163,8 +163,6 @@ const ProductsList = ({ productsList }) => {
 
     return (
         <section className="grid products-list">
-
-            <h5 className="hidden">""</h5>
 
             {products}
 
