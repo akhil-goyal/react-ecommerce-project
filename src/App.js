@@ -1,6 +1,6 @@
 import React from 'react';
 import 'css/App.css';
-import HomePage from 'components/HomePage/HomePage';
+import HomePage from 'components/home-page/HomePage';
 
 // let openMenu = document.querySelector(".menu-bar");
 // let closeMenu = document.querySelector('.menu-close');
