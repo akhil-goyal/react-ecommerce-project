@@ -9,7 +9,7 @@ import Footer from './section-footer/Footer';
 import NavButton from './utilities/NavButton';
 import Main from './Main';
 
-const HomePage = () => {
+const HomePage = ({ trendingProducts, productsList }) => {
 
     return (
         <>
@@ -17,7 +17,7 @@ const HomePage = () => {
 
             <Header />
 
-            <Main />
+            <Main trendingProducts={trendingProducts} productsList={productsList} />
 
             <Footer />
 
