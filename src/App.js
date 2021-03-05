@@ -2,6 +2,10 @@ import React from 'react';
 import 'css/App.css';
 import HomePage from 'components/home-page/HomePage';
 
+import { productsList } from './products';
+
+console.log(productsList);
+
 // let openMenu = document.querySelector(".menu-bar");
 // let closeMenu = document.querySelector('.menu-close');
 
@@ -29,7 +33,7 @@ import HomePage from 'components/home-page/HomePage';
 const App = () => {
 	return (
 		<>
-			<HomePage/>
+			<HomePage />
 		</>
 	)
 }
