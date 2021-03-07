@@ -46,7 +46,7 @@ const ProductsList = ({ productsList }) => {
 
                     <h5 className="hidden">""</h5>
 
-                    <data value={product.features.applyDiscount()}><del>${product.features.initialPrice}</del> <ins>${product.features.applyDiscount()}</ins></data>
+                    <data value={product.features.discountedPrice()}><del>${product.features.initialPrice}</del> <ins>${product.features.discountedPrice()}</ins></data>
 
                     <article className="product-ratings flex">
 

@@ -61,6 +61,11 @@ const trendingProducts = [
     }
 ];
 
+function applyDiscount(initialPrice, discount) {
+    let finalPrice = initialPrice - discount / 100 * initialPrice;
+    return finalPrice
+}
+
 const productsList = [
     {
         id: uuidv4(),
@@ -73,10 +78,8 @@ const productsList = [
             category: 'Indoor',
             initialPrice: 50,
             discount: 20,
-            applyDiscount() {
-                let { initialPrice, discount } = this;
-                let finalPrice = initialPrice - discount / 100 * initialPrice;
-                return finalPrice
+            discountedPrice() {
+                return applyDiscount(this.initialPrice, this.discount);
             }
         }
     },
@@ -91,10 +94,8 @@ const productsList = [
             category: 'Aerial',
             initialPrice: 85,
             discount: 15,
-            applyDiscount() {
-                let { initialPrice, discount } = this;
-                let finalPrice = initialPrice - discount / 100 * initialPrice;
-                return finalPrice
+            discountedPrice() {
+                return applyDiscount(this.initialPrice, this.discount);
             }
         }
     },
@@ -109,10 +110,8 @@ const productsList = [
             category: 'Indoor',
             initialPrice: 33,
             discount: 8,
-            applyDiscount() {
-                let { initialPrice, discount } = this;
-                let finalPrice = initialPrice - discount / 100 * initialPrice;
-                return finalPrice
+            discountedPrice() {
+                return applyDiscount(this.initialPrice, this.discount);
             }
         }
     },
@@ -127,10 +126,8 @@ const productsList = [
             category: 'Outdoor',
             initialPrice: 76,
             discount: 12,
-            applyDiscount() {
-                let { initialPrice, discount } = this;
-                let finalPrice = initialPrice - discount / 100 * initialPrice;
-                return finalPrice
+            discountedPrice() {
+                return applyDiscount(this.initialPrice, this.discount);
             }
         }
     },
@@ -145,10 +142,8 @@ const productsList = [
             category: 'Indoor',
             initialPrice: 24,
             discount: 5,
-            applyDiscount() {
-                let { initialPrice, discount } = this;
-                let finalPrice = initialPrice - discount / 100 * initialPrice;
-                return finalPrice
+            discountedPrice() {
+                return applyDiscount(this.initialPrice, this.discount);
             }
         }
     },
@@ -163,10 +158,8 @@ const productsList = [
             category: 'Outdoor',
             initialPrice: 67,
             discount: 20,
-            applyDiscount() {
-                let { initialPrice, discount } = this;
-                let finalPrice = initialPrice - discount / 100 * initialPrice;
-                return finalPrice
+            discountedPrice() {
+                return applyDiscount(this.initialPrice, this.discount);
             }
         }
     }
