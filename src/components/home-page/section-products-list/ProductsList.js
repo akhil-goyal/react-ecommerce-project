@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import newLabel from 'img/new.png';
 
@@ -90,7 +91,7 @@ const ProductsList = ({ productsList }) => {
 
                     <h5 className="hidden">""</h5>
 
-                    <a href="#" className="button-product-details"><u>View details</u></a>
+                    <Link to={`/product/${product.id}`} className="button-product-details"><u>View details</u></Link>
 
                 </article>
 

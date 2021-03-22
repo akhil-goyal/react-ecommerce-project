@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import userAvatar from 'img/user.jpg';
 import siteLogo from 'img/logo.png';
@@ -16,7 +17,7 @@ const Header = () => {
                 </figure>
 
                 <figure className="logo-container">
-                    <a href="index.html" className="logo">Spruce</a>
+                    <Link to="/" className="logo">Spruce</Link>
                     <img src={siteLogo} alt="Site Logo" />
                 </figure>
 
@@ -28,17 +29,17 @@ const Header = () => {
             <header id="page-header-webview" className="page-header-webview container">
 
                 <figure className="logo-container">
-                    <a href="index.html" className="logo">Spruce</a>
+                    <Link to="/" className="logo">Spruce</Link>
                     <img src={siteLogo} alt="Site Logo" />
                 </figure>
 
                 <nav className="header-webview-nav">
                     <ul className="flex">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Categories</a></li>
-                        <li><a href="#">Gallery</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/categories">Categories</Link></li>
+                        <li><Link to="/gallery">Gallery</Link></li>
+                        <li><Link to="/about">About Us</Link></li>
+                        <li><Link to="/contact">Contact</Link></li>
                     </ul>
                 </nav>
 
