@@ -3,9 +3,9 @@ import { useParams } from 'react-router-dom';
 
 const Product = ({ productsList }) => {
 
-    const { id } = useParams();
+    const { slug } = useParams();
 
-    const product = productsList.find((prod) => prod.id === id) || productsList[0];
+    const product = productsList.find((prod) => prod.slug() === slug) || productsList[0];
 
     const { img, name, description } = product.features;
 

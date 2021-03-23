@@ -91,7 +91,7 @@ const ProductsList = ({ productsList }) => {
 
                     <h5 className="hidden">""</h5>
 
-                    <Link to={`/product/${product.id}`} className="button-product-details"><u>View details</u></Link>
+                    <Link to={`/product/${product.slug()}`} className="button-product-details"><u>View details</u></Link>
 
                 </article>
 

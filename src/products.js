@@ -61,14 +61,29 @@ const trendingProducts = [
     }
 ];
 
-function applyDiscount(initialPrice, discount) {
+const applyDiscount = (initialPrice, discount) => {
     let finalPrice = initialPrice - discount / 100 * initialPrice;
     return finalPrice
+}
+
+const buildSlug = name => {
+
+    return name.toString().toLowerCase()
+        .replace(/\s+/g, '-') // Replacing spaces with hyphen (-)
+        .replace(/&/g, '-and-') // Replacing '&' with 'and'
+        .replace(/[^\w\-]+/g, '') // Removing all special characters
+        .replace(/\-\-+/g, '-') // Replacing multiple hyphens with single hyphen
+        .replace(/^-+/, '') // Trimming hyphen from start of the slug
+        .replace(/-+$/, '') // Trimming hyphen from end of the sloug
+
 }
 
 const productsList = [
     {
         id: uuidv4(),
+        slug() {
+            return buildSlug(this.features.name)
+        },
         features: {
             name: 'Silver Dollar Plant',
             description: 'If you’re looking for drought-tolerant plants, succulents like the Xerosicyos danguyi are fantastic, but it helps to get a container with good drainage like these ceramic and bamboo planters. Xerosicyos are actually a climbing succulent so be prepared to leave a little headroom wherever you display them! A space with direct sunlight is best.',
@@ -85,6 +100,9 @@ const productsList = [
     },
     {
         id: uuidv4(),
+        slug() {
+            return buildSlug(this.features.name)
+        },
         features: {
             name: 'String Of Pearls',
             description: 'What a unique houseplant! Guests are sure to comment on the grace of your beautiful Senecio rowleyanus as its delicate tendrils of round beads overflow its planter. These are great for hanging or draping over a pedestal, preferably in a location just out of the reach of direct sunlight. Plant in loose cactus soil and be careful to avoid overwatering for best results.',
@@ -101,6 +119,9 @@ const productsList = [
     },
     {
         id: uuidv4(),
+        slug() {
+            return buildSlug(this.features.name)
+        },
         features: {
             name: 'Peace Lilly',
             description: 'Sometimes flowering plants prove the most challenging to keep healthy, but certain lilies in the Spathiphyllum genus (the peace lily family) are on the more easygoing side. Peace lilies are forgiving plants but seem to do best in indirect sunlight with access to shade. Wait to water the plant until you notice a bit of drooping in the leaves for best results. These plants need reliable drainage. Consider planting in a simple pot to let the beautiful flowers take center stage.',
@@ -117,6 +138,9 @@ const productsList = [
     },
     {
         id: uuidv4(),
+        slug() {
+            return buildSlug(this.features.name)
+        },
         features: {
             name: 'Areca Palm',
             description: 'Dypsis lutescens, commonly known as golden cane palm or areca palm, makes a lovely focal point with its height and playful fronds. These plants enjoy indirect sunlight or partial shade, preferably in a well-drained planter filled with loamy soil. If you tend to overwater plants, this species will prove rather forgiving. Keep the soil moist but avoid muddiness. A little nibbling won’t hurt cats or dogs so pet owners can rest easily with this one.',
@@ -133,6 +157,9 @@ const productsList = [
     },
     {
         id: uuidv4(),
+        slug() {
+            return buildSlug(this.features.name)
+        },
         features: {
             name: 'Grafter Ficus Bonsai',
             description: 'Are you looking for a small desk plant sure to spark conversation? Ficus microcarpa “Ginseng” definitely has a very distinctive look to it. These plants are extremely forgiving, easily tolerating conditions ranging from low to bright light (but not direct sunlight) and can live through irregular watering for the most part. They are a wonderful addition to any office environment.',
@@ -149,6 +176,9 @@ const productsList = [
     },
     {
         id: uuidv4(),
+        slug() {
+            return buildSlug(this.features.name)
+        },
         features: {
             name: 'Calathea Orbifolia',
             description: 'Smooth streaks of white stand out against the vivid green leaves of the Calathea orbifolia, like a living painting. These plants are a little tricky to care for compared to some of the others on the list, but the key is to stay calm and make adjustments slowly. Moist soil, good drainage, and low but reliable lighting conditions are a great place to start.',
