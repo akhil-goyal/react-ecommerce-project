@@ -3,7 +3,7 @@ import React from 'react';
 const Page404 = () => {
     return (
         <>
-        <h1>Page 404</h1>
+        <h1>Page 4040</h1>
         </>
     )
 }
