@@ -7,7 +7,6 @@ import Categories from 'components/categories/Categories';
 import Contact from 'components/contact-us/Contact';
 import Gallery from 'components/gallery/Gallery';
 import Product from 'components/product-page/Product';
-import Page404 from 'components/page-404/Page404';
 
 import { trendingProducts, productsList } from './products';
 
@@ -25,7 +24,6 @@ const App = () => {
 				<Route path="/product/:slug">
 					<Product productsList={productsList} />
 				</Route>
-				<Route path="*" component={Page404} />
 			</Switch>
 		</Router>
 	)
