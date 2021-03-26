@@ -1,0 +1,27 @@
+{
+  "name": "react-ecommerce-project",
+  "version": "1.0.0",
+  "description": "A MERN stack application for an online shopping store.",
+  "main": "app.js",
+  "scripts": {
+    "server": "nodemon server/app",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akhil-goyal/react-ecommerce-project.git"
+  },
+  "author": "Akhil Goyal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akhil-goyal/react-ecommerce-project/issues"
+  },
+  "homepage": "https://github.com/akhil-goyal/react-ecommerce-project#readme",
+  "dependencies": {
+    "concurrently": "^6.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.2"
+  }
+}
