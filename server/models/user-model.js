@@ -4,9 +4,17 @@ const crypto = require('crypto');
 
 const userSchema = new mongoose.Schema(
     {
-        name: {
+        first_name: {
             type: String,
             required: true
+        },
+        last_name: {
+            type: String,
+            required: true
+        },
+        profile_photo: {
+            data: Buffer,
+            content_type: String
         },
         email_address: {
             type: String,
@@ -26,22 +34,21 @@ const userSchema = new mongoose.Schema(
 // Rather, a hashed password would be stored.)
 userSchema
     .virtual('password')
-    .set(password => {
+    .set(function (password) {
         this._password = password;
         this.salt = uuid();
         this.hashed_password = this.encryptPassword(password);
     })
-    .get(() => {
+    .get(function () {
         return this._password;
     });
 
 userSchema.methods = {
-
-    authenticate: plainText => {
+    authenticate: function (plainText) {
         return this.encryptPassword(plainText) === this.hashed_password;
     },
 
-    encryptPassword: password => {
+    encryptPassword: function (password) {
         if (!password) return '';
         try {
             return crypto
