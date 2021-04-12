@@ -1,0 +1,51 @@
+.about-us-hero {
+    height: 40vh;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.171), 
+      rgba(0, 0, 0, 0.171)
+    ),url(img/about-hero.jpg);
+    background-size: cover; 
+    background-position: bottom;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.about-us-hero h1 {
+    font-family: var(--cursive-font);
+    color: var(--color-light);
+    font-weight: lighter;
+}
+
+.about-us {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 4em;  
+    max-width: 1600px;
+}
+
+.about-us-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-us-logo img{
+    height: 15em;
+    width: 10em;
+}
+
+.about-us-logo a {
+    font-family: var(--cursive-font);
+    font-size: 5em;
+    text-decoration: none;
+    color: var(--color-primary);
+}
+
+.about-us-description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+}

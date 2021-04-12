@@ -1,0 +1,97 @@
+.sign-up-page {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.sign-up-image{
+    background: linear-gradient(
+    rgba(0, 0, 0, 0.575), 
+    rgba(0, 0, 0, 0.575)
+  ),url(img/3.jpg);
+  background-size: cover; 
+  background-position: center;
+  color: #fff;
+  padding: 3em;
+  text-align: center;
+}
+
+.sign-up-image h1 {
+    font-size: 2em;
+}
+
+.sign-up-image p {
+    font-size: 1em;
+}
+
+.sign-up-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-form-container {
+    margin-top: 1em;
+    border: 1px solid black;
+    border-radius: 2em;
+}
+
+.signup-form-container {
+    position: relative;
+    padding: 40px;
+    z-index: 100;
+    justify-self: flex-end;
+  }
+  
+  .signup-form-container .form-control {
+    margin: 30px 0;
+  }
+
+  
+  .signup-form-container input[type='text'],
+  .signup-form-container input[type='email'],
+  .signup-form-container input[type='password']
+  {
+    border: 0;
+    border-bottom: 1px solid #b4becb;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+  }
+  
+  .signup-form-container input:focus {
+    outline: none;
+  }
+  
+  .register-options {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+  }
+
+  .logo-google {
+      height: 2em;
+      width: 2em;
+  }
+
+  .logo-facebook {
+      height: 3em;
+      width: 3em;
+      margin-left: 0.5em;
+  }
+
+  .signup-form-container p {
+      margin-top: 1em;
+  }
+
+  .btn-register {
+    height: 2em;
+    width: 6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary);
+    color: #fff;
+    border: 1px solid black;
+    border-radius: 0.5em;
+}
