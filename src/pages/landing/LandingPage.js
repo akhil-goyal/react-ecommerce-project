@@ -1,4 +1,5 @@
 import React from 'react'
+import 'css/media-queries.css';
 import './landing.css';
 
 import logo from 'img/logo.png';
@@ -15,7 +16,6 @@ import customer1 from 'img/customer1.jpg';
 import customer2 from 'img/customer2.jpg';
 import customer3 from 'img/customer3.jpg';
 
-
 const LandingPage = () => {
     return (
         <div>
@@ -28,7 +28,7 @@ const LandingPage = () => {
 
                             <div className="landing-logo">
                                 <p>Spruce</p>
-                                <img src={logo} style={{height: '2rem', width: '1.5rem'}} alt="" />
+                                <img src={logo} style={{ height: '2rem', width: '1.5rem' }} alt="" />
                             </div>
 
                             <nav>

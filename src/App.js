@@ -15,30 +15,35 @@ import Cart from 'pages/cart/Cart';
 import Checkout from 'pages/checkout/Checkout';
 import Page404 from 'pages/page-404/Page404';
 
+// CONTEXTS
+import ProductsContext from './contexts/product-context';
+
 // OTHERS
 import { trendingProducts, productsList } from './products';
 
 const App = () => {
 	return (
-		<Router>
-			<Switch>
-				<Route exact path="/" component={LandingPage} />
-				<Route path="/signup" component={SignUp} />
-				<Route path="/signin" component={SignIn} />
-				<Route path="/dashboard">
-					<Dashboard trendingProducts={trendingProducts} productsList={productsList} />
-				</Route>
-				<Route path="/gallery" component={Gallery} />
-				<Route path="/about" component={About} />
-				<Route path="/contact" component={Contact} />
-				<Route path="/product/:slug">
-					<Product productsList={productsList} />
-				</Route>
-				<Route path="/cart" component={Cart} />
-				<Route path="/checkout" component={Checkout} />
-				<Route path="*" component={Page404} />
-			</Switch>
-		</Router>
+		<ProductsContext.Provider value={productsList}>
+			<Router>
+				<Switch>
+					<Route exact path="/" component={LandingPage} />
+					<Route path="/signup" component={SignUp} />
+					<Route path="/signin" component={SignIn} />
+					<Route path="/dashboard">
+						<Dashboard trendingProducts={trendingProducts} />
+					</Route>
+					<Route path="/gallery" component={Gallery} />
+					<Route path="/about" component={About} />
+					<Route path="/contact" component={Contact} />
+					<Route path="/product/:slug">
+						<Product productsList={productsList} />
+					</Route>
+					<Route path="/cart" component={Cart} />
+					<Route path="/checkout" component={Checkout} />
+					<Route path="*" component={Page404} />
+				</Switch>
+			</Router>
+		</ProductsContext.Provider>
 	)
 }
 

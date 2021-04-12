@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import './dashboard.css';
 
 import Sidebar from '../../components/common/Sidebar';
@@ -7,7 +7,16 @@ import Footer from '../../components/common/Footer';
 import NavButton from '../../components/common/NavButton';
 import Main from '../../components/homepage/Main';
 
-const Dashboard = ({ trendingProducts, productsList }) => {
+import ProductsContext from '../../contexts/product-context';
+
+const Dashboard = ({ trendingProducts }) => {
+
+    const products = useContext(ProductsContext);
+    const [productResult, setProductResult] = useState(products);
+
+    useEffect(() => {
+        setProductResult(products);
+    }, []);
 
     return (
         <>
@@ -15,7 +24,7 @@ const Dashboard = ({ trendingProducts, productsList }) => {
 
             <Header />
 
-            <Main trendingProducts={trendingProducts} productsList={productsList} />
+            <Main trendingProducts={trendingProducts} productsList={productResult} />
 
             <Footer />
 
