@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Sidebar from './section-sidebar/Sidebar';
-import Header from './section-header/Header';
-import Footer from './section-footer/Footer';
-import NavButton from './utilities/NavButton';
-import Main from './section-main/Main';
+import Sidebar from '../components/common/Sidebar';
+import Header from '../components/common/Header';
+import Footer from '../components/common/Footer';
+import NavButton from '../components/common/NavButton';
+import Main from '../components/homepage/Main';
 
 const HomePage = ({ trendingProducts, productsList }) => {
 
