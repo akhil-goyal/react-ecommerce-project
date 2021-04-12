@@ -51,15 +51,11 @@ const LandingPage = () => {
 
                 <section className="trending">
 
-                    <h5 className="hidden">""</h5>
-
                     <article>
                         <h2 className="subheading text-center">What's blooming?</h2>
                     </article>
 
                     <article className="trending-products">
-
-                        <h5 className="hidden">""</h5>
 
                         <figure className="trending-product flex">
                             <img src={plant1} alt="Plant" />
@@ -197,24 +193,17 @@ const LandingPage = () => {
 
                 <section className="customer-reviews container">
 
-                    <h5 className="hidden">""</h5>
-
                     <article>
                         <h2 className="subheading text-center">Our happy anthophiles :)</h2>
                     </article>
 
                     <article className="reviews">
 
-                        <h5 className="hidden">""</h5>
-
                         <article className="review-1">
-                            <h5 className="hidden">""</h5>
 
                             <img src={customer1} alt="User 1" />
 
                             <section className="customer-review-name">
-
-                                <h5 className="hidden">""</h5>
 
                                 <p>
                                     Spruce has all the beautiful greens that enchance the beauty of my garden. Thank you to the
@@ -225,16 +214,14 @@ const LandingPage = () => {
                         </article>
 
                         <section className="separator-vertical">
-                            <h5 className="hidden">""</h5>
 
                         </section>
 
                         <article className="review-2">
-                            <h5 className="hidden">""</h5>
 
                             <img src={customer2} alt="User 2" />
                             <section className="customer-review-name">
-                                <h5 className="hidden">""</h5>
+
 
                                 <p>
                                     Whenever I have to make a new addition to my home garden, I always look upto Spruce to get
@@ -245,18 +232,14 @@ const LandingPage = () => {
                         </article>
 
                         <section className="separator-vertical">
-                            <h5 className="hidden">""</h5>
+
                         </section>
 
                         <article className="review-3">
 
-                            <h5 className="hidden">""</h5>
-
                             <img src={customer3} alt="User 3" />
 
                             <section className="customer-review-name">
-
-                                <h5 className="hidden">""</h5>
 
                                 <p>
                                     Spruce is a great website for all my needs. I can find every beautiful plant/flowers over
@@ -272,14 +255,12 @@ const LandingPage = () => {
                 </section>
 
                 <section className="newsletter-subscription container">
-                    <h5 className="hidden">""</h5>
 
                     <article>
                         <h2 className="subheading text-center">Subscribe to our newsletter</h2>
                     </article>
 
                     <article className="newsletter">
-                        <h5 className="hidden">""</h5>
 
                         <p>Subscribe to get latest information about the new coming plants in our nursery.
                         Be the first one to bring them home.

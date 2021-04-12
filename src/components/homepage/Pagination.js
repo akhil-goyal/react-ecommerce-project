@@ -4,13 +4,9 @@ const Pagination = () => {
     return (
         <section>
 
-            <h5 className="hidden">""</h5>
-
             <nav aria-label="Pagination" className="pagination text-center container">
 
                 <article>
-
-                    <h5 className="hidden">""</h5>
 
                     <p><strong>Displaying 1-6 of 24 products.</strong></p>
 
@@ -27,9 +23,6 @@ const Pagination = () => {
                 </nav>
 
                 <article className="buttons-prev-next container">
-
-
-                    <h5 className="hidden">""</h5>
 
                     <a href="#">Previous</a>
                     <a href="#">Next</a>

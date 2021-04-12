@@ -2,7 +2,7 @@
 import React from 'react';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 
-// COMPONENTS
+// PAGES & COMPONENTS
 import LandingPage from 'pages/landing/LandingPage';
 import SignUp from 'pages/sign-up/SignUp';
 import SignIn from 'pages/sign-in/SignIn';
@@ -14,6 +14,9 @@ import Product from 'pages/product/Product';
 import Cart from 'pages/cart/Cart';
 import Checkout from 'pages/checkout/Checkout';
 import Page404 from 'pages/page-404/Page404';
+// ------------------------------------------
+import Header from 'components/common/Header';
+import Footer from 'components/common/Footer';
 
 // CONTEXTS
 import ProductsContext from './contexts/product-context';

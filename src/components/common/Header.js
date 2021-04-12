@@ -7,9 +7,6 @@ import siteLogo from 'img/logo.png';
 const Header = () => {
     return (
         <>
-            <aside id="nav-top">
-            </aside>
-
             <header className="page-header container flex">
 
                 <figure className="menu-bar">

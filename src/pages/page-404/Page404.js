@@ -1,13 +1,15 @@
 import React from 'react';
 import './page-404.css';
 
+import errorImage from 'img/page-404.jpg';
+
 const Page404 = () => {
     return (
         <>
             <main>
 
                 <div className="page-404">
-                    <img src="img/page-404.jpg" alt="" />
+                    <img src={errorImage} alt="" />
                 </div>
 
                 <div className="page-404-message">

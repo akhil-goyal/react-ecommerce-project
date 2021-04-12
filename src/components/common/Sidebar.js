@@ -12,8 +12,6 @@ const Sidebar = () => {
 
                 <article className="sidebar-title">
 
-                    <h5 className="hidden">""</h5>
-
                     <figure>
                         <a href="index.html" className="sidebar-logo">
                             {/* Spruce <img src="img/logo.png" style="height: 2rem; width: 1.5rem;" alt="Spruce Logo" /> */}
@@ -37,7 +35,7 @@ const Sidebar = () => {
                         <li><a href="#"><i className="fas fa-user tie"></i> Contact Us</a></li>
                         <li>
                             <article className="your-products">
-                                <h5 className="hidden">""</h5>
+
                                 <a href="#"><i className="fas fa-heart"></i> Favourites</a>
                                 <a href="#"><i className="fas fa-shopping-cart"></i> Cart</a>
                             </article>

@@ -1,104 +1,24 @@
 import React from 'react'
 import './gallery.css';
 
+import Sidebar from '../../components/common/Sidebar';
+import Header from '../../components/common/Header';
+import Footer from '../../components/common/Footer';
+import NavButton from '../../components/common/NavButton';
 
-function Gallery() {
+import plant1 from 'img/plant1.jpg';
+import plant2 from 'img/plant2.jpg';
+import plant3 from 'img/plant3.jpg';
+import plant4 from 'img/plant4.jpg';
+import plant5 from 'img/plant5.jpg';
+import plant6 from 'img/plant6.jpg';
+
+const Gallery = () => {
     return (
         <>
-            <aside id="nav-top">
+            <Sidebar />
 
-            </aside>
-
-            <aside className="side-bar">
-
-                <article className="sidebar-title">
-
-                    <h5 className="hidden">""</h5>
-
-                    <figure>
-                        <a href="/index.html" className="sidebar-logo">
-                            Spruce <img src="img/logo.png" alt="Spruce Logo" />
-                        </a>
-                    </figure>
-
-                    <a href="javascript:void(0)" className="menu-close">&times;</a>
-
-                </article>
-
-                <nav aria-label="Primary" className="navigation">
-
-                    <ul className="menu">
-
-                        <li><a href="#"><i className="fas fa-home"></i> Home</a></li>
-
-                        <li><a href="plants-gallery.html"><i className="fas fa-images"></i> Gallery</a></li>
-
-                        <li><a href="#"><i className="fas fa-user tie"></i> User Profile</a></li>
-
-                        <li><a href="about-us.html"><i className="fas fa-info-circle"></i> About</a></li>
-
-                        <li><a href="contact-us.html"><i className="fas fa-user tie"></i> Contact Us</a></li>
-
-                        <li>
-                            <article className="your-products">
-                                <h5 className="hidden">""</h5>
-                                <a href="#"><i className="fas fa-heart"></i> Favourites</a>
-
-                                <a href="#"><i className="fas fa-shopping-cart"></i> Cart</a>
-
-                            </article>
-                        </li>
-
-                    </ul>
-
-                </nav>
-
-            </aside>
-
-            <header className="page-header container flex">
-
-                <figure className="menu-bar">
-                    <i className="fas fa-bars"></i>
-                </figure>
-
-                <figure className="logo-container">
-                    <a href="/index.html" className="logo">Spruce</a>
-                    <img src="img/logo.png" alt="Site Logo" />
-                </figure>
-
-                <figure className="user-settings"><img className="user-image" src="img/user.jpg" alt="" />
-                </figure>
-
-            </header>
-
-            <header id="page-header-webview" className="page-header-webview container">
-
-                <figure className="logo-container">
-                    <a href="/index.html" className="logo">Spruce</a>
-                    <img src="img/logo.png" alt="Site Logo" />
-                </figure>
-
-                <nav className="header-webview-nav">
-                    <ul className="flex">
-                        <li><a href="dashboard.html">Home</a></li>
-                        <li><a href="plants-gallery.html">Gallery</a></li>
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="contact-us.html">Contact</a></li>
-                    </ul>
-                </nav>
-
-                <figure className="user-settings flex">
-
-                    <img className="user-image" src="img/user.jpg" alt="" />
-
-                    <div className="flex">
-                        <i className="fas fa-shopping-cart"></i>
-                        <div className="cart-total">0</div>
-                    </div>
-
-                </figure>
-
-            </header>
+            <Header />
 
             <main>
 
@@ -113,84 +33,84 @@ function Gallery() {
                     <div className="gallery container">
 
                         <div className="gallery-image-container">
-                            <img className="gallery-image" src="../img/plant1.jpg" alt="" />
+                            <img className="gallery-image" src={plant1} alt="" />
                             <div className="gallery-image-overlay">
                                 <i className="fas fa-search-plus"></i>
                             </div>
                         </div>
 
                         <div className="gallery-image-container">
-                            <img className="gallery-image" src="../img/plant2.jpg" alt="" />
+                            <img className="gallery-image" src={plant2} alt="" />
                             <div className="gallery-image-overlay">
                                 <i className="fas fa-search-plus"></i>
                             </div>
                         </div>
 
                         <div className="gallery-image-container">
-                            <img className="gallery-image" src="../img/plant3.jpg" alt="" />
+                            <img className="gallery-image" src={plant3} alt="" />
                             <div className="gallery-image-overlay">
                                 <i className="fas fa-search-plus"></i>
                             </div>
                         </div>
 
                         <div className="gallery-image-container">
-                            <img className="gallery-image" src="../img/plant4.jpg" alt="" />
+                            <img className="gallery-image" src={plant4} alt="" />
                             <div className="gallery-image-overlay">
                                 <i className="fas fa-search-plus"></i>
                             </div>
                         </div>
 
                         <div className="gallery-image-container">
-                            <img className="gallery-image" src="../img/plant5.jpg" alt="" />
+                            <img className="gallery-image" src={plant5} alt="" />
                             <div className="gallery-image-overlay">
                                 <i className="fas fa-search-plus"></i>
                             </div>
                         </div>
 
                         <div className="gallery-image-container">
-                            <img className="gallery-image" src="../img/plant6.jpg" alt="" />
+                            <img className="gallery-image" src={plant6} alt="" />
                             <div className="gallery-image-overlay">
                                 <i className="fas fa-search-plus"></i>
                             </div>
                         </div>
 
                         <div className="gallery-image-container">
-                            <img className="gallery-image" src="../img/plant1.jpg" alt="" />
+                            <img className="gallery-image" src={plant1} alt="" />
                             <div className="gallery-image-overlay">
                                 <i className="fas fa-search-plus"></i>
                             </div>
                         </div>
 
                         <div className="gallery-image-container">
-                            <img className="gallery-image" src="../img/plant2.jpg" alt="" />
+                            <img className="gallery-image" src={plant2} alt="" />
                             <div className="gallery-image-overlay">
                                 <i className="fas fa-search-plus"></i>
                             </div>
                         </div>
 
                         <div className="gallery-image-container">
-                            <img className="gallery-image" src="../img/plant3.jpg" alt="" />
+                            <img className="gallery-image" src={plant3} alt="" />
                             <div className="gallery-image-overlay">
                                 <i className="fas fa-search-plus"></i>
                             </div>
                         </div>
 
                         <div className="gallery-image-container">
-                            <img className="gallery-image" src="../img/plant4.jpg" alt="" />
+                            <img className="gallery-image" src={plant4} alt="" />
                             <div className="gallery-image-overlay">
                                 <i className="fas fa-search-plus"></i>
                             </div>
                         </div>
 
                         <div className="gallery-image-container">
-                            <img className="gallery-image" src="../img/plant5.jpg" alt="" />
+                            <img className="gallery-image" src={plant5} alt="" />
                             <div className="gallery-image-overlay">
                                 <i className="fas fa-search-plus"></i>
                             </div>
                         </div>
 
                         <div className="gallery-image-container">
-                            <img className="gallery-image" src="../img/plant6.jpg" alt="" />
+                            <img className="gallery-image" src={plant6} alt="" />
                             <div className="gallery-image-overlay">
                                 <i className="fas fa-search-plus"></i>
                             </div>
@@ -206,29 +126,9 @@ function Gallery() {
 
             </main>
 
-            <footer className="page-footer">
+            <Footer />
 
-                <nav>
-                    <ul className="social">
-                        <li><a target="_blank" href="https://www.facebook.com"><i className="fab fa-facebook"></i></a></li>
-                        <li><a target="_blank" href="https://www.instagram.com"><i className="fab fa-instagram"></i></a></li>
-                        <li><a target="_blank" href="https://www.twitter.com"><i className="fab fa-twitter-square"></i></a></li>
-                    </ul>
-                </nav>
-
-                <nav aria-label="Legal">
-                    <ul className="legal">
-                        <li><a href="#">Terms of Use</a></li>
-                        <li>|</li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li>|</li>
-                        <li><a href="#">Accessibility Policy</a></li>
-                    </ul>
-                </nav>
-
-                <p className="text-center"><small className="copyright">Copyright &copy; 2021 | Spruce</small></p>
-
-            </footer>
+            <NavButton />
         </>
     )
 }

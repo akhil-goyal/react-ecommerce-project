@@ -9,19 +9,13 @@ const ProductsList = ({ productsList }) => {
 
         <article key={product.id} className="product container my-1">
 
-            <h5 className="hidden">""</h5>
-
             <section>
-
-                <h5 className="hidden">""</h5>
 
                 <figure>
                     <img className="product-picture" src={product.features.img} alt={product.features.name} />
                 </figure>
 
                 <article className="product-title-icons flex">
-
-                    <h5 className="hidden">""</h5>
 
                     <figure className="product-title-newflash flex">
 
@@ -35,8 +29,6 @@ const ProductsList = ({ productsList }) => {
 
                     <article className="flex">
 
-                        <h5 className="hidden">""</h5>
-
                         <figure><i className="fas fa-shopping-cart"></i></figure>
                         <figure><i className="fas fa-heart"></i></figure>
                     </article>
@@ -45,13 +37,9 @@ const ProductsList = ({ productsList }) => {
 
                 <article className="product-price-ratings flex">
 
-                    <h5 className="hidden">""</h5>
-
                     <data value={product.features.discountedPrice()}><del>${product.features.initialPrice}</del> <ins>${product.features.discountedPrice()}</ins></data>
 
                     <article className="product-ratings flex">
-
-                        <h5 className="hidden">""</h5>
 
                         <p>{product.features.rating}</p>
                         <figure>
@@ -71,8 +59,6 @@ const ProductsList = ({ productsList }) => {
 
                 <article className="product-discount-category">
 
-                    <h5 className="hidden">""</h5>
-
                     <span><strong>Discount : </strong> <em>{product.features.discount}% off</em></span>
 
                     <span><strong>Category : </strong> <em>{product.features.category}</em></span>
@@ -82,14 +68,10 @@ const ProductsList = ({ productsList }) => {
 
                 <article>
 
-                    <h5 className="hidden">""</h5>
-
                     <p>{product.features.description.substring(0, 80)}...</p>
                 </article>
 
                 <article>
-
-                    <h5 className="hidden">""</h5>
 
                     <Link to={`/product/${product.slug()}`} className="button-product-details"><u>View details</u></Link>
 
@@ -98,8 +80,6 @@ const ProductsList = ({ productsList }) => {
             </section>
 
             <section>
-
-                <h5 className="hidden">""</h5>
 
                 <form>
 

@@ -4,11 +4,7 @@ const Filters = () => {
     return (
         <section className="display-filters">
 
-            <h5 className="hidden">""</h5>
-
             <article className="product-filters flex">
-
-                <h5 className="hidden">""</h5>
 
                 <h2>Filters</h2>
                 <figure className="button-filters"><i className="fas fa-sliders-h"></i></figure>
@@ -16,15 +12,9 @@ const Filters = () => {
 
             <article>
 
-                <h5 className="hidden">""</h5>
-
-                <h5 className="hidden">""</h5>
-
                 <form className="filters">
 
                     <section className="filter-options">
-
-                        <h5 className="hidden">""</h5>
 
                         <fieldset>
 

@@ -12,15 +12,11 @@ const Trending = ({ trendingProducts }) => {
     return (
         <section className="trending">
 
-            <h5 className="hidden">""</h5>
-
             <article>
                 <h2 className="subheading text-center">What's blooming?</h2>
             </article>
 
             <article className="trending-products">
-
-                <h5 className="hidden">""</h5>
 
                 {products}
 
