@@ -1,16 +1,8 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React from 'react'
 
-const Product = ({ productsList }) => {
-
-    const { slug } = useParams();
-
-    const product = productsList.find((prod) => prod.slug() === slug) || productsList[0];
-
-    const { img, name, description } = product.features;
-
+const Cart = () => {
     return (
-        <>
+        <div>
             <aside id="nav-top">
 
             </aside>
@@ -106,68 +98,109 @@ const Product = ({ productsList }) => {
 
             </header>
 
-            <main class="container">
+            <main>
 
-                <h1>Product Details</h1>
+                <section class="about-us-hero">
+                    <h1 class="container">My Cart</h1>
+                </section>
 
-                <section class="section-product-details">
+                <section class="cart-items">
 
-                    <div class="product-image">
-                        <img src="../img/1.jpg" alt="" />
-                    </div>
+                    <div class="cart-item">
+                        <div class="cart-product-image">
+                            <img src="../img/plant1.jpg" alt="" />
+                        </div>
 
-                    <div class="product-info">
+                        <div class="cart-title-desc">
+                            <h3>Silver Dollar Plant</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi earum molestiae atque accusamus
+                    numquam temporibus.</p>
+                            <p class="my-1">Category : <em>'Indoor'</em></p>
+                            <p>Pot Included? : Yes</p>
+                        </div>
 
-                        <div class="product-title-ratings">
+                        <div class="cart-quant-price">
 
-                            <h2>Product Name</h2>
+                            <strong>Select Quantity</strong>
 
-                            <div class="product-ratings flex">
-                                <p>4.5</p>
-                                <div>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
+                            <div class="cart-item-qty my-1">
+
+                                <div class="cart-qty-inc">
+                                    <a href="">-</a>
                                 </div>
+
+                                <div class="cart-qty">
+                                    <input name="quantity" value="1" type="text" />
+                                </div>
+
+                                <div class="cart-qty-dec">
+                                    <a href="">+</a>
+                                </div>
+
                             </div>
 
+                            <strong>Price</strong>
+
+                            <p class="my-1">$ 54.42</p>
+
                         </div>
 
-                        <div>
-                            <h3>Product Description</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, placeat autem architecto qui
-                            repudiandae quis. Impedit nobis minus facere amet similique eos eveniet sit inventore, mollitia
-                            commodi! Nisi doloremque dolorem distinctio nam obcaecati velit ipsum quasi hic architecto nulla
-                            repellendus eligendi alias placeat sapiente, commodi non vero tempora vel a quam. Alias deserunt
-                            ipsum eius quaerat placeat corrupti qui. Asperiores, fugit ab corrupti cupiditate impedit natus,
-                            dolores quaerat atque ut laudantium tenetur libero beatae illo omnis debitis perspiciatis
-                            placeat.
-                </p>
+                        <div class="delete-container">
+                            <p>&#215;</p>
                         </div>
-
-                        <div>
-                            <p>Category : <em>Indoor</em></p>
-                        </div>
-
-                        <div>
-                            <p>Price : <del>$100</del> <span class="price">$80</span> only.</p>
-                        </div>
-
-                        <div class="product-buttons">
-                            <div class="add-to-favourites">
-                                <p>Add to Favourites</p>
-                                <i class="fas fa-heart"></i>
-                            </div>
-
-                            <div class="add-to-cart">
-                                <input type="submit" value="Add to Cart" class="btn-cart" />
-                            </div>
-                        </div>
-
                     </div>
 
+                    <div class="cart-item">
+                        <div class="cart-product-image">
+                            <img src="../img/plant5.jpg" alt="" />
+                        </div>
+
+                        <div class="cart-title-desc">
+                            <h3>Ficus Bonsai</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi earum molestiae atque accusamus
+                    numquam temporibus.</p>
+                            <p class="my-1">Category : <em>'Indoor'</em></p>
+                            <p>Pot Included? : No</p>
+                        </div>
+
+                        <div class="cart-quant-price">
+
+                            <strong>Select Quantity</strong>
+
+                            <div class="cart-item-qty my-1">
+
+                                <div class="cart-qty-inc">
+                                    <a href="">-</a>
+                                </div>
+
+                                <div class="cart-qty">
+                                    <input name="quantity" value="1" type="text" />
+                                </div>
+
+                                <div class="cart-qty-dec">
+                                    <a href="">+</a>
+                                </div>
+
+                            </div>
+
+                            <strong>Price</strong>
+
+                            <p class="my-1">$ 24.42</p>
+                        </div>
+
+                        <div class="delete-container">
+                            <p>&#215;</p>
+                        </div>
+                    </div>
+
+                </section>
+
+                <section class="section-cart-total">
+                    <h2>Your total is : $ 85.78</h2>
+                </section>
+
+                <section class="section-cart-checkout">
+                    <a href="page-error.html" class="btn-checkout">Checkout</a>
                 </section>
 
             </main>
@@ -195,8 +228,8 @@ const Product = ({ productsList }) => {
                 <p class="text-center"><small class="copyright">Copyright &copy; 2021 | Spruce</small></p>
 
             </footer>
-        </>
+        </div>
     )
 }
 
-export default Product;
+export default Cart;

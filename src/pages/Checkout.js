@@ -1,16 +1,8 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React from 'react'
 
-const Product = ({ productsList }) => {
-
-    const { slug } = useParams();
-
-    const product = productsList.find((prod) => prod.slug() === slug) || productsList[0];
-
-    const { img, name, description } = product.features;
-
+const Checkout = () => {
     return (
-        <>
+        <div>
             <aside id="nav-top">
 
             </aside>
@@ -106,63 +98,53 @@ const Product = ({ productsList }) => {
 
             </header>
 
-            <main class="container">
+            <main>
 
-                <h1>Product Details</h1>
+                <section class="about-us-hero">
+                    <h1 class="container">Checkout</h1>
+                </section>
 
-                <section class="section-product-details">
+                <section class="section-checkout">
 
-                    <div class="product-image">
-                        <img src="../img/1.jpg" alt="" />
-                    </div>
+                    <h1 class="text-center">Checkout time</h1>
 
-                    <div class="product-info">
+                    <div class="checkout-container">
 
-                        <div class="product-title-ratings">
+                        <div class="checkout-products">
+                            <h2>Your products -</h2>
 
-                            <h2>Product Name</h2>
-
-                            <div class="product-ratings flex">
-                                <p>4.5</p>
-                                <div>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
+                            <div class="checkout-item">
+                                <img src="../img/plant1.jpg" alt="" />
+                                <p>Silver Dollar Plant</p>
+                                <p>x2 </p>
+                                <p>$ 56.78</p>
                             </div>
 
-                        </div>
-
-                        <div>
-                            <h3>Product Description</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, placeat autem architecto qui
-                            repudiandae quis. Impedit nobis minus facere amet similique eos eveniet sit inventore, mollitia
-                            commodi! Nisi doloremque dolorem distinctio nam obcaecati velit ipsum quasi hic architecto nulla
-                            repellendus eligendi alias placeat sapiente, commodi non vero tempora vel a quam. Alias deserunt
-                            ipsum eius quaerat placeat corrupti qui. Asperiores, fugit ab corrupti cupiditate impedit natus,
-                            dolores quaerat atque ut laudantium tenetur libero beatae illo omnis debitis perspiciatis
-                            placeat.
-                </p>
-                        </div>
-
-                        <div>
-                            <p>Category : <em>Indoor</em></p>
-                        </div>
-
-                        <div>
-                            <p>Price : <del>$100</del> <span class="price">$80</span> only.</p>
-                        </div>
-
-                        <div class="product-buttons">
-                            <div class="add-to-favourites">
-                                <p>Add to Favourites</p>
-                                <i class="fas fa-heart"></i>
+                            <div class="checkout-item">
+                                <img src="../img/plant2.jpg" alt="" />
+                                <p>Silver Dollar Plant</p>
+                                <p>x2 </p>
+                                <p>$ 56.78</p>
                             </div>
 
-                            <div class="add-to-cart">
-                                <input type="submit" value="Add to Cart" class="btn-cart" />
+                            <div class="checkout-item">
+                                <img src="../img/plant3.jpg" alt="" />
+                                <p>Silver Dollar Plant</p>
+                                <p>x2 </p>
+                                <p>$ 56.78</p>
+                            </div>
+                        </div>
+
+                        <div class="checkout-payment">
+                            <h2>Total : $108.57</h2>
+
+                            <a href="#" class="btn-credit-debit">Pay with credit/debit</a>
+
+                            <a href="#" class="btn-paypal">Pay with PayPal</a>
+
+                            <div class="checkout-secure-message">
+                                <h4>Your payment is 100% Secure.</h4>
+                                <i class="fas fa-check-circle"></i>
                             </div>
                         </div>
 
@@ -195,8 +177,8 @@ const Product = ({ productsList }) => {
                 <p class="text-center"><small class="copyright">Copyright &copy; 2021 | Spruce</small></p>
 
             </footer>
-        </>
+        </div>
     )
 }
 
-export default Product;
+export default Checkout;
