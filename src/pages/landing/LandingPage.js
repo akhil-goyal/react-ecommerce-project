@@ -1,6 +1,21 @@
 import React from 'react'
 import './landing.css';
 
+import logo from 'img/logo.png';
+import plant1 from 'img/plant1.jpg';
+import plant2 from 'img/plant2.jpg';
+import plant3 from 'img/plant3.jpg';
+import plant4 from 'img/plant4.jpg';
+import plant5 from 'img/plant5.jpg';
+import plant6 from 'img/plant6.jpg';
+import highlight1 from 'img/highlight-1.jpg';
+import highlight2 from 'img/highlight-2.jpg';
+import highlight3 from 'img/highlight-3.jpg';
+import customer1 from 'img/customer1.jpg';
+import customer2 from 'img/customer2.jpg';
+import customer3 from 'img/customer3.jpg';
+
+
 const LandingPage = () => {
     return (
         <div>
@@ -13,7 +28,7 @@ const LandingPage = () => {
 
                             <div className="landing-logo">
                                 <p>Spruce</p>
-                                <img src="img/logo.png" alt="" />
+                                <img src={logo} style={{height: '2rem', width: '1.5rem'}} alt="" />
                             </div>
 
                             <nav>
@@ -47,43 +62,43 @@ const LandingPage = () => {
                         <h5 className="hidden">""</h5>
 
                         <figure className="trending-product flex">
-                            <img src="img/plant1.jpg" alt="Plant" />
+                            <img src={plant1} alt="Plant" />
                             <figcaption className="text-center"><em>Silver Dollar Plant</em></figcaption>
                         </figure>
                         <figure className="trending-product flex">
-                            <img src="img/plant2.jpg" alt="Plant" />
+                            <img src={plant2} alt="Plant" />
                             <figcaption className="text-center"><em>String Of Pearls</em></figcaption>
                         </figure>
                         <figure className="trending-product flex">
-                            <img src="img/plant3.jpg" alt="Plant" />
+                            <img src={plant3} alt="Plant" />
                             <figcaption className="text-center"><em>Peace Lily</em></figcaption>
                         </figure>
                         <figure className="trending-product flex">
-                            <img src="img/plant4.jpg" alt="Plant" />
+                            <img src={plant4} alt="Plant" />
                             <figcaption className="text-center"><em>Areca Palm</em></figcaption>
                         </figure>
                         <figure className="trending-product flex">
-                            <img src="img/plant5.jpg" alt="Plant" />
+                            <img src={plant5} alt="Plant" />
                             <figcaption className="text-center"><em>Grafted Ficus Bonsai</em></figcaption>
                         </figure>
                         <figure className="trending-product flex">
-                            <img src="img/plant6.jpg" alt="Plant" />
+                            <img src={plant6} alt="Plant" />
                             <figcaption className="text-center"><em>Calathea Orbifolia</em></figcaption>
                         </figure>
                         <figure className="trending-product flex">
-                            <img src="img/plant1.jpg" alt="Plant" />
+                            <img src={plant1} alt="Plant" />
                             <figcaption className="text-center"><em>Silver Dollar Plant</em></figcaption>
                         </figure>
                         <figure className="trending-product flex">
-                            <img src="img/plant2.jpg" alt="Plant" />
+                            <img src={plant2} alt="Plant" />
                             <figcaption className="text-center"><em>String Of Pearls</em></figcaption>
                         </figure>
                         <figure className="trending-product flex">
-                            <img src="img/plant3.jpg" alt="Plant" />
+                            <img src={plant3} alt="Plant" />
                             <figcaption className="text-center"><em>Peace Lily</em></figcaption>
                         </figure>
                         <figure className="trending-product flex">
-                            <img src="img/plant4.jpg" alt="Plant" />
+                            <img src={plant4} alt="Plant" />
                             <figcaption className="text-center"><em>Areca Palm</em></figcaption>
                         </figure>
                     </article>
@@ -99,7 +114,7 @@ const LandingPage = () => {
                     <div className="highlights-grid">
                         <div className="highlight">
                             <div className="highlights-image">
-                                <img src="img/highlight-1.jpg" alt="" />
+                                <img src={highlight1} alt="" />
                             </div>
 
                             <div className="highlight-description">
@@ -146,13 +161,13 @@ const LandingPage = () => {
                             </div>
 
                             <div className="highlights-image">
-                                <img src="img/highlight-2.jpg" alt="" />
+                                <img src={highlight2} alt="" />
                             </div>
                         </div>
 
                         <div className="highlight">
                             <div className="highlights-image">
-                                <img src="img/highlight-3.jpg" alt="" />
+                                <img src={highlight3} alt="" />
                             </div>
 
                             <div className="highlight-description">
@@ -195,7 +210,7 @@ const LandingPage = () => {
                         <article className="review-1">
                             <h5 className="hidden">""</h5>
 
-                            <img src="img/customer1.jpg" alt="User 1" />
+                            <img src={customer1} alt="User 1" />
 
                             <section className="customer-review-name">
 
@@ -217,7 +232,7 @@ const LandingPage = () => {
                         <article className="review-2">
                             <h5 className="hidden">""</h5>
 
-                            <img src="img/customer2.jpg" alt="User 2" />
+                            <img src={customer2} alt="User 2" />
                             <section className="customer-review-name">
                                 <h5 className="hidden">""</h5>
 
@@ -237,7 +252,7 @@ const LandingPage = () => {
 
                             <h5 className="hidden">""</h5>
 
-                            <img src="img/customer3.jpg" alt="User 3" />
+                            <img src={customer3} alt="User 3" />
 
                             <section className="customer-review-name">
 
