@@ -1,28 +1,41 @@
+// PACKAGES
 import React from 'react';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 
-import HomePage from 'pages/HomePage';
-import About from 'pages/About';
-import Contact from 'pages/Contact';
-import Gallery from 'pages/Gallery';
-import Product from 'pages/Product';
-import Page404 from 'pages/Page404';
+// COMPONENTS
+import LandingPage from 'pages/landing/LandingPage';
+import SignUp from 'pages/sign-up/SignUp';
+import SignIn from 'pages/sign-in/SignIn';
+import Dashboard from 'pages/dashboard/Dashboard';
+import Gallery from 'pages/gallery/Gallery';
+import About from 'pages/about/About';
+import Contact from 'pages/contact/Contact';
+import Product from 'pages/product/Product';
+import Cart from 'pages/cart/Cart';
+import Checkout from 'pages/checkout/Checkout';
+import Page404 from 'pages/page-404/Page404';
 
+// OTHERS
 import { trendingProducts, productsList } from './products';
 
 const App = () => {
 	return (
 		<Router>
 			<Switch>
-				<Route exact path="/">
-					<HomePage trendingProducts={trendingProducts} productsList={productsList} />
+				<Route exact path="/" component={LandingPage} />
+				<Route path="/signup" component={SignUp} />
+				<Route path="/signin" component={SignIn} />
+				<Route path="/dashboard">
+					<Dashboard trendingProducts={trendingProducts} productsList={productsList} />
 				</Route>
+				<Route path="/gallery" component={Gallery} />
 				<Route path="/about" component={About} />
 				<Route path="/contact" component={Contact} />
-				<Route path="/gallery" component={Gallery} />
 				<Route path="/product/:slug">
 					<Product productsList={productsList} />
 				</Route>
+				<Route path="/cart" component={Cart} />
+				<Route path="/checkout" component={Checkout} />
 				<Route path="*" component={Page404} />
 			</Switch>
 		</Router>

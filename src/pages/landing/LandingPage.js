@@ -6,14 +6,14 @@ const LandingPage = () => {
         <div>
             <main>
 
-                <section class="landing-nav-hero ">
+                <section className="landing-nav-hero ">
 
-                    <div class="landing-navbar container">
-                        <div class="container flex">
+                    <div className="landing-navbar container">
+                        <div className="container flex">
 
-                            <div class="landing-logo">
+                            <div className="landing-logo">
                                 <p>Spruce</p>
-                                <img src="img/logo.png" style="height: 2rem; width: 1.5rem;" alt="" />
+                                <img src="img/logo.png" alt="" />
                             </div>
 
                             <nav>
@@ -25,84 +25,84 @@ const LandingPage = () => {
                         </div>
                     </div>
 
-                    <div class="landing-hero container">
+                    <div className="landing-hero container">
                         <h1>Spruce</h1>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas eum molestiae, delectus eligendi
             optio recusandae animi iusto facilis dolorem sint.</p>
-                        <a class="btn-join-us" href="pages/sign-up.html">Join Us</a>
+                        <a className="btn-join-us" href="pages/sign-up.html">Join Us</a>
                     </div>
 
                 </section>
 
-                <section class="trending">
+                <section className="trending">
 
-                    <h5 class="hidden">""</h5>
+                    <h5 className="hidden">""</h5>
 
                     <article>
-                        <h2 class="subheading text-center">What's blooming?</h2>
+                        <h2 className="subheading text-center">What's blooming?</h2>
                     </article>
 
-                    <article class="trending-products">
+                    <article className="trending-products">
 
-                        <h5 class="hidden">""</h5>
+                        <h5 className="hidden">""</h5>
 
-                        <figure class="trending-product flex">
+                        <figure className="trending-product flex">
                             <img src="img/plant1.jpg" alt="Plant" />
-                            <figcaption class="text-center"><em>Silver Dollar Plant</em></figcaption>
+                            <figcaption className="text-center"><em>Silver Dollar Plant</em></figcaption>
                         </figure>
-                        <figure class="trending-product flex">
+                        <figure className="trending-product flex">
                             <img src="img/plant2.jpg" alt="Plant" />
-                            <figcaption class="text-center"><em>String Of Pearls</em></figcaption>
+                            <figcaption className="text-center"><em>String Of Pearls</em></figcaption>
                         </figure>
-                        <figure class="trending-product flex">
+                        <figure className="trending-product flex">
                             <img src="img/plant3.jpg" alt="Plant" />
-                            <figcaption class="text-center"><em>Peace Lily</em></figcaption>
+                            <figcaption className="text-center"><em>Peace Lily</em></figcaption>
                         </figure>
-                        <figure class="trending-product flex">
+                        <figure className="trending-product flex">
                             <img src="img/plant4.jpg" alt="Plant" />
-                            <figcaption class="text-center"><em>Areca Palm</em></figcaption>
+                            <figcaption className="text-center"><em>Areca Palm</em></figcaption>
                         </figure>
-                        <figure class="trending-product flex">
+                        <figure className="trending-product flex">
                             <img src="img/plant5.jpg" alt="Plant" />
-                            <figcaption class="text-center"><em>Grafted Ficus Bonsai</em></figcaption>
+                            <figcaption className="text-center"><em>Grafted Ficus Bonsai</em></figcaption>
                         </figure>
-                        <figure class="trending-product flex">
+                        <figure className="trending-product flex">
                             <img src="img/plant6.jpg" alt="Plant" />
-                            <figcaption class="text-center"><em>Calathea Orbifolia</em></figcaption>
+                            <figcaption className="text-center"><em>Calathea Orbifolia</em></figcaption>
                         </figure>
-                        <figure class="trending-product flex">
+                        <figure className="trending-product flex">
                             <img src="img/plant1.jpg" alt="Plant" />
-                            <figcaption class="text-center"><em>Silver Dollar Plant</em></figcaption>
+                            <figcaption className="text-center"><em>Silver Dollar Plant</em></figcaption>
                         </figure>
-                        <figure class="trending-product flex">
+                        <figure className="trending-product flex">
                             <img src="img/plant2.jpg" alt="Plant" />
-                            <figcaption class="text-center"><em>String Of Pearls</em></figcaption>
+                            <figcaption className="text-center"><em>String Of Pearls</em></figcaption>
                         </figure>
-                        <figure class="trending-product flex">
+                        <figure className="trending-product flex">
                             <img src="img/plant3.jpg" alt="Plant" />
-                            <figcaption class="text-center"><em>Peace Lily</em></figcaption>
+                            <figcaption className="text-center"><em>Peace Lily</em></figcaption>
                         </figure>
-                        <figure class="trending-product flex">
+                        <figure className="trending-product flex">
                             <img src="img/plant4.jpg" alt="Plant" />
-                            <figcaption class="text-center"><em>Areca Palm</em></figcaption>
+                            <figcaption className="text-center"><em>Areca Palm</em></figcaption>
                         </figure>
                     </article>
 
                 </section>
 
-                <section class="highlights container">
+                <section className="highlights container">
 
                     <article>
-                        <h2 class="subheading text-center">Why Spruce?</h2>
+                        <h2 className="subheading text-center">Why Spruce?</h2>
                     </article>
 
-                    <div class="highlights-grid">
-                        <div class="highlight">
-                            <div class="highlights-image">
+                    <div className="highlights-grid">
+                        <div className="highlight">
+                            <div className="highlights-image">
                                 <img src="img/highlight-1.jpg" alt="" />
                             </div>
 
-                            <div class="highlight-description">
+                            <div className="highlight-description">
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, aliquid, placeat a ipsa dicta
                                 vero eligendi corporis, quam consequatur minima dolore natus quo odit quas reiciendis saepe?
                                 Cupiditate mollitia repellat dicta pariatur nobis, quae ducimus aspernatur odio totam, quos
@@ -123,8 +123,8 @@ const LandingPage = () => {
                             </div>
                         </div>
 
-                        <div class="highlight">
-                            <div class="highlight-description">
+                        <div className="highlight">
+                            <div className="highlight-description">
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eius expedita esse, provident
                                 officia voluptates voluptatum vitae minima maiores illo? Earum officia aspernatur cum harum
                                 assumenda ullam provident corporis totam obcaecati quia laborum, labore fuga iusto
@@ -145,17 +145,17 @@ const LandingPage = () => {
                     voluptas accusantium!</p>
                             </div>
 
-                            <div class="highlights-image">
+                            <div className="highlights-image">
                                 <img src="img/highlight-2.jpg" alt="" />
                             </div>
                         </div>
 
-                        <div class="highlight">
-                            <div class="highlights-image">
+                        <div className="highlight">
+                            <div className="highlights-image">
                                 <img src="img/highlight-3.jpg" alt="" />
                             </div>
 
-                            <div class="highlight-description">
+                            <div className="highlight-description">
                                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium nulla officia dolores
                                 provident totam consequatur, expedita recusandae voluptate facere sit vitae obcaecati optio
                                 mollitia assumenda alias nobis perferendis minima ullam cumque, quidem impedit blanditiis
@@ -180,26 +180,26 @@ const LandingPage = () => {
 
                 </section>
 
-                <section class="customer-reviews container">
+                <section className="customer-reviews container">
 
-                    <h5 class="hidden">""</h5>
+                    <h5 className="hidden">""</h5>
 
                     <article>
-                        <h2 class="subheading text-center">Our happy anthophiles :)</h2>
+                        <h2 className="subheading text-center">Our happy anthophiles :)</h2>
                     </article>
 
-                    <article class="reviews">
+                    <article className="reviews">
 
-                        <h5 class="hidden">""</h5>
+                        <h5 className="hidden">""</h5>
 
-                        <article class="review-1">
-                            <h5 class="hidden">""</h5>
+                        <article className="review-1">
+                            <h5 className="hidden">""</h5>
 
                             <img src="img/customer1.jpg" alt="User 1" />
 
-                            <section class="customer-review-name">
+                            <section className="customer-review-name">
 
-                                <h5 class="hidden">""</h5>
+                                <h5 className="hidden">""</h5>
 
                                 <p>
                                     Spruce has all the beautiful greens that enchance the beauty of my garden. Thank you to the
@@ -209,17 +209,17 @@ const LandingPage = () => {
                             </section>
                         </article>
 
-                        <section class="separator-vertical">
-                            <h5 class="hidden">""</h5>
+                        <section className="separator-vertical">
+                            <h5 className="hidden">""</h5>
 
                         </section>
 
-                        <article class="review-2">
-                            <h5 class="hidden">""</h5>
+                        <article className="review-2">
+                            <h5 className="hidden">""</h5>
 
                             <img src="img/customer2.jpg" alt="User 2" />
-                            <section class="customer-review-name">
-                                <h5 class="hidden">""</h5>
+                            <section className="customer-review-name">
+                                <h5 className="hidden">""</h5>
 
                                 <p>
                                     Whenever I have to make a new addition to my home garden, I always look upto Spruce to get
@@ -229,19 +229,19 @@ const LandingPage = () => {
                             </section>
                         </article>
 
-                        <section class="separator-vertical">
-                            <h5 class="hidden">""</h5>
+                        <section className="separator-vertical">
+                            <h5 className="hidden">""</h5>
                         </section>
 
-                        <article class="review-3">
+                        <article className="review-3">
 
-                            <h5 class="hidden">""</h5>
+                            <h5 className="hidden">""</h5>
 
                             <img src="img/customer3.jpg" alt="User 3" />
 
-                            <section class="customer-review-name">
+                            <section className="customer-review-name">
 
-                                <h5 class="hidden">""</h5>
+                                <h5 className="hidden">""</h5>
 
                                 <p>
                                     Spruce is a great website for all my needs. I can find every beautiful plant/flowers over
@@ -256,21 +256,21 @@ const LandingPage = () => {
 
                 </section>
 
-                <section class="newsletter-subscription container">
-                    <h5 class="hidden">""</h5>
+                <section className="newsletter-subscription container">
+                    <h5 className="hidden">""</h5>
 
                     <article>
-                        <h2 class="subheading text-center">Subscribe to our newsletter</h2>
+                        <h2 className="subheading text-center">Subscribe to our newsletter</h2>
                     </article>
 
-                    <article class="newsletter">
-                        <h5 class="hidden">""</h5>
+                    <article className="newsletter">
+                        <h5 className="hidden">""</h5>
 
                         <p>Subscribe to get latest information about the new coming plants in our nursery.
                         Be the first one to bring them home.
         </p>
-                        <input class="newsletter-email" type="email" placeholder="Email Address" />
-                        <button class="newsletter-button">Subscribe</button>
+                        <input className="newsletter-email" type="email" placeholder="Email Address" />
+                        <button className="newsletter-button">Subscribe</button>
                         <small>Unsubscribe anytime. We won't spam you ever. Promise :)</small>
                     </article>
 
@@ -278,18 +278,18 @@ const LandingPage = () => {
 
             </main>
 
-            <footer class="page-footer">
+            <footer className="page-footer">
 
                 <nav>
-                    <ul class="social">
-                        <li><a target="_blank" href="https://www.facebook.com"><i class="fab fa-facebook"></i></a></li>
-                        <li><a target="_blank" href="https://www.instagram.com"><i class="fab fa-instagram"></i></a></li>
-                        <li><a target="_blank" href="https://www.twitter.com"><i class="fab fa-twitter-square"></i></a></li>
+                    <ul className="social">
+                        <li><a target="_blank" href="https://www.facebook.com"><i className="fab fa-facebook"></i></a></li>
+                        <li><a target="_blank" href="https://www.instagram.com"><i className="fab fa-instagram"></i></a></li>
+                        <li><a target="_blank" href="https://www.twitter.com"><i className="fab fa-twitter-square"></i></a></li>
                     </ul>
                 </nav>
 
                 <nav aria-label="Legal">
-                    <ul class="legal">
+                    <ul className="legal">
                         <li><a href="#">Terms of Use</a></li>
                         <li>|</li>
                         <li><a href="#">Privacy Policy</a></li>
@@ -298,7 +298,7 @@ const LandingPage = () => {
                     </ul>
                 </nav>
 
-                <p class="text-center"><small class="copyright">Copyright &copy; 2021 | Spruce</small></p>
+                <p className="text-center"><small className="copyright">Copyright &copy; 2021 | Spruce</small></p>
 
             </footer>
         </div>

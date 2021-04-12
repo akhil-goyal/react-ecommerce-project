@@ -182,7 +182,7 @@ section {
   background: linear-gradient(
       rgba(0, 0, 0, 0.671), 
       rgba(0, 0, 0, 0.671)
-  ),url(../img/newsletter.jpg);
+  ),url(img/newsletter.jpg);
   background-size: cover; 
   background-position: center;
   display: grid;
