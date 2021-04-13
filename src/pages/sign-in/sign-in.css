@@ -81,3 +81,171 @@
   .signin-form-container p {
       margin-top: 1em;
   }
+
+  /* MEDIA QUERIES */
+
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+  /* ------------------------- Section GENERAL ---------------------- */
+  .subheading {
+      font-size: 2em;
+  }
+  
+  .sign-in-image{
+      padding: 6em;
+      text-align: center;
+  }
+  
+  .signin-form-container {
+      height: 35em;
+      width: 40em;
+      padding: 40px;
+  }
+  
+  }
+  
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 20px;
+}
+
+.subheading {
+  font-size: 2em;
+}
+
+.sign-in-image{
+  padding: 16em;
+  text-align: center;
+}
+
+.signin-form-container {
+  height: 20em;
+  width: 40em;
+  padding: 40px;
+  margin: 1em 0em;
+}
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 40px;
+}
+
+.subheading {
+  font-size: 2em;
+}
+
+.sign-in-page {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.sign-in-image{
+  padding: 6em;
+  text-align: start;
+}
+
+.signin-form-container {
+  height: 20em;
+  width: 25em;
+  padding: 40px;
+}
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+/* ------------------------- Section GENERAL ---------------------- */
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 40px;
+}
+
+.subheading {
+  font-size: 2em;
+}
+
+.sign-in-page {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.sign-in-image{
+  padding: 6em;
+  text-align: start;
+}
+
+.signin-form-container {
+  height: 25em;
+  width: 40em;
+  padding: 40px;
+}
+
+}
+
+/* For full HD display & above */
+@media only screen and (min-width: 1920px) {
+
+body a,p{
+  font-size: 1.5em;
+}
+
+.container {
+  max-width: 2200px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 40px;
+}
+
+.subheading {
+  font-size: 2em;
+}
+
+.sign-in-page {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.sign-in-image{
+  padding: 6em;
+  text-align: start;
+}
+
+.signin-form-container {
+  height: 30em;
+  width: 60em;
+  padding: 40px;
+}
+
+.sign-in-image h1 {
+  font-size: 4em;
+}
+
+.sign-in-image p {
+  font-size: 2em;
+}
+
+.signin-form-container input[type='text'],
+.signin-form-container input[type='email'],
+.signin-form-container input[type='password']
+{
+  font-size: 1.5em;
+}
+
+.btn-login {
+  font-size: 1.5em;
+}
+
+}

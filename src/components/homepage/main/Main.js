@@ -1,14 +1,14 @@
 import React from 'react';
 
-import Hero from './Hero';
-import Trending from './Trending';
-import Highlights from './Highlights';
-import Filters from './Filters';
-import Newsletter from './Newsletter';
-import Reviews from './Reviews';
-import Pagination from './Pagination';
-import ProductSearch from './ProductSearch';
-import ProductsList from './ProductsList';
+import Hero from '../hero/Hero';
+import Trending from '../trending/Trending';
+import Highlights from '../highlights/Highlights';
+import Filters from '../filters/Filters';
+import Newsletter from '../newsletter/Newsletter';
+import Reviews from '../reviews/Reviews';
+import Pagination from '../pagination/Pagination';
+import ProductSearch from '../product-search/ProductSearch';
+import ProductsList from '../products-list/ProductsList';
 
 const Main = ({ trendingProducts, productsList }) => {
 

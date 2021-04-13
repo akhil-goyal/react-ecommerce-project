@@ -100,3 +100,208 @@
     height: 2em;
     width: 7em;
 }
+
+/* MEDIA QUERIES */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+.contact-us {
+    grid-template-columns: 1fr;
+}
+
+.contact-details {
+    text-align: center;
+}
+
+.contact-details h1,
+.contact-touch h1
+{
+    font-size: 2em;
+    text-align: center;
+}
+
+.contact-touch {
+    text-align: center;
+}
+
+.contact-touch input[type='text'],
+.contact-touch input[type='email'],
+.contact-touch textarea[type='text']
+{
+    width: 100%;
+}
+    
+}
+    
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 20px;
+}
+
+.contact-us-hero h1 {
+    font-size: 2em;
+}
+
+.contact-us {
+    grid-template-columns: 1fr;
+}
+
+.contact-details {
+    text-align: center;
+}
+
+.contact-details h1,
+.contact-touch h1
+{
+    font-size: 2em;
+    text-align: center;
+}
+
+.contact-touch {
+    text-align: center;
+}
+
+.contact-touch input[type='text'],
+.contact-touch input[type='email'],
+.contact-touch textarea[type='text']
+{
+    width: 60%;
+}
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.contact-us-hero h1 {
+    font-size: 3em;
+}
+
+.contact-us {
+    grid-template-columns: 1fr;
+}
+
+.contact-details {
+    text-align: center;
+}
+
+.contact-details h1,
+.contact-touch h1
+{
+    font-size: 2em;
+    text-align: center;
+}
+
+.contact-touch {
+    text-align: center;
+}
+
+.contact-touch input[type='text'],
+.contact-touch input[type='email'],
+.contact-touch textarea[type='text']
+{
+    width: 70%;
+}
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.contact-us-hero h1 {
+    font-size: 4em;
+}
+
+.contact-us {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.contact-details h1,
+.contact-touch h1
+{
+    font-size: 2em;
+    text-align: start;
+}
+
+.contact-details,
+.contact-touch
+{
+    text-align: start;
+}
+
+.contact-touch input[type='text'],
+.contact-touch input[type='email'],
+.contact-touch textarea[type='text']
+{
+    width: 50%;
+}
+
+}
+
+/* For full HD display & above */
+@media only screen and (min-width: 1920px) {
+
+body a,p{
+    font-size: 1.5em;
+}
+
+.container {
+    max-width: 2200px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.contact-us-hero h1 {
+    font-size: 4em;
+}
+
+.contact-us {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.contact-details h1,
+.contact-touch h1
+{
+    font-size: 2.5em;
+    text-align: start;
+}
+
+.contact-details,
+.contact-touch
+{
+    text-align: start;
+}
+
+.contact-location img{
+    width: 80%;
+} 
+
+.contact-touch input[type='text'],
+.contact-touch input[type='email'],
+.contact-touch textarea[type='text']
+{
+    width: 80%;
+}
+
+}

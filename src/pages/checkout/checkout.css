@@ -85,3 +85,99 @@
     color : var(--color-primary);
     margin-left: 0.2em;
 }
+
+/* MEDIA QUERIES */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+    .checkout-container {
+        grid-template-columns: 1fr;
+        padding: 0em 1em;
+    }
+    
+    .checkout-item {
+        justify-content: center;
+        width: 20em;
+    }
+    
+    .checkout-secure-message {
+        margin-top: 1em;
+    }
+    
+}
+    
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+    .checkout-container {
+        grid-template-columns: 1fr;
+        padding: 0em 8em;
+    }
+
+    .checkout-item {
+        justify-content: center;
+        width: 30em;
+    }
+
+    .checkout-secure-message {
+        margin: 1em 0em;
+    }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        overflow: auto;
+        padding: 0 40px;
+    }
+
+    .checkout-container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 4em;
+    }
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+    .container {
+        max-width: 1600px;
+        margin: 0 auto;
+        overflow: auto;
+        padding: 0 40px;
+    }
+
+    .checkout-container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 4em;
+    }
+
+}
+
+/* For full HD display & above */
+@media only screen and (min-width: 1920px) {
+
+/* ------------------------- Section GENERAL ---------------------- */
+body a,p{
+    font-size: 1.5em;
+}
+
+.container {
+    max-width: 2200px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.checkout-container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 4em;
+}
+
+}

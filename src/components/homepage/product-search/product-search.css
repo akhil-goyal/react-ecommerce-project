@@ -1,40 +1,33 @@
-main {
-    display: grid;
-    grid-template-columns: 1fr;
-}
 
-.page-404{
+/* ------------------------ Section SEARCH ----------------------- */
+.product-search {
+    margin-top: 1em;
+  }
+  
+  .search-box {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10em;
-}
-
-.page-404 img {
-    width: 90%;
-}
-
-.page-404-message {
-    text-align: center;
-}
-
-.page-404-message h1 {
-    font-size: 3em;
-}
-
-.page-404-message p{
-    font-size: 1.5em;
-}
-
-/* MEDIA QUERIES */
+    gap: 0.5em;
+  }
+  
+  .search-box input {
+    border: 1px solid rgb(173, 173, 173);
+    border-radius: 0.5em;
+    width: 60%;
+    padding-left: 1em;
+  }
+  /* ---------------------------------------------------------------- */
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
 
-    .page-404 img {
-        width: 90%;
+    .subheading {
+        font-size: 2em;
     }
     
+    .search-box input {
+        width: 30%;
+    }
+   
 }
     
 /* Medium devices (landscape tablets, 768px and up) */
@@ -47,8 +40,8 @@ main {
     padding: 0 20px;
 }
 
-.subheading {
-    font-size: 2em;
+.search-box input {
+    width: 30%;
 }
 
 }
@@ -67,8 +60,8 @@ main {
     font-size: 2em;
 }
 
-.page-404 img {
-    width: 70%;
+.search-box input {
+    width: 15em;
 }
 
 }
@@ -76,7 +69,6 @@ main {
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
 
-/* ------------------------- Section GENERAL ---------------------- */
 .container {
     max-width: 1600px;
     margin: 0 auto;
@@ -88,8 +80,13 @@ main {
     font-size: 2em;
 }
 
-.page-404 img {
-    width: 50%;
+.search-box {
+    display: flex;
+    gap: 0.5em;
+}
+
+.search-box input {
+    width: 15em;
 }
 
 }
@@ -97,7 +94,6 @@ main {
 /* For full HD display & above */
 @media only screen and (min-width: 1920px) {
 
-/* ------------------------- Section GENERAL ---------------------- */
 body a,p{
     font-size: 1.5em;
 }
@@ -113,8 +109,8 @@ body a,p{
     font-size: 2em;
 }
 
-.page-404 img {
-    width: 60%;
+.search-box input {
+    width: 20em;
 }
 
 }

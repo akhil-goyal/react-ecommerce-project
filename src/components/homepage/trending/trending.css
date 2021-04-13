@@ -1,38 +1,17 @@
-main {
-    display: grid;
-    grid-template-columns: 1fr;
-}
-
-.page-404{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10em;
-}
-
-.page-404 img {
-    width: 90%;
-}
-
-.page-404-message {
-    text-align: center;
-}
-
-.page-404-message h1 {
-    font-size: 3em;
-}
-
-.page-404-message p{
-    font-size: 1.5em;
-}
-
-/* MEDIA QUERIES */
-
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
 
-    .page-404 img {
-        width: 90%;
+    .subheading {
+        font-size: 2em;
+    }
+    
+    .trending-products {
+        width: calc(250px * 16);
+    }
+    
+    .trending-products img{
+        height: 12em;
+        width: 12em;
     }
     
 }
@@ -51,6 +30,15 @@ main {
     font-size: 2em;
 }
 
+.trending-products {
+    width: calc(250px * 16);
+}
+
+.trending-products img{
+    height: 12em;
+    width: 12em;
+}
+
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -67,8 +55,13 @@ main {
     font-size: 2em;
 }
 
-.page-404 img {
-    width: 70%;
+.trending-products {
+    width: calc(250px * 16);
+}
+
+.trending-products img{
+    height: 15em;
+    width: 15em;
 }
 
 }
@@ -76,7 +69,6 @@ main {
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
 
-/* ------------------------- Section GENERAL ---------------------- */
 .container {
     max-width: 1600px;
     margin: 0 auto;
@@ -88,8 +80,17 @@ main {
     font-size: 2em;
 }
 
-.page-404 img {
-    width: 50%;
+.trending-products {
+    width: calc(250px * 16);
+}
+
+.trending-products img{
+    height: 20em;
+    width: 20em;
+}
+
+.trending {
+    margin-top: 2em;
 }
 
 }
@@ -97,7 +98,6 @@ main {
 /* For full HD display & above */
 @media only screen and (min-width: 1920px) {
 
-/* ------------------------- Section GENERAL ---------------------- */
 body a,p{
     font-size: 1.5em;
 }
@@ -113,8 +113,13 @@ body a,p{
     font-size: 2em;
 }
 
-.page-404 img {
-    width: 60%;
+.trending-products {
+    width: calc(400px * 16);
+}
+
+.trending-products img{
+    height: 25em;
+    width: 25em;
 }
 
 }

@@ -49,3 +49,127 @@
     justify-content: center;
     margin-top: 2em;
 }
+
+/* --------------------- MEDIA QUERIES --------------------- */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .about-us {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-us-logo img{
+        height: 15em;
+        width: 10em;
+    }
+    
+    .about-us-description {
+        margin-top: 2em;
+    }
+}
+    
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+    .container {
+        max-width: 700px;
+        margin: 0 auto;
+        overflow: auto;
+        padding: 0 20px;
+    }
+
+    .about-us {
+        grid-template-columns: 1fr;
+    }
+
+    .about-us-logo img{
+        height: 15em;
+        width: 10em;
+    }
+
+    .about-us-description {
+        margin-top: 2em;
+    }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        overflow: auto;
+        padding: 0 40px;
+    }
+
+    .about-us {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 0em;
+    }
+
+    .about-us-hero h1 {
+        font-size: 2em;
+    }
+
+    .about-us-logo img{
+        height: 15em;
+        width: 10em;
+    }
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+    .about-us {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 2em;
+    }
+
+    .about-us-hero h1 {
+        font-size: 4em;
+    }
+
+    .about-us-logo img{
+        height: 20em;
+        width: 15em;
+    }
+
+}
+
+/* For full HD display & above */
+@media only screen and (min-width: 1920px) {
+
+    body a,p{
+        font-size: 1.5em;
+    }
+
+    .container {
+        max-width: 2200px;
+        margin: 0 auto;
+        overflow: auto;
+        padding: 0 40px;
+    }
+
+    .about-us {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 2em;
+    }
+
+    .about-us-hero h1 {
+        font-size: 4em;
+    }
+
+    .about-us-logo img{
+        height: 20em;
+        width: 15em;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;    
+    }
+
+}

@@ -76,3 +76,157 @@ h1 {
 .price {
     font-size: 1.5em;
 }
+
+/* MEDIA QUERIES */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+    .section-product-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-image img {
+        height: 18em;
+        width: 60%;
+    }
+    
+    .product-info{
+        padding: 1.5em 0.5em;
+        margin-top: 2em;
+    }
+}
+    
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 20px;
+}
+
+.subheading {
+    font-size: 2em;
+}
+
+.section-product-details {
+    grid-template-columns: 1fr;
+}
+
+.product-image img {
+    height: 30em;
+    width: 60%;
+}
+
+.product-info{
+    padding: 1.5em 1em;
+    margin-top: 2em;
+}
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.subheading {
+    font-size: 2em;
+}
+
+.section-product-details {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.product-image img {
+    height: 30em;
+    width: 80%;
+}
+
+.product-info{
+    padding: 1.5em 1em;
+    margin-top: 0em;
+}
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.subheading {
+    font-size: 2em;
+}
+
+.section-product-details {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.product-image img {
+    height: 40em;
+    width: 70%;
+}
+
+.product-info{
+    padding: 0em 2em;
+    margin-top: 0em;
+}
+
+}
+
+/* For full HD display & above */
+@media only screen and (min-width: 1920px) {
+
+body a,p{
+    font-size: 1.5em;
+}
+
+.container {
+    max-width: 2200px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.subheading {
+    font-size: 2em;
+}
+
+.section-product-details {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.product-image img {
+    height: 70em;
+    width: 80%;
+}
+
+.product-info{
+    padding: 0em 2em;
+    margin-top: 0em;
+}
+
+.add-to-favourites {
+    height: 3em;
+    width: 15em;
+}
+
+.btn-cart {
+    height: 3em;
+    width: 7em;
+}
+
+}

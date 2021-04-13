@@ -1,0 +1,181 @@
+/* ------------------------ Section FOOTER ------------------------ */
+.page-footer {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    padding: 1em 0;
+    margin-top: 1rem;
+  }
+  
+  .page-footer a {
+    color: var(--color-light);
+  }
+  
+  .page-footer p {
+    margin-top: 1rem;
+  }
+  
+  .social,
+  .legal {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+  }
+  
+  .social > li {
+    padding: 0 0.5rem;
+  }
+  
+  .legal > li {
+    padding: 0 0.1rem;
+  }
+  /* ---------------------------------------------------------------- */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+    .legal > li {
+        padding: 0 0.7em;
+    }
+    
+    legend,
+    h3,
+    .label-sort
+    {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    
+    .label-sort{
+        padding-right: 0.4em;
+    }
+    
+}
+    
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 20px;
+}
+
+.legal > li {
+    padding: 0 0.7em;
+}
+
+legend,
+h3,
+.label-sort
+{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.label-sort{
+    padding-right: 0.4em;
+}
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.legal > li {
+    padding: 0 1rem;
+}
+
+legend,
+h3,
+.label-sort
+{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.label-sort{
+    padding-right: 0.4em;
+}
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.page-footer {
+    padding: 1.5em 0;
+    margin-top: 2em;
+}
+
+.legal > li {
+    padding: 0 1rem;
+}
+
+small {
+    justify-self: center;
+}
+
+legend,
+h3,
+.label-sort
+{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.label-sort{
+    padding-right: 0.4em;
+}
+
+}
+
+/* For full HD display & above */
+@media only screen and (min-width: 1920px) {
+
+body a,p{
+    font-size: 1.5em;
+}
+
+.container {
+    max-width: 2200px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.page-footer {
+    height: 14em;
+}
+
+.legal > li {
+    padding: 0 1rem;
+}
+
+legend,
+h3,
+.label-sort
+{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.label-sort{
+    padding-right: 0.4em;
+}
+
+}

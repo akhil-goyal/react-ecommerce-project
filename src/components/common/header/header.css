@@ -1,0 +1,310 @@
+/* ------------------------- Section HEADER ----------------------- */
+
+/* FOR LAPTOPS & LARGER DISPLAYS */
+.page-header-webview {
+    display: none;
+  }
+  
+   .page-header-webview a {
+    color: var(--color-primary);
+  }
+  
+  .header-webview-nav a{
+    position: relative;
+  }
+  
+  .header-webview-nav a:after {    
+    background: none repeat scroll 0 0 transparent;
+    content: "";
+    display: block;
+    height: 0.125em;
+    width: 0em;
+    border-radius: 0.7em;
+    position: absolute;
+    background: var(--color-primary);
+    transition: width 0.2s ease 0s, left 0.2s ease 0s;
+  }
+  
+  .header-webview-nav a:hover:after { 
+    width: 100%; 
+  }
+  
+  .header-webview-nav a{
+    font-weight: bold;
+  }
+  
+  /* FOR MOBILE */
+  .page-header {
+    justify-content: space-between;
+    height: 3em;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-container img {
+    height: 2em;
+    width: 1.7em;
+    transition: all .2s ease-in-out;
+  }
+  
+  .logo-container img:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  
+  .logo {
+    font-family: var(--cursive-font);
+    font-size: 1.2rem;
+  }
+  
+  .menu a {
+    font-size: 1em;
+  }
+  
+  .menu-bar i {
+    font-size: 1.5rem;
+  }
+  
+  .user-image {
+    height: 1.5em;
+    width: 1.6em;
+    border-radius: 1em;
+  }
+  
+  .fa-shopping-cart {
+    font-size: 1.5em;
+    margin-left: 1em;
+  }
+  
+  .cart-total {
+    height: 1.5em;
+    width: 1.5em;
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary);
+    color: #fff;
+    position: relative;
+  }
+  
+  .menu-close {
+    margin-right: 1em;
+  }
+  /* ---------------------------------------------------------------- */
+  
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+    .subheading {
+        font-size: 2em;
+    }
+    
+    .page-header {
+        height: 4em;
+    }
+    
+    .logo-container img {
+        height: 2.4em;
+        width: 1.8em;
+    }
+    
+    .logo {
+        font-family: var(--cursive-font);
+        font-size: 1.8em;
+    }
+    
+}
+    
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 20px;
+}
+
+.subheading {
+    font-size: 2em;
+}
+
+.page-header {
+    height: 4em;
+}
+
+.logo-container img {
+    height: 2.4em;
+    width: 1.8em;
+}
+
+.logo {
+    font-family: var(--cursive-font);
+    font-size: 1.8em;
+}
+
+.side-bar a {
+    font-size: 1.2em;
+}
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.subheading {
+    font-size: 2em;
+}
+
+.page-header {
+    display: none;
+}
+
+.page-header-webview {
+    display: flex;
+    justify-content: space-between;
+    height: 4em;
+}
+
+.page-header-webview ul > li {
+    padding: 0 2em;
+}
+
+.page-header-webview .logo,
+.page-header-webview .user-settings
+{
+    align-self: center;
+}
+
+.page-header-webview .logo {
+    font-size: 1.5em;
+}
+
+.logo-container img {
+    height: 2.7em;
+    width: 2em;
+}
+
+.user-image {
+    height: 1.8em;
+    width: 1.9em;
+}
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.subheading {
+    font-size: 2em;
+}
+
+.page-header {
+    display: none;
+}
+
+.page-header-webview {
+    display: flex;
+    justify-content: space-between;
+    height: 5em;
+}
+
+.page-header-webview ul > li {
+    padding: 0 3em;
+}
+
+.page-header-webview .logo,
+.page-header-webview .user-settings
+{
+    align-self: center;
+}
+
+.page-header-webview .logo {
+    font-size: 2em;
+}
+
+.logo-container img {
+    height: 3em;
+    width: 2.3em;
+}
+
+.user-image {
+    height: 2em;
+    width: 2.1em;
+}
+
+}
+
+/* For full HD display & above */
+@media only screen and (min-width: 1920px) {
+
+body a,p{
+    font-size: 1.5em;
+}
+
+.container {
+    max-width: 2200px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.subheading {
+    font-size: 2em;
+}
+
+.page-header {
+    display: none;
+}
+
+.page-header-webview {
+    display: flex;
+    justify-content: space-between;
+    height: 7em;
+}
+
+.page-header-webview ul > li {
+    padding: 0 4em;
+}
+
+.page-header-webview .logo,
+.page-header-webview .user-settings
+{
+    align-self: center;
+}
+
+.page-header-webview .logo {
+    font-size: 3em;
+}
+
+.logo-container img {
+    height: 4em;
+    width: 3.3em;
+}
+
+.user-image {
+    height: 3em;
+    width: 3.1em;
+    border-radius: 2em;
+}
+
+}

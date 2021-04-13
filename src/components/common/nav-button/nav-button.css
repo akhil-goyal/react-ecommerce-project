@@ -1,0 +1,18 @@
+/* ---------------------- Section TOP-BUTTON ---------------------- */
+.section-top-button article {
+    height: 3.5rem; 
+    width: 3.5rem; 
+    background-color: rgb(160, 160, 160); 
+    color: var(--color-light); 
+    border-radius: 0.5rem; 
+    position: fixed; 
+    bottom: 2rem; 
+    right: 2rem;
+    cursor: pointer;
+    box-shadow: 0 0.4rem 0.8rem 0 rgba(0, 0, 0, 0.2), 0 0.6rem 2rem 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .section-top-button p {
+    font-size: 1.5rem
+  }
+  /* ---------------------------------------------------------------- */

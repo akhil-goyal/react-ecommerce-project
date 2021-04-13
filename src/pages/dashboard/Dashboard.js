@@ -1,11 +1,11 @@
 import React, { useContext, useState, useEffect } from 'react';
 import './dashboard.css';
 
-import Sidebar from '../../components/common/Sidebar';
-import Header from '../../components/common/Header';
-import Footer from '../../components/common/Footer';
-import NavButton from '../../components/common/NavButton';
-import Main from '../../components/homepage/Main';
+import Sidebar from 'components/common/sidebar/Sidebar';
+import Header from 'components/common/header/Header';
+import Footer from 'components/common/footer/Footer';
+import NavButton from 'components/common/nav-button/NavButton';
+import Main from 'components/homepage/main/Main';
 
 import ProductsContext from '../../contexts/product-context';
 

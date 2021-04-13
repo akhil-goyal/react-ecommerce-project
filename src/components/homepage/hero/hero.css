@@ -1,40 +1,40 @@
-main {
-    display: grid;
-    grid-template-columns: 1fr;
-}
-
-.page-404{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10em;
-}
-
-.page-404 img {
-    width: 90%;
-}
-
-.page-404-message {
+/* -------------------------- Section HERO ------------------------ */
+.heading {
+    height: 40vh;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.171), 
+      rgba(0, 0, 0, 0.171)
+    ),url(../img/hero.jpg);
+    background-size: cover; 
+    background-position: center;
+    color: var(--color-light);
     text-align: center;
-}
-
-.page-404-message h1 {
-    font-size: 3em;
-}
-
-.page-404-message p{
-    font-size: 1.5em;
-}
-
-/* MEDIA QUERIES */
+    padding: 8rem 0;
+  }
+  
+  .heading h1 {
+  font-family: var(--cursive-font);
+  font-weight: lighter;
+  }
+  /* ---------------------------------------------------------------- */
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
 
-    .page-404 img {
-        width: 90%;
+    .subheading {
+        font-size: 2em;
     }
     
+    .heading {
+        height: 40vh;
+        display: grid;
+        align-items: center;
+    }
+    
+    .heading h1 {
+        font-size: 2.5em;
+    }
+
 }
     
 /* Medium devices (landscape tablets, 768px and up) */
@@ -49,6 +49,16 @@ main {
 
 .subheading {
     font-size: 2em;
+}
+
+.heading {
+    height: 40vh;
+    display: grid;
+    align-items: center;
+}
+
+.heading h1 {
+    font-size: 2.5em;
 }
 
 }
@@ -67,8 +77,14 @@ main {
     font-size: 2em;
 }
 
-.page-404 img {
-    width: 70%;
+.heading {
+    height: 40vh;
+    display: grid;
+    align-items: center;
+}
+
+.heading h1 {
+    font-size: 3em;
 }
 
 }
@@ -76,7 +92,6 @@ main {
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
 
-/* ------------------------- Section GENERAL ---------------------- */
 .container {
     max-width: 1600px;
     margin: 0 auto;
@@ -88,8 +103,15 @@ main {
     font-size: 2em;
 }
 
-.page-404 img {
-    width: 50%;
+.heading {
+    height: 45vh;
+    margin: 0;
+    display: grid;
+    align-items: center;
+}
+
+.heading h1 {
+    font-size: 4em;
 }
 
 }
@@ -97,7 +119,6 @@ main {
 /* For full HD display & above */
 @media only screen and (min-width: 1920px) {
 
-/* ------------------------- Section GENERAL ---------------------- */
 body a,p{
     font-size: 1.5em;
 }
@@ -113,8 +134,14 @@ body a,p{
     font-size: 2em;
 }
 
-.page-404 img {
-    width: 60%;
+.heading {
+    height: 45vh;
+    display: grid;
+    align-items: center;
+}
+
+.heading h1 {
+    font-size: 6em;
 }
 
 }

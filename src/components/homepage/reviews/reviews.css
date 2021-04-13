@@ -1,0 +1,174 @@
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+    .subheading {
+        font-size: 2em;
+    }
+    
+}
+    
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 20px;
+}
+
+.subheading {
+    font-size: 2em;
+}
+
+.customer-reviews {
+    margin-top: 2em;
+    }
+    
+.reviews article {
+    height: 7em;
+}
+
+.reviews img {
+    border-radius: 4em;
+}
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.subheading {
+    font-size: 2em;
+}
+
+.customer-reviews {
+    margin-top: 2em;
+}
+
+.reviews {
+    display: flex;
+}
+
+.reviews article {
+    height: 18em;
+    width: 33.3%;
+}
+
+.reviews img {
+    height: 4em;
+    width: 4.5em;
+    border-radius: 3em;
+}
+
+.reviews p {
+    color: var(--color-primary);
+}
+
+.review-1,
+.review-2,
+.review-3 {
+    display: flex;
+    gap: 1em;
+}
+
+.separator-vertical {
+    display: block;
+    height: 8em;
+    width: 0.1em;
+}
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.subheading {
+    font-size: 2em;
+}
+
+.customer-reviews {
+    margin-top: 2em;
+}
+
+.reviews {
+    display: flex;
+}
+
+.reviews article {
+    height: 13em;
+    width: 33.3%;
+}
+
+.reviews img {
+    height: 5em;
+    width: 5.5em;
+}
+
+.separator-vertical {
+    display: block;
+    height: 8em;
+    width: 0.1em;
+}
+
+}
+
+/* For full HD display & above */
+@media only screen and (min-width: 1920px) {
+
+body a,p{
+    font-size: 1.5em;
+}
+
+.container {
+    max-width: 2200px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.subheading {
+    font-size: 2em;
+}
+
+.customer-reviews {
+    margin-top: 2em;
+}
+
+.reviews {
+    display: flex;
+}
+
+.reviews article {
+    height: 15em;
+    width: 33.3%;
+    padding: 0 2em;
+}
+
+.reviews img {
+    height: 6em;
+    width: 6.5em;
+    border-radius: 4em;
+}
+
+.separator-vertical {
+    display: block;
+    height: 8em;
+    width: 0.1em;
+}
+
+}

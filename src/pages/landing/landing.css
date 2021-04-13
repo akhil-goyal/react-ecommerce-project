@@ -226,3 +226,153 @@ section {
   justify-self: center;
 }
 /* ---------------------------------------------------------------- */
+
+/* MEDIA QUERIES */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+  .subheading {
+      font-size: 2em;
+  }
+  
+  .landing-logo p {
+      font-size: 2em;
+  }
+  
+  .landing-hero h1{
+      font-size: 2em;
+  }
+  
+  .landing-hero p{
+      font-size: 1.1em;
+  }
+  
+  .landing-hero a{
+      height: 2.5em;
+      width: 7.5em;
+  }
+
+  }
+  
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 20px;
+}
+
+.subheading {
+  font-size: 2em;
+}
+
+.landing-logo p {
+  font-size: 2.2em;
+}
+
+.landing-hero h1{
+  font-size: 2.4em;
+}
+
+.landing-hero p{
+  font-size: 1.3em;
+}
+
+.landing-hero a{
+  height: 3em;
+  width: 8em;
+}
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 40px;
+}
+
+.subheading {
+  font-size: 2em;
+}
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 40px;
+}
+
+.subheading {
+  font-size: 2em;
+}
+
+.landing-logo p {
+  font-size: 2.3em;
+}
+
+.landing-hero h1{
+  font-size: 2.5em;
+}
+
+.landing-hero p{
+  font-size: 1.2em;
+}
+
+.landing-hero a{
+  height: 3em;
+  width: 9em;
+  font-size: 1em;
+}
+
+}
+
+/* For full HD display & above */
+@media only screen and (min-width: 1920px) {
+
+/* ------------------------- Section GENERAL ---------------------- */
+body a,p{
+  font-size: 1.5em;
+}
+
+.container {
+  max-width: 2200px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 40px;
+}
+
+.subheading {
+  font-size: 2em;
+}
+
+.landing-logo p {
+  font-size: 2.5em;
+}
+
+.landing-hero h1{
+  font-size: 2.7em;
+}
+
+.landing-hero p{
+  font-size: 1.4em;
+}
+
+.landing-hero a{
+  height: 3.5em;
+  width: 9.5em;
+  font-size: 1em;
+}
+
+}

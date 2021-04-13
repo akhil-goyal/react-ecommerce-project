@@ -1,0 +1,211 @@
+/* ------------------------ Section FILTERS ----------------------- */
+.product-filters{
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .filter-options {
+    display: none;
+  }
+  
+  .button-filters {
+    cursor: pointer;
+  }
+  
+  .filter-plant-types input,
+  .filter-pot-requirement input,
+  .filter-plant-size input
+  {
+    display: none;
+  }
+  
+  .filter-plant-types li,
+  .filter-pot-requirement li,
+  .filter-plant-size li
+  {
+    display: inline-block;
+  }
+  
+  .filter-plant-types label,
+  .filter-pot-requirement label,
+  .filter-plant-size label
+  {
+    cursor: pointer;
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid var(--color-primary);
+    border-radius: 4px;
+    padding: 2px 5px;
+    color: var(--color-primary);
+    margin: 0.1em;  
+  }
+  
+  .filter-plant-types input:checked + label,
+  .filter-pot-requirement input:checked + label,
+  .filter-plant-size input:checked + label
+  {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+  }
+  
+  .fa-sliders-h {
+    margin-left: 0.5em;
+  }
+  
+  .fa-star,
+  .far fa-star,
+  .fa-star-half-alt
+   {
+    color: var(--color-warning);
+  }
+  /* ---------------------------------------------------------------- */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+    .subheading {
+        font-size: 2em;
+    }
+    
+}
+    
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 20px;
+}
+
+.subheading {
+    font-size: 2em;
+}
+
+.product-filters {
+    justify-content: start;
+}
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.subheading {
+    font-size: 2em;
+}
+
+.filters {
+    border: 0.2em solid var(--color-primary);
+    border-radius: 0em 0em 1em 1em;
+    padding: 2em 1em;
+}
+
+.filter-options {
+    display: block;
+}
+
+.product-filters {
+    justify-content: start;
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    border-radius: 1em 1em 0em 0em;
+    padding: 0 1em;
+    margin-top: 1em;
+}
+
+.button-filters {
+    display: none;
+}
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.subheading {
+    font-size: 2em;
+}
+
+.product-filters {
+    justify-content: start;
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    border-radius: 1em 1em 0em 0em;
+    padding: 0 1em;
+    margin-top: 1em;
+    }
+        
+.filters {
+    border: 0.2em solid var(--color-primary);
+    border-radius: 0em 0em 1em 1em;
+    padding: 2em 1em;
+}
+
+.filter-options {
+    display: block;
+}
+
+.button-filters {
+    display: none;
+}
+
+}
+
+/* For full HD display & above */
+@media only screen and (min-width: 1920px) {
+
+body a,p{
+    font-size: 1.5em;
+}
+
+.container {
+    max-width: 2200px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.subheading {
+    font-size: 2em;
+}
+
+.filters {
+    border: 0.2em solid var(--color-primary);
+    border-radius: 0em 0em 1em 1em;
+    padding: 2em 1em;
+}
+
+.product-filters {
+    justify-content: start;
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    border-radius: 1em 1em 0em 0em;
+    padding: 0 1em;
+    margin-top: 1em;
+}
+
+.filter-options {
+    display: block;
+}
+
+.button-filters {
+    display: none;
+}
+
+}

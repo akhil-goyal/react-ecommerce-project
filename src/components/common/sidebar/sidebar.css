@@ -1,0 +1,265 @@
+/* ---------------------------- SIDEBAR --------------------------- */
+.side-bar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.575), 
+      rgba(0, 0, 0, 0.171)
+    ),url(../img/sidebar-background.jpg);
+    background-size: cover; 
+    background-position: center;
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .sidebar-title {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .sidebar-logo {
+    font-family: var(--cursive-font);
+    font-size: 4rem;
+  }
+  
+  .side-bar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: var(--color-light);
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .side-bar a:hover {
+    color: #f1f1f1;
+  }
+  
+  .separator {
+    border-top: 1px solid var(--color-primary);
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .your-products {
+    display: flex;
+    justify-content: space-evenly;
+    width: 85%;
+  }
+  /* ---------------------------------------------------------------- */
+  
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+    .subheading {
+        font-size: 2em;
+    }
+    
+    .page-header {
+        height: 4em;
+    }
+    
+    .logo-container img {
+        height: 2.4em;
+        width: 1.8em;
+    }
+    
+    .logo {
+        font-family: var(--cursive-font);
+        font-size: 1.8em;
+    }
+}
+    
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 20px;
+}
+
+.subheading {
+    font-size: 2em;
+}
+
+.page-header {
+    height: 4em;
+}
+
+.logo-container img {
+    height: 2.4em;
+    width: 1.8em;
+}
+
+.logo {
+    font-family: var(--cursive-font);
+    font-size: 1.8em;
+}
+
+.side-bar a {
+    font-size: 1.2em;
+}
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.subheading {
+    font-size: 2em;
+}
+
+.page-header {
+    display: none;
+}
+
+.page-header-webview {
+    display: flex;
+    justify-content: space-between;
+    height: 4em;
+}
+
+.page-header-webview ul > li {
+    padding: 0 2em;
+}
+
+.page-header-webview .logo,
+.page-header-webview .user-settings
+{
+    align-self: center;
+}
+
+.page-header-webview .logo {
+    font-size: 1.5em;
+}
+
+.logo-container img {
+    height: 2.7em;
+    width: 2em;
+}
+
+.user-image {
+    height: 1.8em;
+    width: 1.9em;
+}
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.subheading {
+    font-size: 2em;
+}
+
+.page-header {
+    display: none;
+}
+
+.page-header-webview {
+    display: flex;
+    justify-content: space-between;
+    height: 5em;
+}
+
+.page-header-webview ul > li {
+    padding: 0 3em;
+}
+
+.page-header-webview .logo,
+.page-header-webview .user-settings
+{
+    align-self: center;
+}
+
+.page-header-webview .logo {
+    font-size: 2em;
+}
+
+.logo-container img {
+    height: 3em;
+    width: 2.3em;
+}
+
+.user-image {
+    height: 2em;
+    width: 2.1em;
+}
+
+}
+
+/* For full HD display & above */
+@media only screen and (min-width: 1920px) {
+
+body a,p{
+    font-size: 1.5em;
+}
+
+.container {
+    max-width: 2200px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.subheading {
+    font-size: 2em;
+}
+
+.page-header {
+    display: none;
+}
+
+.page-header-webview {
+    display: flex;
+    justify-content: space-between;
+    height: 7em;
+}
+
+.page-header-webview ul > li {
+    padding: 0 4em;
+}
+
+.page-header-webview .logo,
+.page-header-webview .user-settings
+{
+    align-self: center;
+}
+
+.page-header-webview .logo {
+    font-size: 3em;
+}
+
+.logo-container img {
+    height: 4em;
+    width: 3.3em;
+}
+
+.user-image {
+    height: 3em;
+    width: 3.1em;
+    border-radius: 2em;
+}
+
+}

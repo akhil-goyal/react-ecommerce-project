@@ -82,3 +82,94 @@
     border: 1px solid black;
     border-radius: 0.5em;
 }
+
+/* MEDIA QUERIES */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+    .cart-item {
+        grid-template-columns: 1fr;
+    }
+    
+    .delete-container {
+        position: absolute;
+        margin-bottom: 10em;
+        margin-left: 19em;
+    }
+    
+    .section-cart-total {
+        text-align: center;
+    }
+    
+    .section-cart-checkout {
+        justify-content: center;
+    }
+    
+}
+    
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+.delete-container {
+    position: absolute;
+    margin-bottom: 10em;
+    margin-left: 43em;
+}
+
+.section-cart-total {
+    text-align: center;
+}
+
+.section-cart-checkout {
+    justify-content: center;
+}
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+.cart-item {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.section-cart-total {
+    text-align: end;
+}
+
+.section-cart-checkout {
+    justify-content: flex-end;
+}
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+/* ------------------------- Section GENERAL ---------------------- */
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.cart-item {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.section-cart-total {
+    text-align: end;
+}
+
+.section-cart-checkout {
+    justify-content: flex-end;
+}
+
+}
+
+/* For full HD display & above */
+@media only screen and (min-width: 1920px) {
+
+}

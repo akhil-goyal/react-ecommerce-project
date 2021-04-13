@@ -1,5 +1,4 @@
 import React from 'react'
-import 'css/media-queries.css';
 import './landing.css';
 
 import logo from 'img/logo.png';

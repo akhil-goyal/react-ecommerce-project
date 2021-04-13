@@ -1,10 +1,10 @@
 import React from 'react';
 import './about.css';
 
-import Sidebar from '../../components/common/Sidebar';
-import Header from '../../components/common/Header';
-import Footer from '../../components/common/Footer';
-import NavButton from '../../components/common/NavButton';
+import Sidebar from 'components/common/sidebar/Sidebar';
+import Header from 'components/common/header/Header';
+import Footer from 'components/common/footer/Footer';
+import NavButton from 'components/common/nav-button/NavButton';
 
 import logo from 'img/logo.png';
 

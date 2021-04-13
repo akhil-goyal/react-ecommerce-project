@@ -543,3 +543,432 @@ ins {
   }
 }
 /* ---------------------------------------------------------------- */
+
+
+/* MEDIA QUERIES */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+  /* ------------------------- Section GENERAL ---------------------- */
+  .subheading {
+      font-size: 2em;
+  }
+  /* ---------------------------------------------------------------- */
+  
+  /* ----------------------- Section SEARCH-BAR --------------------- */
+  .search-box input {
+      width: 30%;
+  }
+  /* ---------------------------------------------------------------- */
+  
+  /* ----------------------- Section PRODUCTS ----------------------- */
+  .results .grid {
+      display: grid;
+      row-gap: 1em;
+      grid-template-rows: repeat(2, 1fr);
+  }
+  
+  .product-title-newflash img{
+      height: 1.6em;
+      width: 2.1em;
+      padding-left: 0.5em;
+      animation: blinker 1s linear infinite;
+  }
+  
+  .product img {
+      height: 15em;
+  }
+  /* ---------------------------------------------------------------- */
+  
+  /* ----------------------- Section PAGINATION --------------------- */
+  .pagination {
+      margin-top: 1em;
+  }
+  
+  .buttons-prev-next {
+      justify-content: center;
+  }
+  
+  .buttons-prev-next a {
+      margin: 1em;
+  }
+  /* ---------------------------------------------------------------- */
+  
+}
+  
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+/* ------------------------- Section GENERAL ---------------------- */
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 20px;
+}
+
+.subheading {
+  font-size: 2em;
+}
+/* ---------------------------------------------------------------- */
+
+/* ----------------------- Section SEARCH-BAR --------------------- */
+.search-box input {
+  width: 30%;
+}
+/* ---------------------------------------------------------------- */
+
+/* ------------------------- Section FILTERS ---------------------- */
+.product-filters {
+  justify-content: start;
+}
+/* ---------------------------------------------------------------- */
+
+/* ----------------------- Section PRODUCTS ----------------------- */
+.section-product-and-filters {
+  margin-top: 2em;
+}
+
+.results .grid {
+  display: grid;
+  row-gap: 1em;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.product img {
+  height: 20em;
+}
+
+.product-title-newflash img{
+  height: 1.6em;
+  width: 2.1em;
+  padding-left: 0.5em;
+  animation: blinker 1s linear infinite;
+}
+/* ---------------------------------------------------------------- */
+
+/* ----------------------- Section PAGINATION --------------------- */
+.pagination {
+  margin-top: 1em;
+}
+
+.buttons-prev-next {
+  justify-content: center;
+}
+
+.buttons-prev-next a {
+  margin: 1em;
+}
+/* ---------------------------------------------------------------- */
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+/* ------------------------- Section GENERAL ---------------------- */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 40px;
+}
+
+.subheading {
+  font-size: 2em;
+}
+/* ---------------------------------------------------------------- */
+
+/* ----------------------- Section SEARCH-BAR --------------------- */
+.search-box input {
+  width: 15em;
+}
+/* ---------------------------------------------------------------- */
+
+/* ------------------------- Section FILTERS ---------------------- */
+.filters {
+  border: 0.2em solid var(--color-primary);
+  border-radius: 0em 0em 1em 1em;
+  padding: 2em 1em;
+}
+
+.filter-options {
+  display: block;
+}
+
+.product-filters {
+  justify-content: start;
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  border-radius: 1em 1em 0em 0em;
+  padding: 0 1em;
+  margin-top: 1em;
+}
+
+.button-filters {
+  display: none;
+}
+/* ---------------------------------------------------------------- */
+
+/* ----------------------- Section PRODUCTS ----------------------- */
+.section-product-and-filters {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: flex-start;
+  margin-top: 2em;
+}
+
+.results .grid {
+  display: grid;
+  row-gap: 1em;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.product img {
+  height: 22em;
+}
+
+.product-title-newflash img{
+  height: 1.9em;
+  width: 2.4em;
+  padding-left: 0.5em;
+  animation: blinker 1s linear infinite;
+}
+
+.products-and-search {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2.5em;
+}
+/* ---------------------------------------------------------------- */
+
+/* ----------------------- Section PAGINATION --------------------- */
+.pagination {
+  margin-top: 1em;
+}
+
+.buttons-prev-next {
+  justify-content: center;
+}
+
+.buttons-prev-next a {
+  margin: 1em;
+}
+/* ---------------------------------------------------------------- */
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+/* ------------------------- Section GENERAL ---------------------- */
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 40px;
+}
+
+.subheading {
+  font-size: 2em;
+}
+
+/* ---------------------------------------------------------------- */
+
+/* ----------------------- Section SEARCH-BAR --------------------- */
+.search-box {
+  display: flex;
+  gap: 0.5em;
+}
+
+.search-box input {
+  width: 15em;
+}
+/* ---------------------------------------------------------------- */
+
+/* ------------------------- Section FILTERS ---------------------- */
+.product-filters {
+  justify-content: start;
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  border-radius: 1em 1em 0em 0em;
+  padding: 0 1em;
+  margin-top: 1em;
+  }
+      
+.filters {
+  border: 0.2em solid var(--color-primary);
+  border-radius: 0em 0em 1em 1em;
+  padding: 2em 1em;
+}
+
+.filter-options {
+  display: block;
+}
+
+.button-filters {
+  display: none;
+}
+/* ---------------------------------------------------------------- */
+
+/* ----------------------- Section PRODUCTS ----------------------- */
+.section-product-and-filters {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: flex-start;
+  margin-top: 4em;
+}
+
+.results .grid {
+  display: grid;
+  row-gap: 1em;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.product article {
+  margin: 0.4em 0;
+}
+
+.product img {
+  height: 26em;
+}
+
+.product-title-icons i {
+  padding: 0 0.2em;
+}
+
+.product-title-newflash img{
+  height: 1.9em;
+  width: 2.4em;
+  padding-left: 0.5em;
+  animation: blinker 1s linear infinite;
+}
+
+.products-and-search {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2.5em;
+}
+/* ---------------------------------------------------------------- */
+
+/* ----------------------- Section PAGINATION --------------------- */
+.pagination {
+  margin-top: 1em;
+}
+
+.buttons-prev-next {
+  justify-content: center;
+}
+
+.buttons-prev-next a {
+  margin: 1em;
+}
+/* ---------------------------------------------------------------- */
+
+}
+
+/* For full HD display & above */
+@media only screen and (min-width: 1920px) {
+
+/* ------------------------- Section GENERAL ---------------------- */
+body a,p{
+  font-size: 1.5em;
+}
+
+.container {
+  max-width: 2200px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 40px;
+}
+
+.subheading {
+  font-size: 2em;
+}
+
+/* ---------------------------------------------------------------- */
+
+/* ----------------------- Section SEARCH-BAR --------------------- */
+.search-box input {
+  width: 20em;
+}
+/* ---------------------------------------------------------------- */
+
+/* ------------------------- Section FILTERS ---------------------- */
+.filters {
+  border: 0.2em solid var(--color-primary);
+  border-radius: 0em 0em 1em 1em;
+  padding: 2em 1em;
+}
+
+.product-filters {
+  justify-content: start;
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  border-radius: 1em 1em 0em 0em;
+  padding: 0 1em;
+  margin-top: 1em;
+}
+
+.filter-options {
+  display: block;
+}
+
+.button-filters {
+  display: none;
+}
+/* ---------------------------------------------------------------- */
+
+/* ----------------------- Section PRODUCTS ----------------------- */
+.section-product-and-filters {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: flex-start;
+  margin-top: 3em;
+}
+
+.results .grid {
+  display: grid;
+  row-gap: 1em;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.product img {
+  height: 40em;
+}
+
+.product-title-newflash img{
+  height: 1.9em;
+  width: 2.4em;
+  padding-left: 0.5em;
+  animation: blinker 1s linear infinite;
+}
+
+.products-and-search {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2.5em;
+}
+/* ---------------------------------------------------------------- */
+
+/* ----------------------- Section PAGINATION --------------------- */
+.pagination {
+  margin-top: 1em;
+}
+
+.buttons-prev-next {
+  justify-content: center;
+}
+
+.buttons-prev-next a {
+  margin: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2em;
+  width: 7em;
+}
+/* ---------------------------------------------------------------- */
+
+}
