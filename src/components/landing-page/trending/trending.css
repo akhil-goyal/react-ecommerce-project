@@ -1,3 +1,26 @@
+/* ------------------------ Section TRENDING ---------------------- */
+.trending {
+    overflow: hidden;
+  }
+  
+  .trending-products {
+    animation: carouselSlider 50s linear infinite;
+    display: flex;
+    width: calc(150px * 16);
+  }
+  
+  .trending-products img{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 1rem;
+    margin: 0 0.5rem;
+  }
+  
+  .trending-product {
+    display: block;
+  }
+  /* ---------------------------------------------------------------- */
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
 

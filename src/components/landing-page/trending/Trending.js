@@ -1,4 +1,5 @@
 import React from 'react';
+import './trending.css';
 
 const Trending = ({ trendingProducts }) => {
 

@@ -1,3 +1,23 @@
+/* -------------------------- Section HERO ------------------------ */
+.heading {
+    height: 40vh;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.171), 
+      rgba(0, 0, 0, 0.171)
+    ),url(img/hero.jpg);
+    background-size: cover; 
+    background-position: center;
+    color: var(--color-light);
+    text-align: center;
+    padding: 8rem 0;
+  }
+  
+  .heading h1 {
+  font-family: var(--cursive-font);
+  font-weight: lighter;
+  }
+  /* ---------------------------------------------------------------- */
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
 
@@ -5,6 +25,16 @@
         font-size: 2em;
     }
     
+    .heading {
+        height: 40vh;
+        display: grid;
+        align-items: center;
+    }
+    
+    .heading h1 {
+        font-size: 2.5em;
+    }
+
 }
     
 /* Medium devices (landscape tablets, 768px and up) */
@@ -21,8 +51,14 @@
     font-size: 2em;
 }
 
-.highlight {
-    grid-template-columns: repeat(2, 1fr);
+.heading {
+    height: 40vh;
+    display: grid;
+    align-items: center;
+}
+
+.heading h1 {
+    font-size: 2.5em;
 }
 
 }
@@ -41,8 +77,14 @@
     font-size: 2em;
 }
 
-.highlight {
-    grid-template-columns: repeat(2, 1fr);
+.heading {
+    height: 40vh;
+    display: grid;
+    align-items: center;
+}
+
+.heading h1 {
+    font-size: 3em;
 }
 
 }
@@ -61,8 +103,15 @@
     font-size: 2em;
 }
 
-.highlight {
-    grid-template-columns: repeat(2, 1fr);
+.heading {
+    height: 45vh;
+    margin: 0;
+    display: grid;
+    align-items: center;
+}
+
+.heading h1 {
+    font-size: 4em;
 }
 
 }
@@ -85,8 +134,14 @@ body a,p{
     font-size: 2em;
 }
 
-.highlight {
-    grid-template-columns: repeat(2, 1fr);
+.heading {
+    height: 45vh;
+    display: grid;
+    align-items: center;
+}
+
+.heading h1 {
+    font-size: 6em;
 }
 
 }

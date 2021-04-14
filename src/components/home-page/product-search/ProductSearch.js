@@ -1,4 +1,5 @@
 import React from 'react';
+import './product-search.css';
 
 const ProductSearch = () => {
     return (

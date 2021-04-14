@@ -1,4 +1,5 @@
 import React from 'react';
+import './sidebar.css';
 
 import siteLogo from 'img/logo.png';
 

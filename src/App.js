@@ -31,7 +31,9 @@ const App = () => {
 		<ProductsContext.Provider value={productsList}>
 			<Router>
 				<Switch>
-					<Route exact path="/" component={LandingPage} />
+					<Route exact path="/">
+						<LandingPage trendingProducts={trendingProducts} />
+					</Route>
 					<Route path="/signup" component={SignUp} />
 					<Route path="/signin" component={SignIn} />
 					<Route path="/dashboard">

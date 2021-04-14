@@ -1,3 +1,65 @@
+/* ----------------------- Section NEWSLETTER --------------------- */
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 15px;
+}
+
+.newsletter-subscription {
+    margin-top: 3em;
+  }
+  
+  .newsletter {
+    height: 25em;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.671), 
+        rgba(0, 0, 0, 0.671)
+    ),url(img/newsletter.jpg);
+    background-size: cover; 
+    background-position: center;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    row-gap: 2em;
+    padding: 1em;
+  }
+  
+  .newsletter p {
+    color: var(--color-light);
+    text-align: center;
+  }
+  
+  .newsletter small {
+    color: var(--color-light);
+    text-align: center;
+  }
+  
+  .newsletter-email {
+    background-color: transparent;
+    justify-self: center;
+    height: 2em;
+    width: 50%;
+    border: 1px solid var(--color-light);
+    border-radius: 1em;
+    color: var(--color-light);
+    text-align: center;
+  }
+  
+  .newsletter-email::placeholder{
+    color: var(--color-light);
+    text-align: center;
+  }
+  
+  .newsletter-button {
+    height: 2em;
+    width: 6em;
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    justify-self: center;
+  }
+  /* ---------------------------------------------------------------- */
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
 
@@ -46,6 +108,10 @@
     font-size: 2em;
 }
 
+.newsletter {
+    padding: 1em 10em;
+}
+
 .newsletter-subscription {
     margin-top: 3em;
 }
@@ -78,6 +144,10 @@
 
 .newsletter-subscription {
     margin-top: 3em;
+}
+
+.newsletter {
+    padding: 1em 20em;
 }
 
 .newsletter p {
@@ -116,6 +186,11 @@ body a,p{
 
 .newsletter-subscription {
     margin-top: 3em;
+}
+
+.newsletter {
+    padding: 1em 30em;
+    margin-bottom: 16em;
 }
 
 .newsletter p {

@@ -5,7 +5,7 @@ import Sidebar from 'components/common/sidebar/Sidebar';
 import Header from 'components/common/header/Header';
 import Footer from 'components/common/footer/Footer';
 import NavButton from 'components/common/nav-button/NavButton';
-import Main from 'components/homepage/main/Main';
+import Main from 'components/home-page/main/Main';
 
 import ProductsContext from '../../contexts/product-context';
 

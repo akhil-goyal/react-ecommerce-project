@@ -1,4 +1,5 @@
 import React from 'react';
+import './reviews.css';
 
 import customerOne from 'img/customer1.jpg';
 import customerTwo from 'img/customer2.jpg';

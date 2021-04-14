@@ -1,3 +1,48 @@
+  /* -------------------- Section CUSTOMER REVIEWS ------------------ */
+  .customer-reviews {
+    margin-top: 2em;
+  }
+  
+  .reviews {
+    display: block;
+    border: 1px solid var(--color-primary);
+    border-radius: 2em;
+    margin-top: 1em;
+  }
+  
+  .reviews article {
+    height: 10em;
+    align-items: center;
+    padding: 0 2em;
+  }
+  
+  .reviews img {
+    height: 3em;
+    width: 3.1em;
+    border-radius: 4em;
+  }
+  
+  .reviews p {
+    color: var(--color-primary);
+  }
+  
+  .review-1,
+  .review-2,
+  .review-3 {
+    display: flex;
+    gap: 1em;
+  }
+  
+  .separator-vertical {
+    display: none;
+    height: 8em;
+    width: 0.1em;
+    background-color: rgb(194, 194, 194);
+    align-self: center;
+  }
+  /* ---------------------------------------------------------------- */
+
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
 

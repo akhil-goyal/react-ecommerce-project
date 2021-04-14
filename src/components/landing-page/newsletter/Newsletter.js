@@ -1,4 +1,5 @@
 import React from 'react';
+import './newsletter.css';
 
 const Newsletter = () => {
     return (
@@ -12,7 +13,7 @@ const Newsletter = () => {
 
                 <p>Subscribe to get latest information about the new coming plants in our nursery.
                 Be the first one to bring them home.
-                </p>
+            </p>
                 <input className="newsletter-email" type="email" placeholder="Email Address" />
                 <button className="newsletter-button">Subscribe</button>
                 <small>Unsubscribe anytime. We won't spam you ever. Promise :)</small>
