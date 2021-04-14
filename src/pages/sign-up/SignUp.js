@@ -9,7 +9,7 @@ import facebookIcon from 'img/facebook.png';
 
 const SignUp = ({ history }) => {
 
-    const { handleSignUp, handleGoogleSignIn, inputs, setInputs, errors, setErrors } = useContext(firebaseAuth);
+    const { handleSignUp, handleGoogleSignIn, handleFacebookLogin, inputs, setInputs, errors, setErrors } = useContext(firebaseAuth);
 
     const handleSubmit = async (e) => {
 
@@ -31,14 +31,15 @@ const SignUp = ({ history }) => {
         history.push('/dashboard');
     }
 
+    const loginWithFacebook = async () => {
+        await handleFacebookLogin();
+        history.push('/dashboard');
+    }
+
     const handleChange = e => {
-
         setErrors([]);
-
         const { name, value } = e.target;
-
         setInputs(prev => ({ ...prev, [name]: value }));
-
     }
 
     return (
@@ -87,7 +88,7 @@ const SignUp = ({ history }) => {
                                 <img className="logo-google" src={googleIcon} alt="" />
                             </a>
 
-                            <a>
+                            <a onClick={loginWithFacebook}>
                                 <img className="logo-facebook" src={facebookIcon} alt="" />
                             </a>
 

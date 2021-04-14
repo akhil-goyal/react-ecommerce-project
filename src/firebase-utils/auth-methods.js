@@ -3,6 +3,7 @@ import firebase from 'firebase/firebase';
 
 const db = firebase.firestore();
 const googleProvider = new firebase.auth.GoogleAuthProvider();
+const facebookProvider = new firebase.auth.FacebookAuthProvider();
 
 export const authMethods = {
 
@@ -57,7 +58,7 @@ export const authMethods = {
     },
 
     // GOOGLE SIGN-IN
-    googleLoginMethod: (setErrors, setToken) => {
+    googleLoginMethod: (setErrors, setToken, setCurrentUser) => {
 
         firebase.auth().signInWithPopup(googleProvider)
             .then(async res => {
@@ -90,8 +91,41 @@ export const authMethods = {
             });
     },
 
+    facebookLoginMethod: (setErrors, setToken, setCurrentUser) => {
+
+        firebase.auth().signInWithPopup(facebookProvider)
+            .then(async res => {
+
+                // Storing the user's data to firestore.
+                addUser(res.user.displayName.split(" ")[0],
+                    res.user.displayName.split(" ")[1],
+                    res.user.email
+                );
+
+                // Extracting the token from response.
+                const token = await Object.entries(res.user)[5][1].b;
+
+                // Setting the extracted token in localstorage.
+                await localStorage.setItem('token', token);
+
+                // Setting the local storage token into the state.
+                setToken(window.localStorage.token);
+
+                // Setting the current user data into the state.
+                setCurrentUser({
+                    "firstName": res.user.displayName.split(" ")[0],
+                    "lastName": res.user.displayName.split(" ")[1],
+                    "email": res.user.email
+                });
+
+            }).catch((error) => {
+                // Setting errors in the state received from server.
+                setErrors(prev => ([...prev, error.message]));
+            });
+    },
+
     // USER SIGN-OUT
-    signOutMethod: (setErrors, setToken) => {
+    signOutMethod: (setErrors, setToken, setCurrentUser) => {
 
         firebase.auth().signOut().then(res => {
 
@@ -110,6 +144,9 @@ export const authMethods = {
 
                 // Setting the token state back to null.
                 setToken(null);
+
+                // Setting the current user state back to empty object.
+                setCurrentUser({})
             });
     }
 

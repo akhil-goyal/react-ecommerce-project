@@ -26,6 +26,8 @@ const AuthContext = ({ children }) => {
     // Current User state with initial/default value of empty object.
     const [currentUser, setCurrentUser] = useState({});
 
+    console.log('CURRENT USER : ', currentUser);
+
     // Function to handle the User registeration.
     const handleSignUp = () => {
         authMethods.signUpMethod(
@@ -46,12 +48,16 @@ const AuthContext = ({ children }) => {
 
     // Function to handle the Google SignIn.
     const handleGoogleSignIn = () => {
-        authMethods.googleLoginMethod(setErrors, setToken);
+        authMethods.googleLoginMethod(setErrors, setToken, setCurrentUser);
+    }
+
+    const handleFacebookLogin = () => {
+        authMethods.facebookLoginMethod(setErrors, setToken, setCurrentUser);
     }
 
     // Function to handle the User signout.
     const handleSignOut = () => {
-        authMethods.signOutMethod(setErrors, setToken);
+        authMethods.signOutMethod(setErrors, setToken, setCurrentUser);
     }
 
     // Setting the values in FirebaseAuth provider so that they may be available
@@ -62,6 +68,7 @@ const AuthContext = ({ children }) => {
                 handleSignUp,
                 handleSignIn,
                 handleGoogleSignIn,
+                handleFacebookLogin,
                 handleSignOut,
                 currentUser,
                 token,
