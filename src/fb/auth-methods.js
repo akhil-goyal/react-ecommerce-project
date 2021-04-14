@@ -1,4 +1,4 @@
-import firebaseconfig from './firebase-index'
+import firebaseconfig from './firebase-index';
 import firebase from 'firebase/firebase';
 
 export const authMethods = {

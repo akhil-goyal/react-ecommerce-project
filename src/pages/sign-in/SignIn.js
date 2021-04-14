@@ -1,8 +1,27 @@
-import React from 'react'
-import './sign-in.css';
+import React, { useContext } from 'react';
+import { withRouter } from 'react-router-dom';
 
-const SignIn = () => {
+import './sign-in.css';
+import { firebaseAuth } from '../../contexts/AuthProvider';
+
+
+const SignIn = ({ history }) => {
+
+    const { handleSignin, inputs, setInputs, errors } = useContext(firebaseAuth);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        await handleSignin()
+        history.push('/dashboard')
+    }
+
+    const handleChange = e => {
+        const { name, value } = e.target
+        setInputs(prev => ({ ...prev, [name]: value }))
+    }
+
     return (
+
         <div>
             <div className="sign-in-page">
 
@@ -16,14 +35,16 @@ const SignIn = () => {
 
                     <div className="signin-form-container">
 
-                        <form method="POST" encType="multipart/form-data" className="registeration-form">
+                        {errors.length > 0 ? errors.map(error => <p style={{ color: 'red' }}>{error}</p>) : null}
+
+                        <form onSubmit={handleSubmit} method="POST" encType="multipart/form-data" className="registeration-form">
 
                             <div className="form-control">
-                                <input className="reg-email" type="email" name="email" placeholder="Email Address" required />
+                                <input onChange={handleChange} className="reg-email" type="email" name="email" placeholder="Email Address" required />
                             </div>
 
                             <div className="form-control">
-                                <input className="password" type="password" name="password" placeholder="Password" required />
+                                <input onChange={handleChange} className="password" type="password" name="password" placeholder="Password" required />
                             </div>
 
                             <div className="login-options">

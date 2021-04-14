@@ -7,7 +7,7 @@ import { firebaseAuth } from '../../contexts/AuthProvider';
 import googleIcon from 'img/google.svg';
 import facebookIcon from 'img/facebook.png';
 
-const SignUp = ({history}) => {
+const SignUp = ({ history }) => {
 
     const { handleSignup, inputs, setInputs, errors } = useContext(firebaseAuth)
 
@@ -19,7 +19,6 @@ const SignUp = ({history}) => {
 
     const handleChange = e => {
         const { name, value } = e.target
-        console.log(inputs)
         setInputs(prev => ({ ...prev, [name]: value }))
     }
 
