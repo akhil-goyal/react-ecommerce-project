@@ -6,14 +6,13 @@ const db = firebase.firestore();
 export const authMethods = {
 
     // USER SIGN-UP
-    signUpMethod: (firstName, lastName, email, password, setErrors, setToken) => {
+    signUpMethod: (firstName, lastName, email, password, setErrors, setToken, setCurrentUser) => {
 
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .then(async res => {
 
-                const user = firebase.auth().currentUser;
-
-                addUser(user.uid, firstName, lastName, email);
+                // Storing the user's data to firestore.
+                addUser(firstName, lastName, email);
 
                 // Extracting the token from response.
                 const token = await Object.entries(res.user)[5][1].b;
@@ -23,6 +22,9 @@ export const authMethods = {
 
                 // Setting the local storage token into the state.
                 setToken(window.localStorage.token);
+
+                // Setting the current user data into the state.
+                setCurrentUser({ firstName, lastName, email });
             })
             .catch(err => {
                 // Setting errors in the state received from server.
@@ -78,12 +80,14 @@ export const authMethods = {
 
 }
 
-const addUser = (uid, firstName, lastName, email) => {
+const addUser = (firstName, lastName, email) => {
+
+    const user = firebase.auth().currentUser;
 
     db.collection("Users")
-        .doc(uid)
+        .doc(user.uid)
         .set({
-            user_id: uid,
+            user_id: user.uid,
             first_name: firstName,
             last_name: lastName,
             email_address: email,

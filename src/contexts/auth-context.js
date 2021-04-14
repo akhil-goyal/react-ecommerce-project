@@ -19,9 +19,12 @@ const AuthContext = ({ children }) => {
 
     // Error state with initial/default value of empty array [].
     const [errors, setErrors] = useState([]);
-    
+
     // Token state with initial/default value of null.
     const [token, setToken] = useState(null);
+
+    // Current User state with initial/default value of empty object.
+    const [currentUser, setCurrentUser] = useState({});
 
     // Function to handle the User registeration.
     const handleSignUp = () => {
@@ -31,7 +34,8 @@ const AuthContext = ({ children }) => {
             inputs.email,
             inputs.password,
             setErrors,
-            setToken
+            setToken,
+            setCurrentUser
         );
     }
 
@@ -53,6 +57,7 @@ const AuthContext = ({ children }) => {
                 handleSignUp,
                 handleSignIn,
                 handleSignOut,
+                currentUser,
                 token,
                 inputs,
                 errors,

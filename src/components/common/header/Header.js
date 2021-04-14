@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './header.css';
+import { firebaseAuth } from '../../../contexts/auth-context';
 
 import userAvatar from 'img/user.jpg';
 import siteLogo from 'img/logo.png';
 
 const Header = () => {
+
+    const { currentUser } = useContext(firebaseAuth);
+
+    console.log('DASHBOARD : ', currentUser.firstName, currentUser.lastName, currentUser.email);
+
     return (
         <>
-
 
             <header className="page-header container flex">
 
@@ -25,9 +30,6 @@ const Header = () => {
                 </figure>
 
             </header>
-
-
-
 
             <header id="page-header-webview" className="page-header-webview container">
 
@@ -59,8 +61,6 @@ const Header = () => {
                 </figure>
 
             </header>
-
-
 
         </>
     )
