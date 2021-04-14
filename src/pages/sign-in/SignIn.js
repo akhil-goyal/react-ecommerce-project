@@ -2,16 +2,16 @@ import React, { useContext } from 'react';
 import { withRouter } from 'react-router-dom';
 
 import './sign-in.css';
-import { firebaseAuth } from '../../contexts/AuthProvider';
+import { firebaseAuth } from '../../contexts/auth-context';
 
 
 const SignIn = ({ history }) => {
 
-    const { handleSignin, inputs, setInputs, errors } = useContext(firebaseAuth);
+    const { handleSignIn, inputs, setInputs, errors } = useContext(firebaseAuth);
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await handleSignin()
+        await handleSignIn()
         history.push('/dashboard')
     }
 
@@ -40,11 +40,11 @@ const SignIn = ({ history }) => {
                         <form onSubmit={handleSubmit} method="POST" encType="multipart/form-data" className="registeration-form">
 
                             <div className="form-control">
-                                <input onChange={handleChange} className="reg-email" type="email" name="email" placeholder="Email Address" required />
+                                <input onChange={handleChange} className="reg-email" type="email" name="email" value={inputs.email} placeholder="Email Address" required />
                             </div>
 
                             <div className="form-control">
-                                <input onChange={handleChange} className="password" type="password" name="password" placeholder="Password" required />
+                                <input onChange={handleChange} className="password" type="password" name="password" value={inputs.password} placeholder="Password" required />
                             </div>
 
                             <div className="login-options">
@@ -65,4 +65,4 @@ const SignIn = ({ history }) => {
     )
 }
 
-export default SignIn;
+export default withRouter(SignIn);

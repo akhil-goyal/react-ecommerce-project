@@ -2,24 +2,24 @@ import React, { useContext } from 'react';
 import { withRouter } from 'react-router-dom';
 import './sign-up.css';
 
-import { firebaseAuth } from '../../contexts/AuthProvider';
+import { firebaseAuth } from '../../contexts/auth-context';
 
 import googleIcon from 'img/google.svg';
 import facebookIcon from 'img/facebook.png';
 
 const SignUp = ({ history }) => {
 
-    const { handleSignup, inputs, setInputs, errors } = useContext(firebaseAuth)
+    const { handleSignUp, inputs, setInputs, errors } = useContext(firebaseAuth);
 
     const handleSubmit = async (e) => {
-        e.preventDefault()
-        await handleSignup()
-        history.push('/dashboard')
+        e.preventDefault();
+        await handleSignUp();
+        history.push('/dashboard');
     }
 
     const handleChange = e => {
-        const { name, value } = e.target
-        setInputs(prev => ({ ...prev, [name]: value }))
+        const { name, value } = e.target;
+        setInputs(prev => ({ ...prev, [name]: value }));
     }
 
     return (
@@ -40,23 +40,23 @@ const SignUp = ({ history }) => {
                     <form onSubmit={handleSubmit} method="POST" encType="multipart/form-data" className="registeration-form">
 
                         <div className="form-control">
-                            <input onChange={handleChange} className="first-name" type="text" name="first-name" placeholder="First Name" required />
+                            <input onChange={handleChange} className="first-name" type="text" name="first-name" value={inputs.firstName} placeholder="First Name" required />
                         </div>
 
                         <div className="form-control">
-                            <input onChange={handleChange} className="last-name" type="text" name="last-name" placeholder="Last Name" required />
+                            <input onChange={handleChange} className="last-name" type="text" name="last-name" value={inputs.lastName} placeholder="Last Name" required />
                         </div>
 
                         <div className="form-control">
-                            <input onChange={handleChange} className="reg-email" type="email" name="email" placeholder="Email Address" required />
+                            <input onChange={handleChange} className="reg-email" type="email" name="email" value={inputs.email} placeholder="Email Address" required />
                         </div>
 
                         <div className="form-control">
-                            <input onChange={handleChange} className="password" type="password" name="password" placeholder="Password" required />
+                            <input onChange={handleChange} className="password" type="password" name="password" value={inputs.password} placeholder="Password" required />
                         </div>
 
                         <div className="form-control">
-                            <input onChange={handleChange} className="confirm-password" type="password" name="confirm-password"
+                            <input onChange={handleChange} className="confirm-password" type="password" name="confirm-password" value={inputs.confirmPassword}
                                 placeholder="Confirm Password" required />
                         </div>
 

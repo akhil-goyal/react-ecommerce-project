@@ -2,13 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import 'css/index.css'
 import App from './App'
-import AuthProvider from './contexts/AuthProvider';
+import AuthContext from './contexts/auth-context';
 import { HashRouter } from 'react-router-dom';
 
 ReactDOM.render(
     <HashRouter>
-        <AuthProvider>
+        <AuthContext>
             <App />
-        </AuthProvider>
+        </AuthContext>
     </HashRouter>
     , document.getElementById('root'))

@@ -17,7 +17,7 @@ import Page404 from 'pages/page-404/Page404';
 
 // CONTEXTS
 import ProductsContext from './contexts/product-context';
-import { firebaseAuth } from './contexts/AuthProvider';
+import { firebaseAuth } from './contexts/auth-context';
 
 // OTHERS
 import { trendingProducts, productsList } from './products';
@@ -34,15 +34,13 @@ const App = () => {
 				</Route>
 				<Route path="/signup" component={SignUp} />
 				<Route path="/signin" component={SignIn} />
-				<Route path='/dashboard' render={rProps => token === null ? <SignIn /> : <Dashboard />} />
-				<Route path="/gallery" component={Gallery} />
-				<Route path="/about" component={About} />
-				<Route path="/contact" component={Contact} />
-				<Route path="/product/:slug">
-					<Product productsList={productsList} />
-				</Route>
-				<Route path="/cart" component={Cart} />
-				<Route path="/checkout" component={Checkout} />
+				<Route path='/dashboard' render={renderProps => token === null ? <SignIn /> : <Dashboard />} />
+				<Route path="/gallery" render={renderProps => token === null ? <SignIn /> : <Gallery />} />
+				<Route path="/about" render={renderProps => token === null ? <SignIn /> : <About />} />
+				<Route path="/contact" render={renderProps => token === null ? <SignIn /> : <Contact />} />
+				<Route path="/product/:slug" render={renderProps => token === null ? <SignIn /> : <Product productsList={productsList} />} />
+				<Route path="/cart" render={renderProps => token === null ? <SignIn /> : <Cart />} />
+				<Route path="/checkout" render={renderProps => token === null ? <SignIn /> : <Checkout />} />
 				<Route path="*" component={Page404} />
 			</Switch>
 		</ProductsContext.Provider>
