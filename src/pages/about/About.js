@@ -8,7 +8,8 @@ import NavButton from 'components/common/nav-button/NavButton';
 
 import logo from 'img/logo.png';
 
-function About() {
+const About = () => {
+
     return (
         <>
 

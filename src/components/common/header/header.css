@@ -1,5 +1,12 @@
 /* ------------------------- Section HEADER ----------------------- */
 
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 15px;
+  }
+
 /* FOR LAPTOPS & LARGER DISPLAYS */
 .page-header-webview {
     display: none;

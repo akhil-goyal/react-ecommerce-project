@@ -6,163 +6,7 @@
     padding: 0 15px;
   }
   /* ---------------------------------------------------------------- */
-  
-  
-  
-  /* ---------------------------- SIDEBAR --------------------------- */
-  .side-bar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background: linear-gradient(
-      rgba(0, 0, 0, 0.575), 
-      rgba(0, 0, 0, 0.171)
-    ),url(img/sidebar-background.jpg);
-    background-size: cover; 
-    background-position: center;
-    overflow-x: hidden;
-    transition: 0.5s;
-  }
-  
-  .sidebar-title {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .sidebar-logo {
-    font-family: var(--cursive-font);
-    font-size: 4rem;
-  }
-  
-  .side-bar a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: var(--color-light);
-    display: block;
-    transition: 0.3s;
-  }
-  
-  .side-bar a:hover {
-    color: #f1f1f1;
-  }
-  
-  .separator {
-    border-top: 1px solid var(--color-primary);
-    width: 80%;
-    margin: 0 auto;
-  }
-  
-  .your-products {
-    display: flex;
-    justify-content: space-evenly;
-    width: 85%;
-  }
-  /* ---------------------------------------------------------------- */
-  
-  
-  
-  /* ------------------------- Section HEADER ----------------------- */
-  
-  /* FOR LAPTOPS & LARGER DISPLAYS */
-  .page-header-webview {
-    display: none;
-  }
-  
-   .page-header-webview a {
-    color: var(--color-primary);
-  }
-  
-  .header-webview-nav a{
-    position: relative;
-  }
-  
-  .header-webview-nav a:after {    
-    background: none repeat scroll 0 0 transparent;
-    content: "";
-    display: block;
-    height: 0.125em;
-    width: 0em;
-    border-radius: 0.7em;
-    position: absolute;
-    background: var(--color-primary);
-    transition: width 0.2s ease 0s, left 0.2s ease 0s;
-  }
-  
-  .header-webview-nav a:hover:after { 
-    width: 100%; 
-  }
-  
-  .header-webview-nav a{
-    font-weight: bold;
-  }
-  
-  /* FOR MOBILE */
-  .page-header {
-    justify-content: space-between;
-    height: 3em;
-  }
-  
-  .logo-container {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo-container img {
-    height: 2em;
-    width: 1.7em;
-    transition: all .2s ease-in-out;
-  }
-  
-  .logo-container img:hover{
-    transform: scale(1.1);
-    cursor: pointer;
-  }
-  
-  .logo {
-    font-family: var(--cursive-font);
-    font-size: 1.2rem;
-  }
-  
-  .menu a {
-    font-size: 1em;
-  }
-  
-  .menu-bar i {
-    font-size: 1.5rem;
-  }
-  
-  .user-image {
-    height: 1.5em;
-    width: 1.6em;
-    border-radius: 1em;
-  }
-  
-  .fa-shopping-cart {
-    font-size: 1.5em;
-    margin-left: 1em;
-  }
-  
-  .cart-total {
-    height: 1.5em;
-    width: 1.5em;
-    border-radius: 1em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--color-primary);
-    color: #fff;
-    position: relative;
-  }
-  
-  .menu-close {
-    margin-right: 1em;
-  }
-  /* ---------------------------------------------------------------- */
-  
+   
   
   
   /* -------------------------- Section HERO ------------------------ */
@@ -460,10 +304,6 @@
   
   
   
-  
-  
-  
-  
   /* ------------------------ Section FOOTER ------------------------ */
   .page-footer {
     background-color: var(--color-primary);
@@ -493,27 +333,6 @@
   
   .legal > li {
     padding: 0 0.1rem;
-  }
-  /* ---------------------------------------------------------------- */
-  
-  
-  
-  /* ---------------------- Section TOP-BUTTON ---------------------- */
-  .section-top-button article {
-    height: 3.5rem; 
-    width: 3.5rem; 
-    background-color: rgb(160, 160, 160); 
-    color: var(--color-light); 
-    border-radius: 0.5rem; 
-    position: fixed; 
-    bottom: 2rem; 
-    right: 2rem;
-    cursor: pointer;
-    box-shadow: 0 0.4rem 0.8rem 0 rgba(0, 0, 0, 0.2), 0 0.6rem 2rem 0 rgba(0, 0, 0, 0.19);
-  }
-  
-  .section-top-button p {
-    font-size: 1.5rem
   }
   /* ---------------------------------------------------------------- */
   

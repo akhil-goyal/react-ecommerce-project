@@ -8,6 +8,8 @@ import siteLogo from 'img/logo.png';
 const Header = () => {
     return (
         <>
+
+
             <header className="page-header container flex">
 
                 <figure className="menu-bar">
@@ -15,7 +17,7 @@ const Header = () => {
                 </figure>
 
                 <figure className="logo-container">
-                    <Link to="/" className="logo">Spruce</Link>
+                    <a href="/index.html" className="logo">Spruce</a>
                     <img src={siteLogo} alt="Site Logo" />
                 </figure>
 
@@ -24,27 +26,42 @@ const Header = () => {
 
             </header>
 
+
+
+
             <header id="page-header-webview" className="page-header-webview container">
 
                 <figure className="logo-container">
-                    <Link to="/" className="logo">Spruce</Link>
+                    <a href="/index.html" className="logo">Spruce</a>
                     <img src={siteLogo} alt="Site Logo" />
                 </figure>
 
                 <nav className="header-webview-nav">
                     <ul className="flex">
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/categories">Categories</Link></li>
-                        <li><Link to="/gallery">Gallery</Link></li>
-                        <li><Link to="/about">About Us</Link></li>
-                        <li><Link to="/contact">Contact</Link></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="plants-gallery.html">Gallery</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="contact-us.html">Contact</a></li>
                     </ul>
                 </nav>
 
-                <figure className="user-settings"><img className="user-image" src={userAvatar} alt="" />
+                <figure className="user-settings flex">
+
+                    <img className="user-image" src={userAvatar} alt="" />
+
+                    <a href="cart.html">
+                        <div className="flex">
+                            <i className="fas fa-shopping-cart"></i>
+                            <div className="cart-total">0</div>
+                        </div>
+                    </a>
+
                 </figure>
 
             </header>
+
+
+
         </>
     )
 }
