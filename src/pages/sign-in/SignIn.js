@@ -16,7 +16,7 @@ const SignIn = () => {
 
                     <div className="signin-form-container">
 
-                        <form method="POST" enctype="multipart/form-data" className="registeration-form">
+                        <form method="POST" encType="multipart/form-data" className="registeration-form">
 
                             <div className="form-control">
                                 <input className="reg-email" type="email" name="email" placeholder="Email Address" required />

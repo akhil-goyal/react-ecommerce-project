@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
+import { withRouter } from 'react-router-dom';
 import './dashboard.css';
 
 import Sidebar from 'components/common/sidebar/Sidebar';
@@ -8,8 +9,16 @@ import NavButton from 'components/common/nav-button/NavButton';
 import Main from 'components/home-page/main/Main';
 
 import ProductsContext from '../../contexts/product-context';
+import { firebaseAuth } from '../../contexts/AuthProvider';
 
-const Dashboard = ({ trendingProducts }) => {
+const Dashboard = ({ history, trendingProducts }) => {
+
+    const { handleSignout } = useContext(firebaseAuth);
+
+    const handleSignOut = async () => {
+        await handleSignout();
+        history.push('/signin');
+    }
 
     const products = useContext(ProductsContext);
     const [productResult, setProductResult] = useState(products);
@@ -24,6 +33,10 @@ const Dashboard = ({ trendingProducts }) => {
 
             <Header />
 
+            <h1>Login Successful...</h1>
+
+            <button onClick={handleSignOut}>Sign Out</button>
+
             <Main trendingProducts={trendingProducts} productsList={productResult} />
 
             <Footer />
@@ -33,4 +46,4 @@ const Dashboard = ({ trendingProducts }) => {
     )
 }
 
-export default Dashboard;
+export default withRouter(Dashboard);

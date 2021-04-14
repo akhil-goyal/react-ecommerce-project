@@ -1,4 +1,5 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
+import { withRouter } from 'react-router-dom';
 import './sign-up.css';
 
 import { firebaseAuth } from '../../contexts/AuthProvider';
@@ -6,23 +7,22 @@ import { firebaseAuth } from '../../contexts/AuthProvider';
 import googleIcon from 'img/google.svg';
 import facebookIcon from 'img/facebook.png';
 
-const SignUp = (props) => {
+const SignUp = ({history}) => {
 
     const { handleSignup, inputs, setInputs, errors } = useContext(firebaseAuth)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log('handleSubmit')
-        //wait to signup 
         await handleSignup()
-        //push home
-        // props.history.push('/')
+        history.push('/dashboard')
     }
+
     const handleChange = e => {
         const { name, value } = e.target
         console.log(inputs)
         setInputs(prev => ({ ...prev, [name]: value }))
     }
+
     return (
         <div className="sign-up-page">
 
@@ -79,4 +79,4 @@ const SignUp = (props) => {
     )
 }
 
-export default SignUp;
+export default withRouter(SignUp);
