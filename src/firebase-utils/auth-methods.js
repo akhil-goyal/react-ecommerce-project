@@ -1,13 +1,19 @@
 import './firebase-index';
 import firebase from 'firebase/firebase';
 
+const db = firebase.firestore();
+
 export const authMethods = {
 
     // USER SIGN-UP
-    signUpMethod: (email, password, setErrors, setToken) => {
+    signUpMethod: (firstName, lastName, email, password, setErrors, setToken) => {
 
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .then(async res => {
+
+                const user = firebase.auth().currentUser;
+
+                addUser(user.uid, firstName, lastName, email);
 
                 // Extracting the token from response.
                 const token = await Object.entries(res.user)[5][1].b;
@@ -70,4 +76,20 @@ export const authMethods = {
             });
     }
 
+}
+
+const addUser = (uid, firstName, lastName, email) => {
+
+    db.collection("Users")
+        .doc(uid)
+        .set({
+            user_id: uid,
+            first_name: firstName,
+            last_name: lastName,
+            email_address: email,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        })
+        .then(() => {
+            console.log('User created!');
+        }).catch((err) => console.log("An error occured while storing user data : ", err));
 }

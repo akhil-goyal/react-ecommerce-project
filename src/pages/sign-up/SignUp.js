@@ -11,6 +11,8 @@ const SignUp = ({ history }) => {
 
     const { handleSignUp, inputs, setInputs, errors } = useContext(firebaseAuth);
 
+    console.log('INPUTS : ', inputs);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         await handleSignUp();
@@ -40,11 +42,11 @@ const SignUp = ({ history }) => {
                     <form onSubmit={handleSubmit} method="POST" encType="multipart/form-data" className="registeration-form">
 
                         <div className="form-control">
-                            <input onChange={handleChange} className="first-name" type="text" name="first-name" value={inputs.firstName} placeholder="First Name" required />
+                            <input onChange={handleChange} className="first-name" type="text" name="firstName" value={inputs.firstName} placeholder="First Name" required />
                         </div>
 
                         <div className="form-control">
-                            <input onChange={handleChange} className="last-name" type="text" name="last-name" value={inputs.lastName} placeholder="Last Name" required />
+                            <input onChange={handleChange} className="last-name" type="text" name="lastName" value={inputs.lastName} placeholder="Last Name" required />
                         </div>
 
                         <div className="form-control">
@@ -56,7 +58,7 @@ const SignUp = ({ history }) => {
                         </div>
 
                         <div className="form-control">
-                            <input onChange={handleChange} className="confirm-password" type="password" name="confirm-password" value={inputs.confirmPassword}
+                            <input onChange={handleChange} className="confirm-password" type="password" name="confirmPassword" value={inputs.confirmPassword}
                                 placeholder="Confirm Password" required />
                         </div>
 

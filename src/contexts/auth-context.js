@@ -8,15 +8,31 @@ export const firebaseAuth = React.createContext();
 const AuthContext = ({ children }) => {
 
     // Input state with initial/default values of null for email & password.
-    const [inputs, setInputs] = useState({ email: '', password: '' });
+    const [inputs, setInputs] =
+        useState({
+            email: '',
+            password: '',
+            confirmPassword: '',
+            firstName: '',
+            lastName: ''
+        });
+
     // Error state with initial/default value of empty array [].
     const [errors, setErrors] = useState([]);
+    
     // Token state with initial/default value of null.
     const [token, setToken] = useState(null);
 
     // Function to handle the User registeration.
     const handleSignUp = () => {
-        authMethods.signUpMethod(inputs.email, inputs.password, setErrors, setToken);
+        authMethods.signUpMethod(
+            inputs.firstName,
+            inputs.lastName,
+            inputs.email,
+            inputs.password,
+            setErrors,
+            setToken
+        );
     }
 
     // Function to handle the User login.
