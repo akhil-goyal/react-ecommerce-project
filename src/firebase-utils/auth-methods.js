@@ -2,6 +2,7 @@ import './firebase-index';
 import firebase from 'firebase/firebase';
 
 const db = firebase.firestore();
+const googleProvider = new firebase.auth.GoogleAuthProvider();
 
 export const authMethods = {
 
@@ -52,6 +53,40 @@ export const authMethods = {
             .catch(err => {
                 // Setting errors in the state received from server.
                 setErrors(prev => ([...prev, err.message]));
+            });
+    },
+
+    // GOOGLE SIGN-IN
+    googleLoginMethod: (setErrors, setToken) => {
+
+        firebase.auth().signInWithPopup(googleProvider)
+            .then(async res => {
+
+                // Storing the user's data to firestore.
+                addUser(res.user.displayName.split(" ")[0],
+                    res.user.displayName.split(" ")[1],
+                    res.user.email
+                );
+
+                // Extracting the token from response.
+                const token = await Object.entries(res.user)[5][1].b;
+
+                // Setting the extracted token in localstorage.
+                await localStorage.setItem('token', token);
+
+                // Setting the local storage token into the state.
+                setToken(window.localStorage.token);
+
+                // Setting the current user data into the state.
+                setCurrentUser({
+                    "firstName": res.user.displayName.split(" ")[0],
+                    "lastName": res.user.displayName.split(" ")[1],
+                    "email": res.user.email
+                });
+
+            }).catch((error) => {
+                // Setting errors in the state received from server.
+                setErrors(prev => ([...prev, error.message]));
             });
     },
 

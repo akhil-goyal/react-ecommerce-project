@@ -4,7 +4,6 @@ import { withRouter } from 'react-router-dom';
 import './sign-in.css';
 import { firebaseAuth } from '../../contexts/auth-context';
 
-
 const SignIn = ({ history }) => {
 
     const { handleSignIn, inputs, setInputs, errors } = useContext(firebaseAuth);
@@ -35,7 +34,7 @@ const SignIn = ({ history }) => {
 
                     <div className="signin-form-container">
 
-                        {errors.length > 0 ? errors.map(error => <p style={{ color: 'red' }}>{error}</p>) : null}
+                        {errors.length > 0 ? errors.map((error, index) => <p key={index} style={{ color: 'red' }}>{error}</p>) : null}
 
                         <form onSubmit={handleSubmit} method="POST" encType="multipart/form-data" className="registeration-form">
 

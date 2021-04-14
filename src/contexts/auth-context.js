@@ -44,6 +44,11 @@ const AuthContext = ({ children }) => {
         authMethods.signInMethod(inputs.email, inputs.password, setErrors, setToken);
     }
 
+    // Function to handle the Google SignIn.
+    const handleGoogleSignIn = () => {
+        authMethods.googleLoginMethod(setErrors, setToken);
+    }
+
     // Function to handle the User signout.
     const handleSignOut = () => {
         authMethods.signOutMethod(setErrors, setToken);
@@ -56,12 +61,14 @@ const AuthContext = ({ children }) => {
             value={{
                 handleSignUp,
                 handleSignIn,
+                handleGoogleSignIn,
                 handleSignOut,
                 currentUser,
                 token,
                 inputs,
                 errors,
-                setInputs
+                setInputs,
+                setErrors
             }}>
             {children}
         </firebaseAuth.Provider>

@@ -9,19 +9,36 @@ import facebookIcon from 'img/facebook.png';
 
 const SignUp = ({ history }) => {
 
-    const { handleSignUp, inputs, setInputs, errors } = useContext(firebaseAuth);
-
-    console.log('INPUTS : ', inputs);
+    const { handleSignUp, handleGoogleSignIn, inputs, setInputs, errors, setErrors } = useContext(firebaseAuth);
 
     const handleSubmit = async (e) => {
+
         e.preventDefault();
-        await handleSignUp();
+
+        if (inputs.password.length < 6) {
+            setErrors(['Password must be atleast 6 characters long.']);
+        } else if (inputs.password !== inputs.confirmPassword) {
+            setErrors(['Password & Confirm Password do not match.']);
+        } else {
+            await handleSignUp();
+            history.push('/dashboard');
+        }
+
+    }
+
+    const signInWithGoogle = async () => {
+        await handleGoogleSignIn();
         history.push('/dashboard');
     }
 
     const handleChange = e => {
+
+        setErrors([]);
+
         const { name, value } = e.target;
+
         setInputs(prev => ({ ...prev, [name]: value }));
+
     }
 
     return (
@@ -37,7 +54,7 @@ const SignUp = ({ history }) => {
 
                 <div className="signup-form-container">
 
-                    {errors.length > 0 ? errors.map(error => <p style={{ color: 'red' }}>{error}</p>) : null}
+                    {errors.length > 0 ? errors.map((error, index) => <p key={index} style={{ color: 'red' }}>{error}</p>) : null}
 
                     <form onSubmit={handleSubmit} method="POST" encType="multipart/form-data" className="registeration-form">
 
@@ -65,8 +82,15 @@ const SignUp = ({ history }) => {
                         <div className="register-options">
                             <input type="submit" value="Register" className="btn-register" />
                             <b className="mx-1">or sign in with</b>
-                            <img className="logo-google" src={googleIcon} alt="" />
-                            <img className="logo-facebook" src={facebookIcon} alt="" />
+
+                            <a onClick={signInWithGoogle}>
+                                <img className="logo-google" src={googleIcon} alt="" />
+                            </a>
+
+                            <a>
+                                <img className="logo-facebook" src={facebookIcon} alt="" />
+                            </a>
+
                         </div>
 
                         <p>Already a user? Click <a href="sign-in.html"><u>here</u></a> to log in.</p>
