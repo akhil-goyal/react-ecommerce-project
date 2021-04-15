@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import './header.css';
 import { firebaseAuth } from '../../../contexts/auth-context';
 
 import userAvatar from 'img/user.jpg';
 import siteLogo from 'img/logo.png';
 
-const Header = () => {
+const Header = ({ history }) => {
 
     const { handleSignOut, currentUser } = useContext(firebaseAuth);
 
@@ -73,4 +73,4 @@ const Header = () => {
     )
 }
 
-export default Header;
+export default withRouter(Header);

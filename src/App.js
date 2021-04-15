@@ -1,8 +1,10 @@
 // PACKAGES
-import React, { useState, useContext } from 'react';
-import { Switch, Route, Redirect, Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Switch, Route } from 'react-router-dom';
 
-// PAGES
+// COMPONENTS & PAGES
+import PrivateRoute from "components/helpers/Protected";
+import PublicRoute from "components/helpers/Public";
 import LandingPage from 'pages/landing/LandingPage';
 import SignUp from 'pages/sign-up/SignUp';
 import SignIn from 'pages/sign-in/SignIn';
@@ -22,73 +24,42 @@ import { firebaseAuth } from './contexts/auth-context';
 // OTHERS
 import { trendingProducts, productsList } from './products';
 
-import Protected from "components/Protected";
-
 const App = () => {
 
-	const { token, isAuthenticated } = useContext(firebaseAuth);
+	const { isAuth, loading, handleUserAuth } = useContext(firebaseAuth);
 
-	console.log('AUTH STATE : ', isAuthenticated, '& token : ', token);
+	handleUserAuth();
 
-	return (
-
+	return loading === true ? (
+		<h1>Loading...</h1>
+	) : (
 		<ProductsContext.Provider value={productsList}>
 
 			<Switch>
 
-				<Route path="/" exact>
-					{token !== null ? (
-						<Dashboard />
-					) : (
-						<LandingPage trendingProducts={trendingProducts} />
-					)}
+				<Route exact path="/" authenticated={isAuth}>
+					<LandingPage trendingProducts={trendingProducts} />
 				</Route>
 
-				<Route path="/signup">
-					{token !== null ? (
-						<Dashboard />
-					) : (
-						<SignUp />
-					)}
-				</Route>
+				<PublicRoute exact path="/signup" authenticated={isAuth} component={SignUp} />
+				<PublicRoute exact path="/signin" authenticated={isAuth} component={SignIn} />
 
-				<Route path="/signin">
-					{token !== null ? (
-						<Dashboard />
-					) : (
-						<SignIn />
-					)}
-				</Route>
+				<PrivateRoute exact path="/dashboard" authenticated={isAuth} component={Dashboard} />
+				<PrivateRoute exact path="/gallery" authenticated={isAuth} component={Gallery} />
+				<PrivateRoute exact path="/about" authenticated={isAuth} component={About} />
+				<PrivateRoute exact path="/contact" authenticated={isAuth} component={Contact} />
+				<PrivateRoute exact path="/product/:slug" authenticated={isAuth} >
+					<Product productsList={productsList} />
+				</PrivateRoute>
+				<PrivateRoute exact path="/cart" authenticated={isAuth} component={Cart} />
+				<PrivateRoute exact path="/checkout" authenticated={isAuth} component={Checkout} />
 
-				<Protected path="/dashboard" component={Dashboard} />
-				<Protected path="/gallery" component={Gallery} />
-				<Protected path="/about" component={About} />
-				<Protected path="/contact" component={Contact} />
-				<Protected path="/cart" component={Cart} />
-				<Protected path="/checkout" component={Checkout} />
 				<Route path="*" component={Page404} />
 
 			</Switch>
 
 		</ProductsContext.Provider>
 
-		// <ProductsContext.Provider value={productsList}>
-		// 	<Switch>
-		// 		<Route exact path="/">
-		// 			<LandingPage trendingProducts={trendingProducts} />
-		// 		</Route>
-		// 		<Route path="/signup" component={SignUp} />
-		// 		<Route path="/signin" component={SignIn} />
-		// 		<Route path='/dashboard' render={renderProps => token === null ? <SignIn /> : <Dashboard />} />
-		// 		<Route path="/gallery" render={renderProps => token === null ? <SignIn /> : <Gallery />} />
-		// 		<Route path="/about" render={renderProps => token === null ? <SignIn /> : <About />} />
-		// 		<Route path="/contact" render={renderProps => token === null ? <SignIn /> : <Contact />} />
-		// 		<Route path="/product/:slug" render={renderProps => token === null ? <SignIn /> : <Product productsList={productsList} />} />
-		// 		<Route path="/cart" render={renderProps => token === null ? <SignIn /> : <Cart />} />
-		// 		<Route path="/checkout" render={renderProps => token === null ? <SignIn /> : <Checkout />} />
-		// 		<Route path="*" component={Page404} />
-		// 	</Switch>
-		// </ProductsContext.Provider>
 	)
 }
 

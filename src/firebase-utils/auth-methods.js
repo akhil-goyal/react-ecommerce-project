@@ -56,6 +56,9 @@ export const authMethods = {
                 // Setting the authenticated state to true on user login.
                 setIsAuthenticated(true);
 
+                // Fetching the current signed in user's data from firestore.
+                fetchUser(setErrors, setCurrentUser);
+
             })
             .catch(err => {
                 // Setting errors in the state received from server.
@@ -162,7 +165,20 @@ export const authMethods = {
 
                 // Setting the current user state back to empty object.
                 setCurrentUser({})
+
             });
+    },
+
+    authHandlerMethod: (setLoading, setIsAuth) => {
+        firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                setIsAuth(true);
+                setLoading(false);
+            } else {
+                setIsAuth(false);
+                setLoading(false);
+            }
+        });
     }
 
 }
@@ -171,6 +187,7 @@ const addUser = (firstName, lastName, email) => {
 
     const user = firebase.auth().currentUser;
 
+    // Query to add a new user record to the Users collection.
     db.collection("Users")
         .doc(user.uid)
         .set({
@@ -183,4 +200,31 @@ const addUser = (firstName, lastName, email) => {
         .then(() => {
             console.log('User created!');
         }).catch((err) => console.log("An error occured while storing user data : ", err));
+}
+
+const fetchUser = (setErrors, setCurrentUser) => {
+
+    const user = firebase.auth().currentUser;
+
+    if (user) {
+
+        // Query to fetch Sign-in user's data.
+        db.collection("Users")
+            .doc(user.uid)
+            .get()
+            .then(function (doc) {
+                if (doc.exists) {
+                    setCurrentUser({
+                        "firstName": doc.data().first_name,
+                        "lastName": doc.data().last_name,
+                        "email": doc.data().email_address
+                    });
+                } else {
+                    // Setting errors in the state received from server.
+                    setErrors(['No record found for the provided credentials.']);
+                }
+            });
+
+    }
+
 }

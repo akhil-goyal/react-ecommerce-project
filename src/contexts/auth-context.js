@@ -1,5 +1,6 @@
 // PACKAGES
 import React, { useState } from 'react';
+import firebase from 'firebase/firebase';
 import { authMethods } from '../firebase-utils/auth-methods';
 
 // Creating a CONTEXT for firebase authentication.
@@ -28,6 +29,12 @@ const AuthContext = ({ children }) => {
 
     // Current User Authenticated state with initial/default value of false.
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+    // Current User Authenticated state with initial/default value of false.
+    const [isAuth, setIsAuth] = useState(false);
+
+    // Current loading state with initial/default value of true.
+    const [loading, setLoading] = useState(true);
 
     console.log('CURRENT USER : ', currentUser);
 
@@ -64,6 +71,11 @@ const AuthContext = ({ children }) => {
         authMethods.signOutMethod(setErrors, setToken, setCurrentUser, setIsAuthenticated);
     }
 
+    // Function to handle the current user auth state.
+    const handleUserAuth = () => {
+        authMethods.authHandlerMethod(setLoading, setIsAuth);
+    }
+
     // Setting the values in FirebaseAuth provider so that they may be available
     // globally in the application.
     return (
@@ -74,6 +86,7 @@ const AuthContext = ({ children }) => {
                 handleGoogleSignIn,
                 handleFacebookLogin,
                 handleSignOut,
+                handleUserAuth,
                 currentUser,
                 isAuthenticated,
                 token,
@@ -81,7 +94,9 @@ const AuthContext = ({ children }) => {
                 errors,
                 setInputs,
                 setErrors,
-                setIsAuthenticated
+                setIsAuthenticated,
+                loading,
+                isAuth
             }}>
             {children}
         </firebaseAuth.Provider>
