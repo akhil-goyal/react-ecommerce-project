@@ -8,7 +8,7 @@ const facebookProvider = new firebase.auth.FacebookAuthProvider();
 export const authMethods = {
 
     // USER SIGN-UP
-    signUpMethod: (firstName, lastName, email, password, setErrors, setToken, setCurrentUser) => {
+    signUpMethod: (firstName, lastName, email, password, setErrors, setToken, setCurrentUser, setIsAuthenticated) => {
 
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .then(async res => {
@@ -27,6 +27,9 @@ export const authMethods = {
 
                 // Setting the current user data into the state.
                 setCurrentUser({ firstName, lastName, email });
+
+                // Setting the authenticated state to true on user signup.
+                setIsAuthenticated(true);
             })
             .catch(err => {
                 // Setting errors in the state received from server.
@@ -36,7 +39,7 @@ export const authMethods = {
     },
 
     // USER LOGIN
-    signInMethod: (email, password, setErrors, setToken) => {
+    signInMethod: (email, password, setErrors, setToken, setCurrentUser, setIsAuthenticated) => {
 
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then(async res => {
@@ -50,6 +53,9 @@ export const authMethods = {
                 // Setting the local storage token into the state.
                 setToken(window.localStorage.token);
 
+                // Setting the authenticated state to true on user login.
+                setIsAuthenticated(true);
+
             })
             .catch(err => {
                 // Setting errors in the state received from server.
@@ -58,7 +64,7 @@ export const authMethods = {
     },
 
     // GOOGLE SIGN-IN
-    googleLoginMethod: (setErrors, setToken, setCurrentUser) => {
+    googleLoginMethod: (setErrors, setToken, setCurrentUser, setIsAuthenticated) => {
 
         firebase.auth().signInWithPopup(googleProvider)
             .then(async res => {
@@ -78,6 +84,9 @@ export const authMethods = {
                 // Setting the local storage token into the state.
                 setToken(window.localStorage.token);
 
+                // Setting the authenticated state to true on Google Signin.
+                setIsAuthenticated(true);
+
                 // Setting the current user data into the state.
                 setCurrentUser({
                     "firstName": res.user.displayName.split(" ")[0],
@@ -91,7 +100,7 @@ export const authMethods = {
             });
     },
 
-    facebookLoginMethod: (setErrors, setToken, setCurrentUser) => {
+    facebookLoginMethod: (setErrors, setToken, setCurrentUser, setIsAuthenticated) => {
 
         firebase.auth().signInWithPopup(facebookProvider)
             .then(async res => {
@@ -111,6 +120,9 @@ export const authMethods = {
                 // Setting the local storage token into the state.
                 setToken(window.localStorage.token);
 
+                // Setting the authenticated state to true on Facebook login.
+                setIsAuthenticated(true);
+
                 // Setting the current user data into the state.
                 setCurrentUser({
                     "firstName": res.user.displayName.split(" ")[0],
@@ -125,7 +137,7 @@ export const authMethods = {
     },
 
     // USER SIGN-OUT
-    signOutMethod: (setErrors, setToken, setCurrentUser) => {
+    signOutMethod: (setErrors, setToken, setCurrentUser, setIsAuthenticated) => {
 
         firebase.auth().signOut().then(res => {
 
@@ -144,6 +156,9 @@ export const authMethods = {
 
                 // Setting the token state back to null.
                 setToken(null);
+
+                // Setting the authenticated state to false on signout.
+                setIsAuthenticated(false);
 
                 // Setting the current user state back to empty object.
                 setCurrentUser({})

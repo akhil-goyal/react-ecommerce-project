@@ -1,5 +1,5 @@
 // PACKAGES
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { Switch, Route, Redirect, Link } from 'react-router-dom';
 
 // PAGES
@@ -22,28 +22,73 @@ import { firebaseAuth } from './contexts/auth-context';
 // OTHERS
 import { trendingProducts, productsList } from './products';
 
+import Protected from "components/Protected";
+
 const App = () => {
 
-	const { token } = useContext(firebaseAuth)
+	const { token, isAuthenticated } = useContext(firebaseAuth);
+
+	console.log('AUTH STATE : ', isAuthenticated, '& token : ', token);
 
 	return (
+
 		<ProductsContext.Provider value={productsList}>
+
 			<Switch>
-				<Route exact path="/">
-					<LandingPage trendingProducts={trendingProducts} />
+
+				<Route path="/" exact>
+					{token !== null ? (
+						<Dashboard />
+					) : (
+						<LandingPage trendingProducts={trendingProducts} />
+					)}
 				</Route>
-				<Route path="/signup" component={SignUp} />
-				<Route path="/signin" component={SignIn} />
-				<Route path='/dashboard' render={renderProps => token === null ? <SignIn /> : <Dashboard />} />
-				<Route path="/gallery" render={renderProps => token === null ? <SignIn /> : <Gallery />} />
-				<Route path="/about" render={renderProps => token === null ? <SignIn /> : <About />} />
-				<Route path="/contact" render={renderProps => token === null ? <SignIn /> : <Contact />} />
-				<Route path="/product/:slug" render={renderProps => token === null ? <SignIn /> : <Product productsList={productsList} />} />
-				<Route path="/cart" render={renderProps => token === null ? <SignIn /> : <Cart />} />
-				<Route path="/checkout" render={renderProps => token === null ? <SignIn /> : <Checkout />} />
+
+				<Route path="/signup">
+					{token !== null ? (
+						<Dashboard />
+					) : (
+						<SignUp />
+					)}
+				</Route>
+
+				<Route path="/signin">
+					{token !== null ? (
+						<Dashboard />
+					) : (
+						<SignIn />
+					)}
+				</Route>
+
+				<Protected path="/dashboard" component={Dashboard} />
+				<Protected path="/gallery" component={Gallery} />
+				<Protected path="/about" component={About} />
+				<Protected path="/contact" component={Contact} />
+				<Protected path="/cart" component={Cart} />
+				<Protected path="/checkout" component={Checkout} />
 				<Route path="*" component={Page404} />
+
 			</Switch>
+
 		</ProductsContext.Provider>
+
+		// <ProductsContext.Provider value={productsList}>
+		// 	<Switch>
+		// 		<Route exact path="/">
+		// 			<LandingPage trendingProducts={trendingProducts} />
+		// 		</Route>
+		// 		<Route path="/signup" component={SignUp} />
+		// 		<Route path="/signin" component={SignIn} />
+		// 		<Route path='/dashboard' render={renderProps => token === null ? <SignIn /> : <Dashboard />} />
+		// 		<Route path="/gallery" render={renderProps => token === null ? <SignIn /> : <Gallery />} />
+		// 		<Route path="/about" render={renderProps => token === null ? <SignIn /> : <About />} />
+		// 		<Route path="/contact" render={renderProps => token === null ? <SignIn /> : <Contact />} />
+		// 		<Route path="/product/:slug" render={renderProps => token === null ? <SignIn /> : <Product productsList={productsList} />} />
+		// 		<Route path="/cart" render={renderProps => token === null ? <SignIn /> : <Cart />} />
+		// 		<Route path="/checkout" render={renderProps => token === null ? <SignIn /> : <Checkout />} />
+		// 		<Route path="*" component={Page404} />
+		// 	</Switch>
+		// </ProductsContext.Provider>
 	)
 }
 
