@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 import './sign-in.css';
 import { firebaseAuth } from '../../contexts/auth-context';
@@ -48,10 +48,10 @@ const SignIn = ({ history }) => {
 
                             <div className="login-options">
                                 <input type="submit" value="Login" className="btn-login" />
-                                <b className="mx-1"><a href="">Forgot Password?</a></b>
+                                <b className="mx-1"><Link to="/signin">Forgot Password?</Link></b>
                             </div>
 
-                            <p>Not registered yet? Click <a href="sign-up.html"><u>here</u></a> to join.</p>
+                            <p>Not registered yet? Click <Link to="/signup"><b>here</b></Link> to join.</p>
 
                         </form>
 

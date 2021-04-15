@@ -1,6 +1,6 @@
 // PACKAGES
 import React, { useContext } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect, Link } from 'react-router-dom';
 
 // PAGES
 import LandingPage from 'pages/landing/LandingPage';

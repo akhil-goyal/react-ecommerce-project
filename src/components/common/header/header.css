@@ -80,6 +80,10 @@
     width: 1.6em;
     border-radius: 1em;
   }
+
+  .cart {
+      margin: 0em 1em;
+  }
   
   .fa-shopping-cart {
     font-size: 1.5em;

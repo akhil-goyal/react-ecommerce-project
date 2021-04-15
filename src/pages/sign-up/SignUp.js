@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import './sign-up.css';
 
 import { firebaseAuth } from '../../contexts/auth-context';
@@ -94,7 +94,7 @@ const SignUp = ({ history }) => {
 
                         </div>
 
-                        <p>Already a user? Click <a href="sign-in.html"><u>here</u></a> to log in.</p>
+                        <p>Already a user? Click <Link to="/signin"><b>here</b></Link> to log in.</p>
 
                     </form>
 

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {Link} from 'react-router-dom';
 import './cart.css';
 
 import Sidebar from 'components/common/sidebar/Sidebar';
@@ -119,7 +120,7 @@ const Cart = () => {
                 </section>
 
                 <section className="section-cart-checkout">
-                    <a href="page-error.html" className="btn-checkout">Checkout</a>
+                    <Link to="/checkout" className="btn-checkout">Checkout</Link>
                 </section>
 
             </main>

@@ -8,7 +8,12 @@ import siteLogo from 'img/logo.png';
 
 const Header = () => {
 
-    const { currentUser } = useContext(firebaseAuth);
+    const { handleSignOut, currentUser } = useContext(firebaseAuth);
+
+    const signOutHandler = async () => {
+        await handleSignOut();
+        history.push('/signin');
+    }
 
     console.log('DASHBOARD : ', currentUser.firstName, currentUser.lastName, currentUser.email);
 
@@ -22,7 +27,7 @@ const Header = () => {
                 </figure>
 
                 <figure className="logo-container">
-                    <a href="/index.html" className="logo">Spruce</a>
+                    <Link to="/" className="logo">Spruce</Link>
                     <img src={siteLogo} alt="Site Logo" />
                 </figure>
 
@@ -34,16 +39,16 @@ const Header = () => {
             <header id="page-header-webview" className="page-header-webview container">
 
                 <figure className="logo-container">
-                    <a href="/index.html" className="logo">Spruce</a>
+                    <Link to="/" className="logo">Spruce</Link>
                     <img src={siteLogo} alt="Site Logo" />
                 </figure>
 
                 <nav className="header-webview-nav">
                     <ul className="flex">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="plants-gallery.html">Gallery</a></li>
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="contact-us.html">Contact</a></li>
+                        <li><Link to="/dashboard">Home</Link></li>
+                        <li><Link to="/gallery">Gallery</Link></li>
+                        <li><Link to="/about">About Us</Link></li>
+                        <li><Link to="/contact">Contact</Link></li>
                     </ul>
                 </nav>
 
@@ -51,12 +56,14 @@ const Header = () => {
 
                     <img className="user-image" src={userAvatar} alt="" />
 
-                    <a href="cart.html">
-                        <div className="flex">
+                    <Link to="/cart">
+                        <div className="cart flex">
                             <i className="fas fa-shopping-cart"></i>
                             <div className="cart-total">0</div>
                         </div>
-                    </a>
+                    </Link>
+
+                    <button onClick={signOutHandler}>Sign Out</button>
 
                 </figure>
 
