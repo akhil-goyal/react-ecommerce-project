@@ -6,142 +6,164 @@ import newLabel from 'img/new.png';
 
 const ProductsList = ({ productsList }) => {
 
-    const products = productsList.map(product => (
+    const buildSlug = name => {
 
-        <article key={product.id} className="product container my-1">
+        return name.toString().toLowerCase()
+            .replace(/\s+/g, '-') // Replacing spaces with hyphen (-)
+            .replace(/&/g, '-and-') // Replacing '&' with 'and'
+            .replace(/[^\w\-]+/g, '') // Removing all special characters
+            .replace(/\-\-+/g, '-') // Replacing multiple hyphens with single hyphen
+            .replace(/^-+/, '') // Trimming hyphen from start of the slug
+            .replace(/-+$/, '') // Trimming hyphen from end of the sloug
 
-            <section>
+    }
 
-                <figure>
-                    <img className="product-picture" src={product.features.img} alt={product.features.name} />
-                </figure>
+    const applyDiscount = (initialPrice, discount) => {
+        let finalPrice = initialPrice - discount / 100 * initialPrice;
+        return finalPrice
+    }
 
-                <article className="product-title-icons flex">
+    const products = productsList.map(product => {
 
-                    <figure className="product-title-newflash flex">
+        let finalPrice = applyDiscount(product.features.initialPrice, product.features.discount);
+        let productSlug = buildSlug(product.features.name);
 
-                        <h3>{product.features.name}</h3>
+        return (
+            <article key={product.id} className="product container my-1">
 
-                        {
-                            product.features.isNew ? <img className="new-product-icon" src={newLabel} alt="New Product Label" /> : ''
-                        }
+                <section>
 
+                    <figure>
+                        <img className="product-picture" src={product.features.img} alt={product.features.name} />
                     </figure>
 
-                    <article className="flex">
+                    <article className="product-title-icons flex">
 
-                        <figure><i className="fas fa-shopping-cart"></i></figure>
-                        <figure><i className="fas fa-heart"></i></figure>
-                    </article>
+                        <figure className="product-title-newflash flex">
 
-                </article>
+                            <h3>{product.features.name}</h3>
 
-                <article className="product-price-ratings flex">
-
-                    <data value={product.features.discountedPrice()}><del>${product.features.initialPrice}</del> <ins>${product.features.discountedPrice()}</ins></data>
-
-                    <article className="product-ratings flex">
-
-                        <p>{product.features.rating}</p>
-                        <figure>
                             {
-                                <>
-                                    <i className={(product.features.rating == 0) ? 'far fa-star' : (product.features.rating > 0 && product.features.rating < 1) ? 'fas fa-star-half-alt' : 'fas fa-star'}></i>
-                                    <i className={(product.features.rating > 1 && product.features.rating < 2) ? 'fas fa-star-half-alt' : (product.features.rating >= 2) ? 'fas fa-star' : 'far fa-star'}></i>
-                                    <i className={(product.features.rating > 2 && product.features.rating < 3) ? 'fas fa-star-half-alt' : (product.features.rating >= 3) ? 'fas fa-star' : 'far fa-star'}></i>
-                                    <i className={(product.features.rating > 3 && product.features.rating < 4) ? 'fas fa-star-half-alt' : (product.features.rating >= 4) ? 'fas fa-star' : 'far fa-star'}></i>
-                                    <i className={(product.features.rating > 4 && product.features.rating < 5) ? 'fas fa-star-half-alt' : (product.features.rating >= 5) ? 'fas fa-star' : 'far fa-star'}></i>
-                                </>
+                                product.features.isNew ? <img className="new-product-icon" src={newLabel} alt="New Product Label" /> : ''
                             }
+
                         </figure>
+
+                        <article className="flex">
+
+                            <figure><i className="fas fa-shopping-cart"></i></figure>
+                            <figure><i className="fas fa-heart"></i></figure>
+                        </article>
+
                     </article>
 
-                </article>
+                    <article className="product-price-ratings flex">
 
-                <article className="product-discount-category">
+                        <data value={finalPrice}><del>${product.features.initialPrice}</del> <ins>${finalPrice}</ins></data>
 
-                    <span><strong>Discount : </strong> <em>{product.features.discount}% off</em></span>
+                        <article className="product-ratings flex">
 
-                    <span><strong>Category : </strong> <em>{product.features.category}</em></span>
-                </article>
+                            <p>{product.features.rating}</p>
+                            <figure>
+                                {
+                                    <>
+                                        <i className={(product.features.rating == 0) ? 'far fa-star' : (product.features.rating > 0 && product.features.rating < 1) ? 'fas fa-star-half-alt' : 'fas fa-star'}></i>
+                                        <i className={(product.features.rating > 1 && product.features.rating < 2) ? 'fas fa-star-half-alt' : (product.features.rating >= 2) ? 'fas fa-star' : 'far fa-star'}></i>
+                                        <i className={(product.features.rating > 2 && product.features.rating < 3) ? 'fas fa-star-half-alt' : (product.features.rating >= 3) ? 'fas fa-star' : 'far fa-star'}></i>
+                                        <i className={(product.features.rating > 3 && product.features.rating < 4) ? 'fas fa-star-half-alt' : (product.features.rating >= 4) ? 'fas fa-star' : 'far fa-star'}></i>
+                                        <i className={(product.features.rating > 4 && product.features.rating < 5) ? 'fas fa-star-half-alt' : (product.features.rating >= 5) ? 'fas fa-star' : 'far fa-star'}></i>
+                                    </>
+                                }
+                            </figure>
+                        </article>
 
-                <br />
+                    </article>
 
-                <article>
+                    <article className="product-discount-category">
 
-                    <p>{product.features.description.substring(0, 80)}...</p>
-                </article>
+                        <span><strong>Discount : </strong> <em>{product.features.discount}% off</em></span>
 
-                <article>
+                        <span><strong>Category : </strong> <em>{product.features.category}</em></span>
+                    </article>
 
-                    <Link to={`/product/${product.slug()}`} className="button-product-details"><u>View details</u></Link>
+                    <br />
 
-                </article>
+                    <article>
 
-            </section>
+                        <p>{product.features.description.substring(0, 80)}...</p>
+                    </article>
 
-            <section>
+                    <article>
 
-                <form>
+                        <Link to={`/product/${productSlug}`} className="button-product-details"><u>View details</u></Link>
 
-                    <fieldset>
+                    </article>
 
-                        <legend>Pot requirement :</legend>
+                </section>
 
-                        <nav>
-                            <ul className="pot-fields">
+                <section>
 
-                                <li>
-                                    <input id={`pot${product.id}-req`} type="radio" name="pot-requirement" value="req" />
-                                    <label htmlFor={`pot${product.id}-req`}>Required</label>
-                                </li>
+                    <form>
 
-                                <li>
-                                    <input id={`pot${product.id}-not-req`} type="radio" name="pot-requirement" value="not-req" />
-                                    <label htmlFor={`pot${product.id}-not-req`}>Not required</label>
-                                </li>
+                        <fieldset>
 
-                            </ul>
-                        </nav>
+                            <legend>Pot requirement :</legend>
 
-                    </fieldset>
+                            <nav>
+                                <ul className="pot-fields">
 
-                    <fieldset className="my-1">
+                                    <li>
+                                        <input id={`pot${product.id}-req`} type="radio" name="pot-requirement" value="req" />
+                                        <label htmlFor={`pot${product.id}-req`}>Required</label>
+                                    </li>
 
-                        <legend>Plant Size :</legend>
+                                    <li>
+                                        <input id={`pot${product.id}-not-req`} type="radio" name="pot-requirement" value="not-req" />
+                                        <label htmlFor={`pot${product.id}-not-req`}>Not required</label>
+                                    </li>
 
-                        <nav>
-                            <ol className="size-fields">
+                                </ul>
+                            </nav>
 
-                                <li>
-                                    <input id={`pot${product.id}-size-1`} type="radio" name="plant-size" value="seed" />
-                                    <label htmlFor={`pot${product.id}-size-1`}>Seedlings</label>
-                                </li>
+                        </fieldset>
 
-                                <li>
-                                    <input id={`pot${product.id}-size-2`} type="radio" name="plant-size" value="sapling" />
-                                    <label htmlFor={`pot${product.id}-size-2`}>Sapling</label>
-                                </li>
+                        <fieldset className="my-1">
 
-                                <li>
-                                    <input id={`pot${product.id}-size-3`} type="radio" name="plant-size" value="peak" />
-                                    <label htmlFor={`pot${product.id}-size-3`}>Peak</label>
-                                </li>
+                            <legend>Plant Size :</legend>
 
-                            </ol>
-                        </nav>
+                            <nav>
+                                <ol className="size-fields">
 
-                    </fieldset>
+                                    <li>
+                                        <input id={`pot${product.id}-size-1`} type="radio" name="plant-size" value="seed" />
+                                        <label htmlFor={`pot${product.id}-size-1`}>Seedlings</label>
+                                    </li>
 
-                    <fieldset>
-                        <button className="button-buy my-1">Buy Now</button>
-                    </fieldset>
+                                    <li>
+                                        <input id={`pot${product.id}-size-2`} type="radio" name="plant-size" value="sapling" />
+                                        <label htmlFor={`pot${product.id}-size-2`}>Sapling</label>
+                                    </li>
 
-                </form>
-            </section>
+                                    <li>
+                                        <input id={`pot${product.id}-size-3`} type="radio" name="plant-size" value="peak" />
+                                        <label htmlFor={`pot${product.id}-size-3`}>Peak</label>
+                                    </li>
 
-        </article>
-    ))
+                                </ol>
+                            </nav>
+
+                        </fieldset>
+
+                        <fieldset>
+                            <button className="button-buy my-1">Buy Now</button>
+                        </fieldset>
+
+                    </form>
+                </section>
+
+            </article>
+        )
+    })
 
     return (
         <section className="grid products-list">
