@@ -1,10 +1,51 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './product-list.css';
 
+import { allProducts } from '../../../contexts/product-context';
+
 import newLabel from 'img/new.png';
 
-const ProductsList = ({ productsList }) => {
+const ProductsList = () => {
+
+    const { products, setProducts, filters, setFilters } = useContext(allProducts);
+
+    useEffect(() => {
+
+        let filteredData = [...products];
+
+        if (filters.query)
+            filteredData = filteredData.filter((prod) => prod.features.name.toLowerCase().includes(filters.query.toLowerCase().trim()))
+        if (filters.rating !== 'all')
+            filteredData = filteredData.filter((prod) => Number(prod.features.rating) >= Number(filters.rating))
+        if (filters.plantsType !== 'all')
+            filteredData = filteredData.filter((prod) => prod.features.category.toLowerCase() === filters.plantsType.toLowerCase())
+        if (filters.potRequirement !== 'all')
+            filteredData = filteredData.filter((prod) => prod.features.potAvailability === filters.potRequirement.toLowerCase())
+        if (filters.plantSize !== 'all')
+            filteredData = filteredData.filter((prod) => prod.features.plantSize.toLowerCase() === filters.plantSize.toLowerCase())
+
+        // Sort if appropriate
+        switch (filters.sortBy) {
+            case `highest`:
+                filteredData.sort((a, b) => a.features.initialPrice - b.features.initialPrice)
+                break;
+            case `lowest`:
+                filteredData.sort((a, b) => b.features.initialPrice - a.features.initialPrice)
+                break;
+            case `rating`:
+                filteredData.sort((a, b) => b.features.rating - a.features.rating)
+                break;
+        }
+
+        // Assign the filtered products to the result state
+        setProducts(filteredData)
+
+    }, [filters]);
+
+    useEffect(() => {
+        products
+    }, []);
 
     const buildSlug = name => {
 
@@ -23,7 +64,7 @@ const ProductsList = ({ productsList }) => {
         return finalPrice
     }
 
-    const products = productsList.map(product => {
+    const productList = products.map(product => {
 
         let finalPrice = applyDiscount(product.features.initialPrice, product.features.discount);
         let productSlug = buildSlug(product.features.name);
@@ -168,7 +209,7 @@ const ProductsList = ({ productsList }) => {
     return (
         <section className="grid products-list">
 
-            {products}
+            {productList}
 
         </section>
     )

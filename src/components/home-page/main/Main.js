@@ -7,7 +7,7 @@ import Pagination from '../pagination/Pagination';
 import ProductSearch from '../product-search/ProductSearch';
 import ProductsList from '../products-list/ProductsList';
 
-const Main = ({ trendingProducts, productsList }) => {
+const Main = () => {
 
     return (
         <main className="products">
@@ -22,7 +22,7 @@ const Main = ({ trendingProducts, productsList }) => {
 
                     <ProductSearch />
 
-                    <ProductsList productsList={productsList} />
+                    <ProductsList />
 
                 </section>
 

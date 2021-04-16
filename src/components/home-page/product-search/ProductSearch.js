@@ -1,7 +1,30 @@
-import React from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import './product-search.css';
+import { allProducts } from '../../../contexts/product-context';
 
 const ProductSearch = () => {
+
+    const [search, setSearch] = useState("");
+
+    const { products, setProducts } = useContext(allProducts);
+
+    const filteredProducts = products.filter((product) => {
+        if (
+            product.features.name.toLowerCase().includes(search) ||
+            product.features.category.toLowerCase().includes(search)
+        ) {
+            return product;
+        }
+    });
+
+    useEffect(() => {
+        setProducts(filteredProducts);
+    }, [search]);
+
+    const onChangeHandler = (e) => {
+        setSearch(e.target.value.toLowerCase());
+    }
+
     return (
         <article className="products-and-search">
 
@@ -11,7 +34,7 @@ const ProductSearch = () => {
 
                 <article className="search-box">
 
-                    <input className="search-bar" type="text" placeholder="Search for exotic plants" name="search" />
+                    <input onChange={onChangeHandler} className="search-bar" type="text" placeholder="Search for exotic plants" name="search" />
                     <figure className="button-search">
                         <img alt="Search icon" src="https://img.icons8.com/cotton/24/000000/search--v2.png" />
                     </figure>

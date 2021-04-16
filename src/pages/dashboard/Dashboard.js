@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './dashboard.css';
 
@@ -8,11 +8,7 @@ import Footer from 'components/common/footer/Footer';
 import NavButton from 'components/common/nav-button/NavButton';
 import Main from 'components/home-page/main/Main';
 
-import { allProducts } from '../../contexts/product-context';
-
 const Dashboard = ({ trendingProducts }) => {
-
-    const { products } = useContext(allProducts);
 
     return (
         <>
@@ -20,7 +16,7 @@ const Dashboard = ({ trendingProducts }) => {
 
             <Header />
 
-            <Main trendingProducts={trendingProducts} productsList={products} />
+            <Main trendingProducts={trendingProducts} />
 
             <Footer />
 
