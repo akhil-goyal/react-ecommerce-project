@@ -1,5 +1,21 @@
-import { createContext } from 'react';
+import React, { createContext, useState } from 'react';
+import { authMethods } from '../firebase-utils/auth-methods';
 
-const ProductsContext = createContext();
+export const allProducts = createContext();
 
-export default ProductsContext;
+const ProductsContext = ({ children }) => {
+
+    const [products, setProducts] = useState([]);
+
+    const handleProductsData = () => {
+        authMethods.getProductsMethod(setProducts);
+    }
+
+    return (
+        <allProducts.Provider value={{ products, handleProductsData }}>
+            {children}
+        </allProducts.Provider>
+    )
+}
+
+export { ProductsContext };

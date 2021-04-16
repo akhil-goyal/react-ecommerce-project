@@ -111,6 +111,20 @@ export const authMethods = {
                 setLoading(false);
             }
         });
+    },
+
+    getProductsMethod: (setProducts) => {
+
+        db.collection('products').get().then(
+            (snapshot) => {
+                const products = [];
+                snapshot.docs.forEach(doc => {
+                    const record = doc.data();
+                    products.push(record);
+                });
+                setProducts(products);
+            }
+        )
     }
 
 }

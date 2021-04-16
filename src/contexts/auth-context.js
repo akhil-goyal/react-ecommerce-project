@@ -1,9 +1,9 @@
 // PACKAGES
-import React, { useState } from 'react';
+import React, { useState, createContext } from 'react';
 import { authMethods } from '../firebase-utils/auth-methods';
 
 // Creating a CONTEXT for firebase authentication.
-export const firebaseAuth = React.createContext();
+export const firebaseAuth = createContext();
 
 const AuthContext = ({ children }) => {
 

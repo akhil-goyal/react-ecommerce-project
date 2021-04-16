@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { withRouter } from 'react-router-dom';
 import './dashboard.css';
 
@@ -8,18 +8,11 @@ import Footer from 'components/common/footer/Footer';
 import NavButton from 'components/common/nav-button/NavButton';
 import Main from 'components/home-page/main/Main';
 
-import ProductsContext from '../../contexts/product-context';
+import { allProducts } from '../../contexts/product-context';
 
-const Dashboard = ({ history, trendingProducts }) => {
+const Dashboard = ({ trendingProducts }) => {
 
-
-
-    const products = useContext(ProductsContext);
-    const [productResult, setProductResult] = useState(products);
-
-    useEffect(() => {
-        setProductResult(products);
-    }, []);
+    const { products } = useContext(allProducts);
 
     return (
         <>
@@ -27,7 +20,7 @@ const Dashboard = ({ history, trendingProducts }) => {
 
             <Header />
 
-            <Main trendingProducts={trendingProducts} productsList={productResult} />
+            <Main trendingProducts={trendingProducts} productsList={products} />
 
             <Footer />
 
