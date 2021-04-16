@@ -21,20 +21,23 @@ const ProductsList = () => {
         if (filters.plantsType !== 'all')
             filteredData = filteredData.filter((prod) => prod.features.category.toLowerCase() === filters.plantsType.toLowerCase())
         if (filters.potRequirement !== 'all')
-            filteredData = filteredData.filter((prod) => prod.features.potAvailability === filters.potRequirement.toLowerCase())
+            filteredData = filteredData.filter((prod) => prod.features.potAvailability === Boolean(filters.potRequirement.toLowerCase()))
         if (filters.plantSize !== 'all')
             filteredData = filteredData.filter((prod) => prod.features.plantSize.toLowerCase() === filters.plantSize.toLowerCase())
 
         // Sort if appropriate
         switch (filters.sortBy) {
-            case `highest`:
-                filteredData.sort((a, b) => a.features.initialPrice - b.features.initialPrice)
-                break;
             case `lowest`:
-                filteredData.sort((a, b) => b.features.initialPrice - a.features.initialPrice)
+                filteredData.sort((a, b) => a.features.initialPrice - b.features.initialPrice);
+                break;
+            case `highest`:
+                filteredData.sort((a, b) => b.features.initialPrice - a.features.initialPrice);
                 break;
             case `rating`:
-                filteredData.sort((a, b) => b.features.rating - a.features.rating)
+                filteredData.sort((a, b) => b.features.rating - a.features.rating);
+                break;
+            case `new`:
+                filteredData = filteredData.filter((prod) => prod.features.isNew === true);
                 break;
         }
 

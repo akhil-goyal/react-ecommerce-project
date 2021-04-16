@@ -83,17 +83,17 @@ const Filters = () => {
                                 <ul className="filter-plant-types">
 
                                     <li>
-                                        <input onChange={handlePlantTypeChange} type="checkbox" name="type-filter" value="outdoor" id="filter-outdoor" />
+                                        <input onChange={handlePlantTypeChange} type="radio" name="type-filter" value="outdoor" id="filter-outdoor" />
                                         <label htmlFor="filter-outdoor">Outdoor</label>
                                     </li>
 
                                     <li>
-                                        <input onChange={handlePlantTypeChange} type="checkbox" name="type-filter" value="indoor" id="filter-indoor" />
+                                        <input onChange={handlePlantTypeChange} type="radio" name="type-filter" value="indoor" id="filter-indoor" />
                                         <label htmlFor="filter-indoor">Indoor</label>
                                     </li>
 
                                     <li>
-                                        <input onChange={handlePlantTypeChange} type="checkbox" name="type-filter" value="aerial" id="filter-aerial" />
+                                        <input onChange={handlePlantTypeChange} type="radio" name="type-filter" value="aerial" id="filter-aerial" />
                                         <label htmlFor="filter-aerial">Aerial</label>
                                     </li>
 
@@ -109,10 +109,10 @@ const Filters = () => {
                             <nav>
                                 <ul className="filter-pot-requirement">
 
-                                    <li><input onChange={handlePotRequirementChange} type="checkbox" name="req-filter" value="incl" id="filter-incl" /> <label
+                                    <li><input onChange={handlePotRequirementChange} type="radio" name="req-filter" value="true" id="filter-incl" /> <label
                                         htmlFor="filter-incl">Including Pot</label></li>
 
-                                    <li><input onChange={handlePotRequirementChange} type="checkbox" name="req-filter" value="excl" id="filter-excl" /> <label
+                                    <li><input onChange={handlePotRequirementChange} type="radio" name="req-filter" value="false" id="filter-excl" /> <label
                                         htmlFor="filter-excl">Excluding Pot</label></li>
 
                                 </ul>
@@ -127,13 +127,13 @@ const Filters = () => {
                             <nav>
                                 <ol className="filter-plant-size">
 
-                                    <li><input onChange={handlePlantSizeChange} type="checkbox" name="size-filter" value="input-seed" id="filter-seed" /> <label
+                                    <li><input onChange={handlePlantSizeChange} type="radio" name="size-filter" value="seedling" id="filter-seed" /> <label
                                         htmlFor="filter-seed">Seedlings</label></li>
 
-                                    <li><input onChange={handlePlantSizeChange} type="checkbox" name="size-filter" value="input-sapling" id="filter-sapling" /> <label
+                                    <li><input onChange={handlePlantSizeChange} type="radio" name="size-filter" value="sapling" id="filter-sapling" /> <label
                                         htmlFor="filter-sapling">Sapling</label></li>
 
-                                    <li><input onChange={handlePlantSizeChange} type="checkbox" name="size-filter" value="input-peak" id="filter-peak" /> <label
+                                    <li><input onChange={handlePlantSizeChange} type="radio" name="size-filter" value="peak" id="filter-peak" /> <label
                                         htmlFor="filter-peak">Peak</label></li>
 
                                 </ol>
@@ -205,9 +205,9 @@ const Filters = () => {
 
                                 <option disabled>Select</option>
                                 <option value="rating">Ratings</option>
-                                <option value="new-arrivals">Newest Arrivals</option>
-                                <option value="low-to-high">Price, lowest to highest</option>
-                                <option value="high-to-low">Price, highest to lowest</option>
+                                <option value="new">Newest Arrivals</option>
+                                <option value="lowest">Price, lowest to highest</option>
+                                <option value="highest">Price, highest to lowest</option>
 
                             </select>
 
@@ -216,6 +216,7 @@ const Filters = () => {
                     </section>
 
                 </form>
+
             </article>
 
         </section>

@@ -6,23 +6,32 @@ const ProductSearch = () => {
 
     const [search, setSearch] = useState("");
 
-    const { products, setProducts } = useContext(allProducts);
+    const { products, setProducts, filters, setFilters } = useContext(allProducts);
 
-    const filteredProducts = products.filter((product) => {
-        if (
-            product.features.name.toLowerCase().includes(search) ||
-            product.features.category.toLowerCase().includes(search)
-        ) {
-            return product;
-        }
-    });
+    // const filteredProducts = products.filter((product) => {
+    //     if (
+    //         product.features.name.toLowerCase().includes(search) ||
+    //         product.features.category.toLowerCase().includes(search)
+    //     ) {
+    //         return product;
+    //     }
+    // });
 
-    useEffect(() => {
-        setProducts(filteredProducts);
-    }, [search]);
+    // useEffect(() => {
+    //     setProducts(filteredProducts);
+    // }, [search]);
 
-    const onChangeHandler = (e) => {
-        setSearch(e.target.value.toLowerCase());
+    // const onChangeHandler = (e) => {
+    //     setSearch(e.target.value.toLowerCase());
+    // }
+
+    const onChangeHandler = (event) => {
+
+        setFilters({
+            ...filters,
+            query: event.target.value
+        });
+
     }
 
     return (
@@ -34,7 +43,7 @@ const ProductSearch = () => {
 
                 <article className="search-box">
 
-                    <input onChange={onChangeHandler} className="search-bar" type="text" placeholder="Search for exotic plants" name="search" />
+                    <input onChange={onChangeHandler} value={filters.query} className="search-bar" type="text" placeholder="Search for exotic plants" name="search" />
                     <figure className="button-search">
                         <img alt="Search icon" src="https://img.icons8.com/cotton/24/000000/search--v2.png" />
                     </figure>
