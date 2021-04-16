@@ -8,7 +8,22 @@ import newLabel from 'img/new.png';
 
 const ProductsList = () => {
 
-    const { products, setProducts, filters, setFilters } = useContext(allProducts);
+    const { products, setProducts, filters } = useContext(allProducts);
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
 
     useEffect(() => {
 

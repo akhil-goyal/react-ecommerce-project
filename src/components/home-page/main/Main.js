@@ -3,7 +3,7 @@ import './main.css';
 
 import Hero from '../hero/Hero';
 import Filters from '../filters/Filters';
-import Pagination from '../pagination/Pagination';
+import PaginationComponent from '../pagination/Pagination';
 import ProductSearch from '../product-search/ProductSearch';
 import ProductsList from '../products-list/ProductsList';
 
@@ -28,7 +28,7 @@ const Main = () => {
 
             </section>
 
-            <Pagination />
+            <PaginationComponent />
 
         </main>
     )
