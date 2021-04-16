@@ -1,6 +1,5 @@
 // PACKAGES
 import React, { useState } from 'react';
-import firebase from 'firebase/firebase';
 import { authMethods } from '../firebase-utils/auth-methods';
 
 // Creating a CONTEXT for firebase authentication.
@@ -21,14 +20,8 @@ const AuthContext = ({ children }) => {
     // Error state with initial/default value of empty array [].
     const [errors, setErrors] = useState([]);
 
-    // Token state with initial/default value of null.
-    const [token, setToken] = useState(null);
-
     // Current User state with initial/default value of empty object.
     const [currentUser, setCurrentUser] = useState({});
-
-    // Current User Authenticated state with initial/default value of false.
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     // Current User Authenticated state with initial/default value of false.
     const [isAuth, setIsAuth] = useState(false);
@@ -46,29 +39,27 @@ const AuthContext = ({ children }) => {
             inputs.email,
             inputs.password,
             setErrors,
-            setToken,
             setCurrentUser,
-            setIsAuthenticated
         );
     }
 
     // Function to handle the User login.
     const handleSignIn = () => {
-        authMethods.signInMethod(inputs.email, inputs.password, setErrors, setToken, setCurrentUser, setIsAuthenticated);
+        authMethods.signInMethod(inputs.email, inputs.password, setErrors, setCurrentUser);
     }
 
     // Function to handle the Google SignIn.
     const handleGoogleSignIn = () => {
-        authMethods.googleLoginMethod(setErrors, setToken, setCurrentUser, setIsAuthenticated);
+        authMethods.googleLoginMethod(setErrors, setCurrentUser);
     }
 
     const handleFacebookLogin = () => {
-        authMethods.facebookLoginMethod(setErrors, setToken, setCurrentUser, setIsAuthenticated);
+        authMethods.facebookLoginMethod(setErrors, setCurrentUser);
     }
 
     // Function to handle the User signout.
     const handleSignOut = () => {
-        authMethods.signOutMethod(setErrors, setToken, setCurrentUser, setIsAuthenticated);
+        authMethods.signOutMethod(setErrors, setCurrentUser);
     }
 
     // Function to handle the current user auth state.
@@ -88,13 +79,10 @@ const AuthContext = ({ children }) => {
                 handleSignOut,
                 handleUserAuth,
                 currentUser,
-                isAuthenticated,
-                token,
                 inputs,
                 errors,
                 setInputs,
                 setErrors,
-                setIsAuthenticated,
                 loading,
                 isAuth
             }}>
