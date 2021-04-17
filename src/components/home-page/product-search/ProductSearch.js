@@ -4,26 +4,26 @@ import { allProducts } from '../../../contexts/product-context';
 
 const ProductSearch = () => {
 
-    const [search, setSearch] = useState("");
+    // const { products } = useContext(allProducts);
 
-    const { products, setProducts, filters, setFilters } = useContext(allProducts);
+    // const [data, setData] = useState(products);
+    // const [search, setSearch] = React.useState("");
 
-    // const filteredProducts = products.filter((product) => {
-    //     if (
-    //         product.features.name.toLowerCase().includes(search) ||
-    //         product.features.category.toLowerCase().includes(search)
-    //     ) {
-    //         return product;
-    //     }
-    // });
-
-    // useEffect(() => {
-    //     setProducts(filteredProducts);
-    // }, [search]);
 
     // const onChangeHandler = (e) => {
-    //     setSearch(e.target.value.toLowerCase());
+
+    //     if (e.target.value) {
+    //         const filteredTeams = data.filter(team => {
+    //             return team.features.name.toLowerCase().includes(e.target.value.toLowerCase());
+    //         });
+    //         setData(filteredTeams);
+    //     } else {
+    //         setData(products);
+    //     }
+    //     setSearch(e.target.value);
     // }
+
+    const { filters, setFilters } = useContext(allProducts);
 
     const onChangeHandler = (event) => {
 
@@ -42,12 +42,13 @@ const ProductSearch = () => {
             <section className="product-search">
 
                 <article className="search-box">
-
                     <input onChange={onChangeHandler} value={filters.query} className="search-bar" type="text" placeholder="Search for exotic plants" name="search" />
                     <figure className="button-search">
                         <img alt="Search icon" src="https://img.icons8.com/cotton/24/000000/search--v2.png" />
                     </figure>
+
                 </article>
+
             </section>
 
         </article>

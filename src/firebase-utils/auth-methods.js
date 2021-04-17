@@ -64,6 +64,7 @@ export const authMethods = {
             });
     },
 
+    // FACEBOOK LOG-IN
     facebookLoginMethod: (setErrors, setCurrentUser) => {
 
         firebase.auth().signInWithPopup(facebookProvider)
@@ -101,6 +102,7 @@ export const authMethods = {
             });
     },
 
+    // USER AUTHENTICATION
     authHandlerMethod: (setLoading, setIsAuth) => {
         firebase.auth().onAuthStateChanged(user => {
             if (user) {
@@ -113,6 +115,7 @@ export const authMethods = {
         });
     },
 
+    // FETCH PRODUCTS FROM FIRESTORE.
     getProductsMethod: (setProducts) => {
 
         db.collection('products').get().then(

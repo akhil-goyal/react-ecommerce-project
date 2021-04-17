@@ -19,8 +19,6 @@ const PaginationComponent = () => {
     let paginatedProducts = products
         .slice((pageNum - 1) * maxResults, (pageNum - 1) * maxResults + maxResults)
 
-    console.log('HURAAYY! :', paginatedProducts);
-
     useEffect(() => {
         setProducts(paginatedProducts);
     }, [pageNum]);

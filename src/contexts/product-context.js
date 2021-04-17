@@ -17,8 +17,6 @@ const ProductsContext = ({ children }) => {
         sortBy: 'none'
     });
 
-    console.log('FFFFFF : ', filters);
-
     const handleProductsData = () => {
         authMethods.getProductsMethod(setProducts);
     }

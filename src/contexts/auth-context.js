@@ -29,8 +29,6 @@ const AuthContext = ({ children }) => {
     // Current loading state with initial/default value of true.
     const [loading, setLoading] = useState(true);
 
-    console.log('CURRENT USER : ', currentUser);
-
     // Function to handle the User registeration.
     const handleSignUp = () => {
         authMethods.signUpMethod(

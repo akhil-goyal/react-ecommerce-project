@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './product-list.css';
 
@@ -8,22 +8,8 @@ import newLabel from 'img/new.png';
 
 const ProductsList = () => {
 
-    const { products, setProducts, filters } = useContext(allProducts);
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
+    const { products, filters } = useContext(allProducts);
+    let [data, setData] = useState(products);
 
     useEffect(() => {
 
@@ -31,8 +17,6 @@ const ProductsList = () => {
 
         if (filters.query)
             filteredData = filteredData.filter((prod) => prod.features.name.toLowerCase().includes(filters.query.toLowerCase().trim()))
-        if (filters.rating !== 'all')
-            filteredData = filteredData.filter((prod) => Number(prod.features.rating) >= Number(filters.rating))
         if (filters.plantsType !== 'all')
             filteredData = filteredData.filter((prod) => prod.features.category.toLowerCase() === filters.plantsType.toLowerCase())
         if (filters.potRequirement !== 'all')
@@ -40,30 +24,47 @@ const ProductsList = () => {
         if (filters.plantSize !== 'all')
             filteredData = filteredData.filter((prod) => prod.features.plantSize.toLowerCase() === filters.plantSize.toLowerCase())
 
-        // Sort if appropriate
+        if (filters.rating !== 'all') {
+            switch (filters.rating) {
+                case '4':
+                    filteredData = filteredData.filter((prod) => prod.features.rating >= 4 && prod.features.rating <= 5);
+                    break;
+                case '3':
+                    filteredData = filteredData.filter((prod) => prod.features.rating >= 3 && prod.features.rating <= 4);
+                    break;
+                case '2':
+                    filteredData = filteredData.filter((prod) => prod.features.rating >= 2 && prod.features.rating <= 3);
+                    break;
+                case '1':
+                    filteredData = filteredData.filter((prod) => prod.features.rating >= 1 && prod.features.rating <= 2);
+                    break;
+            }
+        }
+
         switch (filters.sortBy) {
-            case `lowest`:
-                filteredData.sort((a, b) => a.features.initialPrice - b.features.initialPrice);
-                break;
-            case `highest`:
-                filteredData.sort((a, b) => b.features.initialPrice - a.features.initialPrice);
-                break;
-            case `rating`:
+            case 'rating':
                 filteredData.sort((a, b) => b.features.rating - a.features.rating);
                 break;
-            case `new`:
+            case 'new':
                 filteredData = filteredData.filter((prod) => prod.features.isNew === true);
+                break;
+            case 'lowest':
+                filteredData.sort((a, b) => a.features.initialPrice - b.features.initialPrice);
+                break;
+            case 'highest':
+                filteredData.sort((a, b) => b.features.initialPrice - a.features.initialPrice);
                 break;
         }
 
-        // Assign the filtered products to the result state
-        setProducts(filteredData)
+        setData(filteredData);
 
     }, [filters]);
 
     useEffect(() => {
-        products
-    }, []);
+        if (products.length > 0) {
+            setData(products);
+        }
+    }, [products]);
 
     const buildSlug = name => {
 
@@ -82,7 +83,7 @@ const ProductsList = () => {
         return finalPrice
     }
 
-    const productList = products.map(product => {
+    const productList = data.map(product => {
 
         let finalPrice = applyDiscount(product.features.initialPrice, product.features.discount);
         let productSlug = buildSlug(product.features.name);

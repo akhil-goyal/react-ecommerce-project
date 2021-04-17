@@ -15,8 +15,6 @@ const Header = ({ history }) => {
         history.push('/signin');
     }
 
-    console.log('DASHBOARD : ', currentUser.firstName, currentUser.lastName, currentUser.email);
-
     return (
         <>
 
