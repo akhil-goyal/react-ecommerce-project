@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import './header.css';
 import { firebaseAuth } from '../../../contexts/auth-context';
+import { menuItems } from '../../../contexts/menu-context';
 
 import userAvatar from 'img/user.jpg';
 import siteLogo from 'img/logo.png';
@@ -9,10 +10,16 @@ import siteLogo from 'img/logo.png';
 const Header = ({ history }) => {
 
     const { handleSignOut, currentUser } = useContext(firebaseAuth);
+    const { setMenuWidth } = useContext(menuItems);
 
     const signOutHandler = async () => {
         await handleSignOut();
         history.push('/signin');
+    }
+
+    const openMenu = (e) => {
+        e.preventDefault();
+        setMenuWidth('17em');
     }
 
     return (
@@ -20,7 +27,7 @@ const Header = ({ history }) => {
 
             <header className="page-header container flex">
 
-                <figure className="menu-bar">
+                <figure onClick={openMenu} className="menu-bar">
                     <i className="fas fa-bars"></i>
                 </figure>
 

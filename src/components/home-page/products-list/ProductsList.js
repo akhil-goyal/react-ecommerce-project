@@ -49,10 +49,10 @@ const ProductsList = () => {
                 filteredData = filteredData.filter((prod) => prod.features.isNew === true);
                 break;
             case 'lowest':
-                filteredData.sort((a, b) => a.features.initialPrice - b.features.initialPrice);
+                filteredData.sort((a, b) => applyDiscount(a.features.initialPrice, a.features.discount) - applyDiscount(b.features.initialPrice, b.features.discount));
                 break;
             case 'highest':
-                filteredData.sort((a, b) => b.features.initialPrice - a.features.initialPrice);
+                filteredData.sort((a, b) => applyDiscount(b.features.initialPrice, b.features.discount) - applyDiscount(a.features.initialPrice, a.features.discount));
                 break;
         }
 
@@ -119,7 +119,7 @@ const ProductsList = () => {
 
                     <article className="product-price-ratings flex">
 
-                        <data value={finalPrice}><del>${product.features.initialPrice}</del> <ins>${finalPrice}</ins></data>
+                        <data value={finalPrice}><del>${product.features.initialPrice.toFixed(2)}</del> <ins>${finalPrice.toFixed(2)}</ins></data>
 
                         <article className="product-ratings flex">
 

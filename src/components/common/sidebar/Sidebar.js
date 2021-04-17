@@ -1,26 +1,39 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import './sidebar.css';
+
+import { menuItems } from '../../../contexts/menu-context';
 
 import siteLogo from 'img/logo.png';
 
 const Sidebar = () => {
+
+    const { menuWidth, setMenuWidth } = useContext(menuItems);
+
+    const closeMenu = (e) => {
+
+        e.preventDefault();
+
+        setMenuWidth('0em');
+
+    }
+
     return (
         <>
             <aside id="nav-top">
             </aside>
 
-            <aside className="side-bar">
+            <aside style={{ width: `${menuWidth}` }} className="side-bar">
 
                 <article className="sidebar-title">
 
                     <figure>
                         <a href="index.html" className="sidebar-logo">
-                            {/* Spruce <img src="img/logo.png" style="height: 2rem; width: 1.5rem;" alt="Spruce Logo" /> */}
-                            Spruce <img src={siteLogo} />
+                            Spruce <img src={siteLogo} style={{ height: ' 2rem', width: '1.5rem' }} alt="Spruce Logo" />
                         </a>
                     </figure>
 
-                    <a href="#" className="menu-close">&times;</a>
+                    <a onClick={closeMenu} className="menu-close">&times;</a>
 
                 </article>
 
@@ -28,17 +41,14 @@ const Sidebar = () => {
 
                     <ul className="menu">
 
-                        <li><a href="#"><i className="fas fa-home"></i> Home</a></li>
-                        <li><a href="#"><i className="fas fa-th-large"></i> Categories</a></li>
-                        <li><a href="#"><i className="fas fa-images"></i> Gallery</a></li>
-                        <li><a href="#"><i className="fas fa-user tie"></i> User Profile</a></li>
-                        <li><a href="#"><i className="fas fa-info-circle"></i> About</a></li>
-                        <li><a href="#"><i className="fas fa-user tie"></i> Contact Us</a></li>
+                        <li><Link to="/dasboard"><i className="fas fa-home"></i> Home</Link></li>
+                        <li><Link to="/gallery"><i className="fas fa-images"></i> Gallery</Link></li>
+                        <li><Link to="/about"><i className="fas fa-info-circle"></i> About</Link></li>
+                        <li><Link to="/contact"><i className="fas fa-user tie"></i> Contact Us</Link></li>
                         <li>
                             <article className="your-products">
-
-                                <a href="#"><i className="fas fa-heart"></i> Favourites</a>
-                                <a href="#"><i className="fas fa-shopping-cart"></i> Cart</a>
+                                <Link to="#"><i className="fas fa-heart"></i> Favourites</Link>
+                                <Link to="/cart"><i className="fas fa-shopping-cart"></i> Cart</Link>
                             </article>
                         </li>
 

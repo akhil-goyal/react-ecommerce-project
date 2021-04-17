@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './product.css';
 
@@ -9,13 +9,39 @@ import NavButton from 'components/common/nav-button/NavButton';
 
 import plant1 from 'img/plant1.jpg';
 
-const Product = ({ productsList }) => {
+import { allProducts } from '../../contexts/product-context';
+
+const Product = () => {
 
     const { slug } = useParams();
 
-    const product = productsList.find((prod) => prod.slug() === slug) || productsList[0];
+    const { products } = useContext(allProducts);
+    const [data, setData] = useState(products);
+    const [currentProduct, setCurrentProduct] = useState({});
 
-    const { img, name, description } = product.features;
+    useEffect(() => {
+        if (products.length > 0) {
+            setData(products);
+            setCurrentProduct('Akhil');
+        }
+    }, [products]);
+
+    const buildSlug = name => {
+
+        return name.toString().toLowerCase()
+            .replace(/\s+/g, '-') // Replacing spaces with hyphen (-)
+            .replace(/&/g, '-and-') // Replacing '&' with 'and'
+            .replace(/[^\w\-]+/g, '') // Removing all special characters
+            .replace(/\-\-+/g, '-') // Replacing multiple hyphens with single hyphen
+            .replace(/^-+/, '') // Trimming hyphen from start of the slug
+            .replace(/-+$/, '') // Trimming hyphen from end of the sloug
+    }
+
+    console.log(currentProduct)
+
+    const product = data.find((prod) => buildSlug(prod.features.name) === slug);
+
+    // console.log(product.features);
 
     return (
         <>

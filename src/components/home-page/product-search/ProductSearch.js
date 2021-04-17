@@ -4,25 +4,6 @@ import { allProducts } from '../../../contexts/product-context';
 
 const ProductSearch = () => {
 
-    // const { products } = useContext(allProducts);
-
-    // const [data, setData] = useState(products);
-    // const [search, setSearch] = React.useState("");
-
-
-    // const onChangeHandler = (e) => {
-
-    //     if (e.target.value) {
-    //         const filteredTeams = data.filter(team => {
-    //             return team.features.name.toLowerCase().includes(e.target.value.toLowerCase());
-    //         });
-    //         setData(filteredTeams);
-    //     } else {
-    //         setData(products);
-    //     }
-    //     setSearch(e.target.value);
-    // }
-
     const { filters, setFilters } = useContext(allProducts);
 
     const onChangeHandler = (event) => {
