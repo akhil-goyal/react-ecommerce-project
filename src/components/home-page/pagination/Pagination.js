@@ -1,63 +1,113 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { Pagination } from 'antd';
 import './pagination.css';
-import { usePagination } from "./PagnationHook";
 
 import { allProducts } from '../../../contexts/product-context';
 
 const PaginationComponent = () => {
 
-    const { products, setProducts } = useContext(allProducts);
-    const [pageNum, setPageNum] = useState(1)
+    const { data, setTestHook } = useContext(allProducts);
 
-    const onPageChange = (current, size) => {
-        setPageNum(current)
+    const [currentPage, setcurrentPage] = useState(1);
+    const [itemsPerPage] = useState(6);
+
+    const [pageNumberLimit] = useState(6);
+    const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(6);
+    const [minPageNumberLimit, setminPageNumberLimit] = useState(0);
+
+    const handleClick = (event) => {
+        setcurrentPage(Number(event.target.id));
+    };
+
+    const pages = [];
+
+    for (let i = 1; i <= Math.ceil(data.length / itemsPerPage); i++) {
+        pages.push(i);
     }
 
-    const maxResults = 6;
-
-    let paginatedProducts = products
-        .slice((pageNum - 1) * maxResults, (pageNum - 1) * maxResults + maxResults)
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
 
     useEffect(() => {
-        setProducts(paginatedProducts);
-    }, [pageNum]);
+        setTestHook(currentItems);
+    }, [data]);
+
+    useEffect(() => {
+        setTestHook(currentItems);
+    }, [currentPage]);
+
+    const handleNextbtn = () => {
+        setcurrentPage(currentPage + 1);
+
+        if (currentPage + 1 > maxPageNumberLimit) {
+            setmaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit);
+            setminPageNumberLimit(minPageNumberLimit + pageNumberLimit);
+        }
+    };
+
+    const handlePrevbtn = () => {
+        setcurrentPage(currentPage - 1);
+
+        if ((currentPage - 1) % pageNumberLimit == 0) {
+            setmaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit);
+            setminPageNumberLimit(minPageNumberLimit - pageNumberLimit);
+        }
+    };
+
+    let pageIncrementBtn = null;
+    if (pages.length > maxPageNumberLimit) {
+        pageIncrementBtn = <li onClick={handleNextbtn}> &hellip; </li>;
+    }
+
+    let pageDecrementBtn = null;
+    if (minPageNumberLimit >= 1) {
+        pageDecrementBtn = <li onClick={handlePrevbtn}> &hellip; </li>;
+    }
+
+    const renderPageNumbers = pages.map((number) => {
+        if (number < maxPageNumberLimit + 1 && number > minPageNumberLimit) {
+            console.log(number);
+            return (
+                <li
+                    key={number}
+                    id={number}
+                    onClick={handleClick}
+                    className={currentPage === number ? "active" : null}
+                >
+                    {number}
+                </li>
+            );
+        } else {
+            return null;
+        }
+    });
 
     return (
-        <section>
+        <>
+            <section>
 
-            <nav aria-label="Pagination" className="pagination text-center container">
+                <nav aria-label="Pagination" className="pagination text-center container">
 
-                <article>
-                    <p><strong>Displaying 1-6 of {products.length} products.</strong></p>
-                </article>
+                    <article>
+                        <p><strong>Displaying {indexOfFirstItem + 1}-{indexOfLastItem} of {data.length} products.</strong></p>
+                    </article>
 
-                <Pagination
-                    id="pagination"
-                    current={pageNum}
-                    defaultPageSize={maxResults}
-                    total={products.length}
-                    onChange={onPageChange}
-                />
+                    <nav>
+                        <ol className="pages flex">
+                            {pageDecrementBtn}
+                            {renderPageNumbers}
+                            {pageIncrementBtn}
+                        </ol>
+                    </nav>
 
-                {/* <nav>
-                    <ol className="pages flex">
-                        <li><a href="#" aria-label="Current Page, Page 1" aria-current="true">1</a></li>
-                        <li><a href="#" aria-label="Page 2">2</a></li>
-                        <li><a href="#" aria-label="Page 3">3</a></li>
-                        <li><a href="#" aria-label="Page 4">4</a></li>
-                        <li><a href="#" aria-label="Page 5">5</a></li>
-                    </ol>
+                    <article className="buttons-prev-next container">
+                        <a onClick={handlePrevbtn} disabled={currentPage == pages[0] ? true : false}>Previous</a>
+                        <a onClick={handleNextbtn} disabled={currentPage == pages[pages.length - 1] ? true : false}>Next</a>
+                    </article>
                 </nav>
+            </section>
 
-                <article className="buttons-prev-next container">
-
-                    <a href="#">Previous</a>
-                    <a href="#">Next</a>
-                </article> */}
-
-            </nav>
-        </section>
+        </>
     )
 }
 

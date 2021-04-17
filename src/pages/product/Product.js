@@ -7,8 +7,6 @@ import Header from 'components/common/header/Header';
 import Footer from 'components/common/footer/Footer';
 import NavButton from 'components/common/nav-button/NavButton';
 
-import plant1 from 'img/plant1.jpg';
-
 const Product = ({ productsList }) => {
 
     const { slug } = useParams();

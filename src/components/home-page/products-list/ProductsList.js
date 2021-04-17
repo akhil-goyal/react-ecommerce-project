@@ -8,10 +8,15 @@ import newLabel from 'img/new.png';
 
 const ProductsList = () => {
 
-    const { products, filters } = useContext(allProducts);
-    let [data, setData] = useState(products);
+    const { products, filters, data, setData, testHook, setTestHook } = useContext(allProducts);
+
+    console.log('Testing Hooook : ', testHook);
+
+    // let [data, setData] = useState(products);
 
     useEffect(() => {
+
+        console.log('Filtered Hook ...');
 
         let filteredData = [...products];
 
@@ -56,15 +61,15 @@ const ProductsList = () => {
                 break;
         }
 
-        setData(filteredData);
+        setTestHook(filteredData);
 
     }, [filters]);
 
-    useEffect(() => {
-        if (products.length > 0) {
-            setData(products);
-        }
-    }, [products]);
+    // useEffect(() => {
+    //     if (products.length > 0) {
+    //         setData(products);
+    //     }
+    // }, [products]);
 
     const buildSlug = name => {
 
@@ -83,7 +88,7 @@ const ProductsList = () => {
         return finalPrice
     }
 
-    const productList = data.map(product => {
+    const productList = testHook.map(product => {
 
         let finalPrice = applyDiscount(product.features.initialPrice, product.features.discount);
         let productSlug = buildSlug(product.features.name);
@@ -94,7 +99,9 @@ const ProductsList = () => {
                 <section>
 
                     <figure>
-                        <img className="product-picture" src={product.features.img} alt={product.features.name} />
+                        <Link to={`/product/${productSlug}`}>
+                            <img className="product-picture" src={product.features.img} alt={product.features.name} />
+                        </Link>
                     </figure>
 
                     <article className="product-title-icons flex">

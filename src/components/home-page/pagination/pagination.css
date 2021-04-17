@@ -1,3 +1,6 @@
+
+
+
 /* ----------------------- Section PAGINATION --------------------- */
 .pagination {
     margin-top: 1em;
@@ -6,13 +9,15 @@
   .pages {
     justify-content: center;
   }
-  
+
   .pages > li {
     margin: calc(var(--pad-and-gap) / 2);
-    background-color: var(--color-secondary);
+    background-color: var(--color-primary);
+    color: #fff;
     padding: 0.4rem 0.8rem;
     border-radius: 0.3rem;
     margin-top: 1rem;
+    cursor: pointer;
   }
   
   .pages > li a {
@@ -33,6 +38,7 @@
     height: 1.8rem;
     width: 6rem;
     margin-top: 1rem;
+    cursor: pointer;
   }
   
   .buttons-prev-next a:hover {

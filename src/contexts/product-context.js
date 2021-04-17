@@ -6,6 +6,18 @@ export const allProducts = createContext();
 const ProductsContext = ({ children }) => {
 
     const [products, setProducts] = useState([]);
+    let [data, setData] = useState(products);
+
+    let [testHook, setTestHook] = useState([]);
+
+    console.log('Testing Hook : ', testHook);
+
+    useEffect(() => {
+        if (products.length > 0) {
+            setData(products);
+        }
+        console.log('Product Hook From Context ...');
+    }, [products]);
 
     const [filters, setFilters] = useState({
         query: '',
@@ -26,8 +38,12 @@ const ProductsContext = ({ children }) => {
             value={{
                 products,
                 filters,
+                data,
+                testHook,
                 setProducts,
                 setFilters,
+                setTestHook,
+                setData,
                 handleProductsData
             }}>
             {children}

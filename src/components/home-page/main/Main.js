@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './main.css';
 
 import Hero from '../hero/Hero';
@@ -7,7 +7,11 @@ import PaginationComponent from '../pagination/Pagination';
 import ProductSearch from '../product-search/ProductSearch';
 import ProductsList from '../products-list/ProductsList';
 
+import { allProducts } from '../../../contexts/product-context';
+
 const Main = () => {
+
+    const { products } = useContext(allProducts);
 
     return (
         <main className="products">
@@ -28,7 +32,7 @@ const Main = () => {
 
             </section>
 
-            <PaginationComponent />
+            <PaginationComponent productsList={products} />
 
         </main>
     )
