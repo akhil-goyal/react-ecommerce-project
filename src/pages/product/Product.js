@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import './product.css';
 
@@ -9,22 +9,9 @@ import NavButton from 'components/common/nav-button/NavButton';
 
 import plant1 from 'img/plant1.jpg';
 
-import { allProducts } from '../../contexts/product-context';
-
-const Product = () => {
+const Product = ({ productsList }) => {
 
     const { slug } = useParams();
-
-    const { products } = useContext(allProducts);
-    const [data, setData] = useState(products);
-    const [currentProduct, setCurrentProduct] = useState({});
-
-    useEffect(() => {
-        if (products.length > 0) {
-            setData(products);
-            setCurrentProduct('Akhil');
-        }
-    }, [products]);
 
     const buildSlug = name => {
 
@@ -37,11 +24,14 @@ const Product = () => {
             .replace(/-+$/, '') // Trimming hyphen from end of the sloug
     }
 
-    console.log(currentProduct)
+    const product = productsList.find((prod) => buildSlug(prod.features.name) === slug);
 
-    const product = data.find((prod) => buildSlug(prod.features.name) === slug);
+    const { name, description, img, rating, category, initialPrice, discount } = product.features;
 
-    // console.log(product.features);
+    const applyDiscount = (initialPrice, discount) => {
+        let finalPrice = initialPrice - discount / 100 * initialPrice;
+        return finalPrice
+    }
 
     return (
         <>
@@ -56,23 +46,27 @@ const Product = () => {
                 <section className="section-product-details">
 
                     <div className="product-image">
-                        <img src={plant1} alt="" />
+                        <img src={img} alt="" />
                     </div>
 
                     <div className="product-info">
 
                         <div className="product-title-ratings">
 
-                            <h2>Product Name</h2>
+                            <h1 className="text-lg">{name}</h1>
 
                             <div className="product-ratings flex">
-                                <p>4.5</p>
+                                <p>{rating}</p>
                                 <div>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star-half-alt"></i>
+                                    {
+                                        <>
+                                            <i className={(rating == 0) ? 'far fa-star' : (rating > 0 && rating < 1) ? 'fas fa-star-half-alt' : 'fas fa-star'}></i>
+                                            <i className={(rating > 1 && rating < 2) ? 'fas fa-star-half-alt' : (rating >= 2) ? 'fas fa-star' : 'far fa-star'}></i>
+                                            <i className={(rating > 2 && rating < 3) ? 'fas fa-star-half-alt' : (rating >= 3) ? 'fas fa-star' : 'far fa-star'}></i>
+                                            <i className={(rating > 3 && rating < 4) ? 'fas fa-star-half-alt' : (rating >= 4) ? 'fas fa-star' : 'far fa-star'}></i>
+                                            <i className={(rating > 4 && rating < 5) ? 'fas fa-star-half-alt' : (rating >= 5) ? 'fas fa-star' : 'far fa-star'}></i>
+                                        </>
+                                    }
                                 </div>
                             </div>
 
@@ -80,22 +74,15 @@ const Product = () => {
 
                         <div>
                             <h3>Product Description</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, placeat autem architecto qui
-                            repudiandae quis. Impedit nobis minus facere amet similique eos eveniet sit inventore, mollitia
-                            commodi! Nisi doloremque dolorem distinctio nam obcaecati velit ipsum quasi hic architecto nulla
-                            repellendus eligendi alias placeat sapiente, commodi non vero tempora vel a quam. Alias deserunt
-                            ipsum eius quaerat placeat corrupti qui. Asperiores, fugit ab corrupti cupiditate impedit natus,
-                            dolores quaerat atque ut laudantium tenetur libero beatae illo omnis debitis perspiciatis
-                            placeat.
-                </p>
+                            <p>{description}</p>
                         </div>
 
                         <div>
-                            <p>Category : <em>Indoor</em></p>
+                            <p>Category : <em>{category}</em></p>
                         </div>
 
                         <div>
-                            <p>Price : <del>$100</del> <span className="price">$80</span> only.</p>
+                            <p>Price : <del>${initialPrice}</del> <span className="price">${applyDiscount(initialPrice, discount)}</span> only.</p>
                         </div>
 
                         <div className="product-buttons">
