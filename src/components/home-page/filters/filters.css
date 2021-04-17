@@ -4,9 +4,9 @@
     justify-content: flex-start;
   }
   
-  .filter-options {
-    display: none;
-  }
+  /* .filter-options {
+    display: block;
+  } */
   
   .button-filters {
     cursor: pointer;
@@ -109,9 +109,9 @@
     padding: 2em 1em;
 }
 
-.filter-options {
+/* .filter-options {
     display: block;
-}
+} */
 
 .product-filters {
     justify-content: start;
@@ -157,9 +157,9 @@
     padding: 2em 1em;
 }
 
-.filter-options {
+/* .filter-options {
     display: block;
-}
+} */
 
 .button-filters {
     display: none;
@@ -200,9 +200,9 @@ body a,p{
     margin-top: 1em;
 }
 
-.filter-options {
+/* .filter-options {
     display: block;
-}
+} */
 
 .button-filters {
     display: none;

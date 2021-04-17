@@ -5,12 +5,15 @@ export const menuItems = createContext();
 const MenuContext = ({ children }) => {
 
     const [menuWidth, setMenuWidth] = useState('0em');
+    const [filtersMenu, setFiltersMenu] = useState('block');
 
     return (
         <menuItems.Provider
             value={{
                 menuWidth,
-                setMenuWidth
+                filtersMenu,
+                setMenuWidth,
+                setFiltersMenu
             }}>
             {children}
         </menuItems.Provider>

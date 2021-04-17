@@ -1,14 +1,15 @@
 import React, { useContext } from 'react';
 import './filters.css';
 import { allProducts } from '../../../contexts/product-context';
+import { menuItems } from '../../../contexts/menu-context';
 
 const Filters = () => {
 
     const { filters, setFilters } = useContext(allProducts);
+    const { filtersMenu, setFiltersMenu } = useContext(menuItems);
 
     const handleRatingChange = (event) => {
 
-        console.log('FILTER RATING : ', event.target.value);
         setFilters({
             ...filters,
             rating: event.target.value
@@ -16,8 +17,6 @@ const Filters = () => {
     }
 
     const handlePlantTypeChange = (event) => {
-
-        console.log('FILTER PLANT TYPE : ', event.target.value);
 
         setFilters({
             ...filters,
@@ -28,8 +27,6 @@ const Filters = () => {
 
     const handlePotRequirementChange = (event) => {
 
-        console.log('FILTER POT REQUIREMENT : ', event.target.value);
-
         setFilters({
             ...filters,
             potRequirement: event.target.value
@@ -38,8 +35,6 @@ const Filters = () => {
     }
 
     const handlePlantSizeChange = (event) => {
-
-        console.log('FILTER PLANT SIZE : ', event.target.value);
 
         setFilters({
             ...filters,
@@ -50,12 +45,17 @@ const Filters = () => {
 
     const handleSortByChange = (event) => {
 
-        console.log('FILTER SORT BY : ', event.target.value);
-
         setFilters({
             ...filters,
             sortBy: event.target.value
         });
+
+    }
+
+
+    const toggleFilters = () => {
+
+        setFiltersMenu(filtersMenu === 'none' ? 'block' : 'none');
 
     }
 
@@ -65,15 +65,15 @@ const Filters = () => {
             <article className="product-filters flex">
 
                 <h2>Filters</h2>
-                <figure className="button-filters"><i className="fas fa-sliders-h"></i></figure>
+                <figure onClick={toggleFilters} className="button-filters"><i className="fas fa-sliders-h"></i></figure>
 
             </article>
 
-            <article>
+            <article style={{ display: `${filtersMenu}` }}>
 
                 <form className="filters">
 
-                    <section className="filter-options">
+                    <section>
 
                         <fieldset>
 
