@@ -1,5 +1,5 @@
 // PACKAGES
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 import { authMethods } from '../firebase-utils/auth-methods';
 
 // Creating a CONTEXT for firebase authentication.
@@ -51,6 +51,7 @@ const AuthContext = ({ children }) => {
         authMethods.googleLoginMethod(setErrors, setCurrentUser);
     }
 
+    // Function to handle the Facebook Login.
     const handleFacebookLogin = () => {
         authMethods.facebookLoginMethod(setErrors, setCurrentUser);
     }

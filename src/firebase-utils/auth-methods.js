@@ -108,6 +108,7 @@ export const authMethods = {
             if (user) {
                 setIsAuth(true);
                 setLoading(false);
+
             } else {
                 setIsAuth(false);
                 setLoading(false);

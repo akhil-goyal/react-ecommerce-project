@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import './header.css';
 import { firebaseAuth } from '../../../contexts/auth-context';
@@ -9,7 +9,7 @@ import siteLogo from 'img/logo.png';
 
 const Header = ({ history }) => {
 
-    const { handleSignOut, currentUser } = useContext(firebaseAuth);
+    const { handleSignOut } = useContext(firebaseAuth);
     const { setMenuWidth } = useContext(menuItems);
 
     const signOutHandler = async () => {
@@ -17,12 +17,9 @@ const Header = ({ history }) => {
         history.push('/signin');
     }
 
-    const openMenu = (e) => {
-        e.preventDefault();
+    const openMenu = () => {
         setMenuWidth('17em');
     }
-
-    console.log('Current : ', currentUser);
 
     return (
         <>
@@ -60,8 +57,6 @@ const Header = ({ history }) => {
                 </nav>
 
                 <figure className="user-settings flex">
-
-                    <p>Welcome, <b>Akhil Goyal</b></p>
 
                     <img className="user-image" src={userAvatar} alt="" />
 
