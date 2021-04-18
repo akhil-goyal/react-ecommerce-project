@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './product-list.css';
 
@@ -18,7 +18,7 @@ const ProductsList = () => {
 
         console.log('Filtered Hook ...');
 
-        let filteredData = [...products];
+        let filteredData = [...data];
 
         if (filters.query)
             filteredData = filteredData.filter((prod) => prod.features.name.toLowerCase().includes(filters.query.toLowerCase().trim()))
