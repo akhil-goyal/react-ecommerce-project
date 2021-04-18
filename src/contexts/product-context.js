@@ -8,15 +8,12 @@ const ProductsContext = ({ children }) => {
     const [products, setProducts] = useState([]);
     let [data, setData] = useState(products);
 
-    let [testHook, setTestHook] = useState([]);
-
-    console.log('Testing Hook : ', testHook);
+    let [filteredData, setFilteredData] = useState([]);
 
     useEffect(() => {
         if (products.length > 0) {
             setData(products);
         }
-        console.log('Product Hook From Context ...');
     }, [products]);
 
     const [filters, setFilters] = useState({
@@ -39,10 +36,10 @@ const ProductsContext = ({ children }) => {
                 products,
                 filters,
                 data,
-                testHook,
+                filteredData,
                 setProducts,
                 setFilters,
-                setTestHook,
+                setFilteredData,
                 setData,
                 handleProductsData
             }}>

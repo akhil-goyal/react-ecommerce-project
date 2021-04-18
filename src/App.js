@@ -1,7 +1,6 @@
 // PACKAGES
 import React, { useContext, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import firebase from 'firebase/firebase';
 
 // COMPONENTS & PAGES
 import PrivateRoute from "components/helpers/Protected";
@@ -19,11 +18,12 @@ import Checkout from 'pages/checkout/Checkout';
 import Page404 from 'pages/page-404/Page404';
 
 // CONTEXTS
-import { ProductsContext, TestContext, allProducts } from './contexts/product-context';
+import { allProducts } from './contexts/product-context';
 import { firebaseAuth } from './contexts/auth-context';
 
 // OTHERS
 import { trendingProducts, productsList } from './products';
+import loader from 'img/loader.gif';
 
 const App = () => {
 
@@ -37,7 +37,9 @@ const App = () => {
 	}, [])
 
 	return loading === true ? (
-		<h1>Loading...</h1>
+		<div className="loader">
+			<img src={loader} alt="Site Loader" />
+		</div>
 	) : (
 		<Switch>
 

@@ -5,7 +5,7 @@ import { allProducts } from '../../../contexts/product-context';
 
 const PaginationComponent = () => {
 
-    const { data, setTestHook } = useContext(allProducts);
+    const { data, setFilteredData } = useContext(allProducts);
 
     const [currentPage, setcurrentPage] = useState(1);
     const [itemsPerPage] = useState(6);
@@ -29,11 +29,11 @@ const PaginationComponent = () => {
     const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
 
     useEffect(() => {
-        setTestHook(currentItems);
+        setFilteredData(currentItems);
     }, [data]);
 
     useEffect(() => {
-        setTestHook(currentItems);
+        setFilteredData(currentItems);
     }, [currentPage]);
 
     const handleNextbtn = () => {

@@ -8,11 +8,7 @@ import newLabel from 'img/new.png';
 
 const ProductsList = () => {
 
-    const { products, filters, data, setData, testHook, setTestHook } = useContext(allProducts);
-
-    console.log('Testing Hooook : ', testHook);
-
-    // let [data, setData] = useState(products);
+    const { products, filters, data, setData, filteredData, setFilteredData } = useContext(allProducts);
 
     useEffect(() => {
 
@@ -61,15 +57,9 @@ const ProductsList = () => {
                 break;
         }
 
-        setTestHook(filteredData);
+        setFilteredData(filteredData);
 
     }, [filters]);
-
-    // useEffect(() => {
-    //     if (products.length > 0) {
-    //         setData(products);
-    //     }
-    // }, [products]);
 
     const buildSlug = name => {
 
@@ -88,7 +78,7 @@ const ProductsList = () => {
         return finalPrice
     }
 
-    const productList = testHook.map(product => {
+    const productList = filteredData.map(product => {
 
         let finalPrice = applyDiscount(product.features.initialPrice, product.features.discount);
         let productSlug = buildSlug(product.features.name);
@@ -118,7 +108,7 @@ const ProductsList = () => {
 
                         <article className="flex">
 
-                            <figure><i className="fas fa-shopping-cart"></i></figure>
+                            <figure ><i className="fas fa-shopping-cart"></i></figure>
                             <figure><i className="fas fa-heart"></i></figure>
                         </article>
 

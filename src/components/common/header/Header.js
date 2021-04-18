@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import './header.css';
 import { firebaseAuth } from '../../../contexts/auth-context';
@@ -21,6 +21,8 @@ const Header = ({ history }) => {
         e.preventDefault();
         setMenuWidth('17em');
     }
+
+    console.log('Current : ', currentUser);
 
     return (
         <>
@@ -58,6 +60,8 @@ const Header = ({ history }) => {
                 </nav>
 
                 <figure className="user-settings flex">
+
+                    <p>Welcome, <b>Akhil Goyal</b></p>
 
                     <img className="user-image" src={userAvatar} alt="" />
 
