@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack serve --mode development --history-api-fallback",
     "build": "webpack --mode production",
-    "deploy": "git reset && git add -f dist && git commit -m \"deploy\" && git subtree split --prefix dist -b gh-pages && git push -f origin gh-pages:gh-pages && git branch -D gh-pages && git reset --mixed HEAD~1"
+    "deploy": "npm run build; netlify deploy --prod --dir=dist;"
   },
   "keywords": [],
   "author": "",
@@ -36,6 +36,7 @@
     "dotenv-webpack": "^7.0.2",
     "firebase": "^8.4.0",
     "framer-motion": "^4.1.4",
+    "netlify-cli": "^3.21.0",
     "process": "^0.11.10",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
