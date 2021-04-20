@@ -4,7 +4,7 @@ export const menuItems = createContext();
 
 const MenuContext = ({ children }) => {
 
-    const [menuWidth, setMenuWidth] = useState('0em');
+    const [menuWidth, setMenuWidth] = useState('0.01em');
     const [filtersMenu, setFiltersMenu] = useState('block');
 
     return (

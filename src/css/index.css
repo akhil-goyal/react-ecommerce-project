@@ -50,22 +50,22 @@
 /* ------------------------- Basic Resets ----------------------- */
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  padding: 0em;
+  margin: 0em;
   scroll-behavior: smooth;
 }
 
 body {
   font-family: var(--main-font);
   line-height: 1.6;
-  padding: 0 var(--pad-and-gap);
+  padding: 0em var(--pad-and-gap);
 }
 
 h1,
 h2 {
   font-weight: 300;
   line-height: 1.2;
-  margin: 1rem 0;
+  margin: 1rem 0em;
 }
 
 a {
@@ -80,8 +80,8 @@ img {
 
 ul, ol, dl {
   list-style: none;
-  margin: 0;
-  padding: 0;
+  margin: 0em;
+  padding: 0em;
 }
 
 li > ul, li > ol {
@@ -112,13 +112,13 @@ transform: scale(1.07);
 
 fieldset {
   display: flex;
-  margin: 0;
-  padding: 0;
+  margin: 0em;
+  padding: 0em;
   border: none;
 } 
 
 legend {
-  padding: 0;
+  padding: 0em;
   border: none;
 }
 
@@ -176,7 +176,7 @@ legend.legend {
 }
 
 .grid-row-gap {
-  grid-gap: 0;
+  grid-gap: 0em;
 }
 
 .grid-1 {
@@ -255,27 +255,27 @@ legend.legend {
 
 /* ----------------------------- Margins --------------------------- */
 .my-1 {
-  margin: 1rem 0;
+  margin: 1rem 0em;
 }
 
 .my-2 {
-  margin: 1.5rem 0;
+  margin: 1.5rem 0em;
 }
 
 .my-3 {
-  margin: 2rem 0;
+  margin: 2rem 0em;
 }
 
 .my-4 {
-  margin: 3rem 0;
+  margin: 3rem 0em;
 }
 
 .my-5 {
-  margin: 4rem 0;
+  margin: 4rem 0em;
 }
 
 .my-auto{
-  margin: 0 auto;
+  margin: 0em auto;
 }
 
 .m-1 {
@@ -303,23 +303,23 @@ legend.legend {
 
 /* ---------------------------- Paddings -------------------------- */
 .py-1 {
-  padding: 1rem 0;
+  padding: 1rem 0em;
 }
 
 .py-2 {
-  padding: 1.5rem 0;
+  padding: 1.5rem 0em;
 }
 
 .py-3 {
-  padding: 2rem 0;
+  padding: 2rem 0em;
 }
 
 .py-4 {
-  padding: 3rem 0;
+  padding: 3rem 0em;
 }
 
 .py-5 {
-  padding: 4rem 0;
+  padding: 4rem 0em;
 }
 
 .p-1 {
