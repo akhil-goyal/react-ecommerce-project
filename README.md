@@ -1,11 +1,64 @@
-# E-Comm Webstore Review Project
+# E-Commerce - Web Store Project
 
-## About project
+## Deployment Status 
 
-This project is a part of WDDM 121/122 for the course 'Web Design & Development' at Humber College. The project named "E-Comm Webstore Review Project" has been built in order to set up an e-commerce store using the latest fundamentals & techniques of front-end web development. The project titled 'Spruce' has been organized such that it aims to sell the plants online. This will have several options for the customers to enchance their user experience, such as :
+[![Netlify Status](https://api.netlify.com/api/v1/badges/01f47ba1-7b78-4ec3-821d-70caa1fd7e52/deploy-status)](https://app.netlify.com/sites/lucid-torvalds-f1e00e/deploys)
 
-- A carousel to display all the trending products in the market.
-- Various filters that can enable the user to arrive at what they want exactly.
-- Nice portrayal of products on home page with all the relevant information provided on the stop.
-- Ability to add the product to cart or checkout directly from the home page.
-- A label 'new' that can enable the customer in knowing if a product has arrived within last 48 hours.
+## W3C
+
+![W3C](https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2F607f13553aaa9100ed5b539f--lucid-torvalds-f1e00e.netlify.app%2F%23%2F)
+
+## Lighthouse 
+
+![Accessibility](assets/accessibility.svg)
+![Best Practices](assets/best-practices.svg)
+![Performance](assets/performance.svg)
+![SEO](assets/seo.svg)
+
+## Project Overview
+
+This project is a part of course WDDM - 121/122 for program Web Designing & Development at Humber College. The purpose of this project is to be familiar with latest front-end development practices ranging from creating a UI to developing a user friendly e-commerce store.
+
+### Technologies Used
+
+* HTML 5
+* CSS 3
+* JavaScript
+* React JS (Hooks)
+* Firebase (Authentication, Firestore, Storage)
+
+### Features
+
+* User authentication
+* Social Login (Google & Facebook)
+* Resource Protection
+* Product Search
+* Product Filtering
+* Pagination
+
+## Installation
+
+To install this project locally, run -
+
+1. Install the project dependencies
+   ```shell
+   npm install
+   ```
+
+2. Run the application
+    ```shell
+    npm run start
+    ```
+
+## Deployment
+
+   Deploy the project to netlify
+   ```shell
+   npm run deploy
+   ```
+
+## Live Testing
+
+The project can be tested live by visiting at :
+
+https://lucid-torvalds-f1e00e.netlify.app/#/
