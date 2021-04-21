@@ -58,6 +58,7 @@ h1 {
 
 .fa-heart {
     margin-left: 0.5em;
+    font-size: 1.5em;
 }
 
 .btn-cart {
@@ -173,6 +174,7 @@ h1 {
 
 .section-product-details {
     grid-template-columns: repeat(2, 1fr);
+    margin: 4em 0em 4em 0em;
 }
 
 .product-image img {
@@ -183,6 +185,10 @@ h1 {
 .product-info{
     padding: 0em 2em;
     margin-top: 0em;
+}
+
+.fa-heart {
+    font-size: 1.5em;
 }
 
 }

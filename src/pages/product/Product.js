@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import './product.css';
 
 import Sidebar from 'components/common/sidebar/Sidebar';
@@ -90,7 +90,7 @@ const Product = ({ productsList }) => {
                             </div>
 
                             <div className="add-to-cart">
-                                <input type="submit" value="Add to Cart" className="btn-cart" />
+                                <Link to="/cart"><input type="submit" value="Add to Cart" className="btn-cart" /></Link>
                             </div>
                         </div>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './cart.css';
 
 import Sidebar from 'components/common/sidebar/Sidebar';

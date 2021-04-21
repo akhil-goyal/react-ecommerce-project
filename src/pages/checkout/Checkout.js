@@ -1,5 +1,6 @@
 import React from 'react'
 import './checkout.css';
+import {Link} from 'react-router-dom';
 
 import Sidebar from 'components/common/sidebar/Sidebar';
 import Header from 'components/common/header/Header';
@@ -57,9 +58,9 @@ const Checkout = () => {
                         <div className="checkout-payment">
                             <h2>Total : $108.57</h2>
 
-                            <a href="#" className="btn-credit-debit">Pay with credit/debit</a>
+                            <Link to="/checkout" className="btn-credit-debit">Pay with credit/debit</Link>
 
-                            <a href="#" className="btn-paypal">Pay with PayPal</a>
+                            <Link to="/checkout" className="btn-paypal">Pay with PayPal</Link>
 
                             <div className="checkout-secure-message">
                                 <h4>Your payment is 100% Secure.</h4>
