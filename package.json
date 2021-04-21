@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack serve --mode development --history-api-fallback",
     "build": "webpack --mode production",
-    "deploy": "npm run build; netlify deploy --prod --dir=dist;"
+    "analytics": "node analytics",
+    "deploy": "npm run analytics; npm run build; netlify deploy --prod --dir=dist;"
   },
   "keywords": [],
   "author": "",
@@ -27,14 +28,18 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "badge-maker": "^3.3.0",
     "dotenv": "^8.2.0",
     "firebase": "^8.4.0",
     "framer-motion": "^4.1.4",
+    "lighthouse": "^7.3.0",
     "netlify-cli": "^3.21.0",
     "process": "^0.11.10",
+    "puppeteer": "^8.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
+    "url": "^0.11.0",
     "uuid": "^8.3.2"
   }
 }
