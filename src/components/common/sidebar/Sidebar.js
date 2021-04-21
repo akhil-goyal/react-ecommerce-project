@@ -8,8 +8,10 @@ import siteLogo from 'img/logo.png';
 
 const Sidebar = () => {
 
+    // Importing menu state, method from menu context.
     const { menuWidth, setMenuWidth } = useContext(menuItems);
 
+    // Function to close the sidebar.
     const closeMenu = (e) => {
 
         e.preventDefault();

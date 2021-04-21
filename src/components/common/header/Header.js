@@ -9,14 +9,17 @@ import siteLogo from 'img/logo.png';
 
 const Header = ({ history }) => {
 
+    // Importing auth & menu methods from contexts.
     const { handleSignOut } = useContext(firebaseAuth);
     const { setMenuWidth } = useContext(menuItems);
 
+    // Sign out
     const signOutHandler = async () => {
         await handleSignOut();
         history.push('/signin');
     }
 
+    // Menu Opener.
     const openMenu = () => {
         setMenuWidth('17em');
     }

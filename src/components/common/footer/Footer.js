@@ -15,11 +15,11 @@ const Footer = () => {
 
             <nav aria-label="Legal">
                 <ul className="legal">
-                    <li><a href="#">Terms of Use</a></li>
+                    <li><b>Terms of Use</b></li>
                     <li>|</li>
-                    <li><a href="#">Privacy Policy</a></li>
+                    <li><b>Privacy Policy</b></li>
                     <li>|</li>
-                    <li><a href="#">Accessibility Policy</a></li>
+                    <li><b>Accessibility Policy</b></li>
                 </ul>
             </nav>
 

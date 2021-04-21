@@ -9,8 +9,10 @@ import NavButton from 'components/common/nav-button/NavButton';
 
 const Product = ({ productsList }) => {
 
+    // Getting the slug parameter value from URL.
     const { slug } = useParams();
 
+    // Creating a new slug.
     const buildSlug = name => {
 
         return name.toString().toLowerCase()
@@ -22,10 +24,14 @@ const Product = ({ productsList }) => {
             .replace(/-+$/, '') // Trimming hyphen from end of the sloug
     }
 
+    // Finding a product on the basis of slug.
     const product = productsList.find((prod) => buildSlug(prod.features.name) === slug);
 
+    // Destructuring the product fields.
     const { name, description, img, rating, category, initialPrice, discount } = product.features;
 
+    // Function to calculate final price on the basis
+    // of initial price & discount.
     const applyDiscount = (initialPrice, discount) => {
         let finalPrice = initialPrice - discount / 100 * initialPrice;
         return finalPrice

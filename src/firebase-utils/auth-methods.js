@@ -133,6 +133,7 @@ export const authMethods = {
 
 }
 
+// Function to add the newly signed up user to the firestore.
 const addUser = (firstName, lastName, email) => {
 
     const user = firebase.auth().currentUser;
@@ -152,6 +153,7 @@ const addUser = (firstName, lastName, email) => {
         }).catch((err) => console.log("An error occured while storing user data : ", err));
 }
 
+// Function to fetch current signed up user data from the firestore.
 const fetchUser = (setErrors, setCurrentUser) => {
 
     const user = firebase.auth().currentUser;

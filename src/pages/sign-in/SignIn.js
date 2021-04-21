@@ -6,14 +6,19 @@ import { firebaseAuth } from '../../contexts/auth-context';
 
 const SignIn = ({ history }) => {
 
+    // Destructuring the auth methods from context.
     const { handleSignIn, inputs, setInputs, errors } = useContext(firebaseAuth);
 
     const handleSubmit = async (e) => {
-        e.preventDefault()
-        await handleSignIn()
+        e.preventDefault();
+        await handleSignIn();
+
+        // Redirecting to dashboard if the
+        // user is signed up successfully.
         history.push('/dashboard')
     }
 
+    // Handling change in input fields.
     const handleChange = e => {
         const { name, value } = e.target
         setInputs(prev => ({ ...prev, [name]: value }))

@@ -4,10 +4,14 @@ import { allProducts } from '../../../contexts/product-context';
 
 const ProductSearch = () => {
 
+    // Importing filters state, method from products context.
     const { filters, setFilters } = useContext(allProducts);
 
+    // Whenever there's a change in product search field.
     const onChangeHandler = (event) => {
 
+        // Setting the products filters state
+        // with product search query.
         setFilters({
             ...filters,
             query: event.target.value

@@ -5,9 +5,11 @@ import { menuItems } from '../../../contexts/menu-context';
 
 const Filters = () => {
 
+    // Importing filters menu, methods from filters context.
     const { filters, setFilters } = useContext(allProducts);
     const { filtersMenu, setFiltersMenu } = useContext(menuItems);
 
+    // Ratings Filter
     const handleRatingChange = (event) => {
 
         setFilters({
@@ -16,6 +18,7 @@ const Filters = () => {
         });
     }
 
+    // Plant Type Filter
     const handlePlantTypeChange = (event) => {
 
         setFilters({
@@ -25,6 +28,7 @@ const Filters = () => {
 
     }
 
+    // Pot Requirement Filter
     const handlePotRequirementChange = (event) => {
 
         setFilters({
@@ -34,6 +38,7 @@ const Filters = () => {
 
     }
 
+    // Plant Size Filter
     const handlePlantSizeChange = (event) => {
 
         setFilters({
@@ -43,6 +48,7 @@ const Filters = () => {
 
     }
 
+    // Sorting Filter
     const handleSortByChange = (event) => {
 
         setFilters({
@@ -52,7 +58,7 @@ const Filters = () => {
 
     }
 
-
+    // Filters Menu toggler.
     const toggleFilters = () => {
 
         setFiltersMenu(filtersMenu === 'none' ? 'block' : 'none');

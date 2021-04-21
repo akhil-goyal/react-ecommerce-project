@@ -8,14 +8,17 @@ import newLabel from 'img/new.png';
 
 const ProductsList = () => {
 
-    const { products, filters, data, setData, filteredData, setFilteredData } = useContext(allProducts);
+    // Importing products, filters states & methods from products context.
+    const { filters, data, filteredData, setFilteredData } = useContext(allProducts);
 
+    // This hook will fire up whenever there's a change in any flters data.
     useEffect(() => {
 
-        console.log('Filtered Hook ...');
-
+        // Duplicating the original products array.
         let filteredData = [...data];
 
+        // Setting the values of filterd data on the basis of current state
+        // and extracting it from firestore.
         if (filters.query)
             filteredData = filteredData.filter((prod) => prod.features.name.toLowerCase().includes(filters.query.toLowerCase().trim()))
         if (filters.plantsType !== 'all')
@@ -25,6 +28,8 @@ const ProductsList = () => {
         if (filters.plantSize !== 'all')
             filteredData = filteredData.filter((prod) => prod.features.plantSize.toLowerCase() === filters.plantSize.toLowerCase())
 
+        // Setting the ratings state on the basis of rating
+        // selected by the user.
         if (filters.rating !== 'all') {
             switch (filters.rating) {
                 case '4':
@@ -42,6 +47,8 @@ const ProductsList = () => {
             }
         }
 
+        // Setting the sorting option state on the basis of
+        // Sorting selected by user.
         switch (filters.sortBy) {
             case 'rating':
                 filteredData.sort((a, b) => b.features.rating - a.features.rating);
@@ -57,10 +64,12 @@ const ProductsList = () => {
                 break;
         }
 
+        // Setting the filteredData state as new filtered data.
         setFilteredData(filteredData);
 
     }, [filters]);
 
+    // Function to build a new slug as per the product name.
     const buildSlug = name => {
 
         return name.toString().toLowerCase()
@@ -73,6 +82,8 @@ const ProductsList = () => {
 
     }
 
+    // Function to apply discount on the basis of initial price
+    // & discount values of a product.
     const applyDiscount = (initialPrice, discount) => {
         let finalPrice = initialPrice - discount / 100 * initialPrice;
         return finalPrice

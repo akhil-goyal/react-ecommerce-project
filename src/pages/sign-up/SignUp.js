@@ -9,33 +9,41 @@ import facebookIcon from 'img/facebook.png';
 
 const SignUp = ({ history }) => {
 
+    // Destructuring the auth methods from context.
     const { handleSignUp, handleGoogleSignIn, handleFacebookLogin, inputs, setInputs, errors, setErrors } = useContext(firebaseAuth);
 
     const handleSubmit = async (e) => {
 
         e.preventDefault();
 
+        // Validating passwords fields.
         if (inputs.password.length < 6) {
             setErrors(['Password must be atleast 6 characters long.']);
         } else if (inputs.password !== inputs.confirmPassword) {
             setErrors(['Password & Confirm Password do not match.']);
         } else {
             await handleSignUp();
+
+            // Redirecting to dashboard if the
+            // user is signed up successfully.
             history.push('/dashboard');
         }
 
     }
 
+    // Google Sign In
     const signInWithGoogle = async () => {
         await handleGoogleSignIn();
         history.push('/dashboard');
     }
 
+    // Facebook Log In
     const loginWithFacebook = async () => {
         await handleFacebookLogin();
         history.push('/dashboard');
     }
 
+    // Handling change in input fields.
     const handleChange = e => {
         setErrors([]);
         const { name, value } = e.target;

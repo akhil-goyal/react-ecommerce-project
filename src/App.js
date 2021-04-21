@@ -27,15 +27,22 @@ import loader from 'img/loader.gif';
 
 const App = () => {
 
+	// Destructuring the states from firebase & products contexts.
 	const { isAuth, loading, handleUserAuth } = useContext(firebaseAuth);
 	const { handleProductsData } = useContext(allProducts);
 
+	// Hanling user authentication.
 	handleUserAuth();
 
+	// Importing the products from firestore when the app loads.
 	useEffect(() => {
 		handleProductsData();
 	}, [])
 
+	// Rendering as per the loading state.
+	// The paths are setup as per the auth state. If they are
+	// not authenticated, they are set up as PublicRoute & if 
+	// authenticated, then PrivateRoute.
 	return loading === true ? (
 		<div className="loader">
 			<img src={loader} alt="Site Loader" />
