@@ -29,7 +29,7 @@ const Navbar = () => {
             <div className="landing-hero container">
                 <h1>Spruce</h1>
                 <p>Join Spruce & explore a large variety of plants that suit your living & work place.</p>
-                <a className="btn-join-us" href="pages/sign-up.html">Join Us</a>
+                <Link className="btn-join-us" to="/signup">Join Us</Link>
             </div>
 
         </section>
