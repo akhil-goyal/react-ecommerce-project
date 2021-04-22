@@ -70,3 +70,10 @@ Here's a short demonstration that walks through all the crucial features of this
 The project can be tested live by visiting at :
 
 https://lucid-torvalds-f1e00e.netlify.app/#/
+
+### Testing credentials -
+
+The following credentials may also be used to test the project :
+
+Email Address : test@gmail.com
+Password : test123
