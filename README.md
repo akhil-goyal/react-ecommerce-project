@@ -17,6 +17,8 @@
 
 ## Project Overview
 
+![Sprice Screengrab](assets/dashboard.png)
+
 This project is a part of course WDDM - 121/122 for program Web Designing & Development at Humber College. The purpose of this project is to be familiar with latest front-end development practices ranging from creating a UI to developing a user friendly e-commerce store.
 
 ### Technologies Used
@@ -56,6 +58,12 @@ To install this project locally, run -
    ```shell
    npm run deploy
    ```
+
+## Demonstration
+
+Here's a short demonstration that walks through all the crucial features of this project - 
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/em5Nz1T9rC4/2.jpg)](https://www.youtube.com/watch?v=em5Nz1T9rC4)
 
 ## Live Testing
 

@@ -7,7 +7,7 @@ import { firebaseAuth } from '../../contexts/auth-context';
 const SignIn = ({ history }) => {
 
     // Destructuring the auth methods from context.
-    const { handleSignIn, inputs, setInputs, errors } = useContext(firebaseAuth);
+    const { handleSignIn, inputs, setInputs, errors, setErrors } = useContext(firebaseAuth);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -20,6 +20,7 @@ const SignIn = ({ history }) => {
 
     // Handling change in input fields.
     const handleChange = e => {
+        setErrors([]);
         const { name, value } = e.target
         setInputs(prev => ({ ...prev, [name]: value }))
     }

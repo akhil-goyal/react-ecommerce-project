@@ -28,8 +28,7 @@ const Navbar = () => {
 
             <div className="landing-hero container">
                 <h1>Spruce</h1>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas eum molestiae, delectus eligendi
-            optio recusandae animi iusto facilis dolorem sint.</p>
+                <p>Join Spruce & explore a large variety of plants that suit your living & work place.</p>
                 <a className="btn-join-us" href="pages/sign-up.html">Join Us</a>
             </div>
 

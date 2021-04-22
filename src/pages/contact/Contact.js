@@ -43,7 +43,7 @@ function Contact() {
 
                             <h1>Get in touch.</h1>
 
-                            <form method="POST" enctype="multipart/form-data" className="contact-form">
+                            <form method="POST" encType="multipart/form-data" className="contact-form">
 
                                 <div className="form-control">
                                     <input className="contact-name" type="text" name="name" placeholder="Full Name" required />
